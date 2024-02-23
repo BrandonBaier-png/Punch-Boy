@@ -40,7 +40,6 @@ public class PlayerController : MonoBehaviour
     private void MovePlayer(Vector3 direction)
     {
         transform.position += (direction * tileMove * Time.deltaTime);
-        //transform.Translate(direction * tileMove * Time.deltaTime);
     }
 
 
