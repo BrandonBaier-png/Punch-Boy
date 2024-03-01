@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectCollisions : MonoBehaviour
+public class DetectCollisions : SpikeRowMove
 {
     // Start is called before the first frame update
     void Start()
@@ -14,12 +14,6 @@ public class DetectCollisions : MonoBehaviour
     void Update()
     {
 
-    }
-
-    private void OnTriggerEnter(UnityEngine.Collider other)
-    {
-       // Destroy(gameObject);
-        Destroy(other.gameObject);
     }
 
 }

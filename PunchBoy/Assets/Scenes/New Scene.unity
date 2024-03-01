@@ -650,10 +650,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 475594311}
-  - component: {fileID: 475594312}
   m_Layer: 0
   m_Name: Spike Row
-  m_TagString: Untagged
+  m_TagString: Spike Row
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -677,18 +676,6 @@ Transform:
   - {fileID: 857180536}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &475594312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 475594310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d5f7ec36fd16b74689c7efcb8f72741, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &477434080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,6 +1547,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7532477605725840550, guid: 4b360ca2d8d1dec45a816bba7f716a98, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2413,6 +2404,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7532477605725840550, guid: 4b360ca2d8d1dec45a816bba7f716a98, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2436,7 +2431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1624504714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2918,7 +2913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7532477605725840550, guid: 4b360ca2d8d1dec45a816bba7f716a98, type: 3}
       propertyPath: m_Name
-      value: Spike  1
+      value: Spike 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
