@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        Debug.Log("Conversation with " + name);
+        Debug.Log("Starting conversation with " + name);
         sentences.Clear();
 
         foreach (string sentence in dialogue.sentences)
@@ -34,6 +34,8 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
+        string sentence = sentences.Dequeue();
+        Debug.Log(sentence);
     }
     public void EndDialogue()
     {

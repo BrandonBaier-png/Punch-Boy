@@ -10,6 +10,12 @@ public class DialogueTrigger : MonoBehaviour
     {
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 
-        
+
+    }
+
+    public void StartDialogue(Dialogue dialogue)
+    {
+    
+
     }
 }
