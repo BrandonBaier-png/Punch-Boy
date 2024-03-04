@@ -6,6 +6,8 @@ public class SpikeRowMove : MonoBehaviour
 {
 
     private float speed = 10.0f;
+    private bool isHit = false;
+    public GameObject spikeRow;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +20,14 @@ public class SpikeRowMove : MonoBehaviour
         transform.Translate(Vector2.up * Time.deltaTime * speed);
     }
 
- /*   private void OnTriggerEnter(UnityEngine.Collider other)
+   void OnTriggerEnter(UnityEngine.Collider other)
     {
-        DetectCollisions.Destroy(gameObject);
-    }*/
+        isHit = true;   
+        DetectCollisions.Destroy(other);
+    }
+
+   public void moveSpikes(GameObject spikesToMove)
+    {
+        transform.Translate(Vector2.up * Time.deltaTime * speed);
+    }
 }
