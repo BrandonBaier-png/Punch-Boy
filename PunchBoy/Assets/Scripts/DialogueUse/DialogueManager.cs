@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    public DialogueTrigger dialogueTrigger;
+
     public Text nameText;
     public Text dialogueText;
 
@@ -26,7 +29,7 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
-
+        
         DisplayNextSentence();
 
     }
@@ -43,7 +46,9 @@ public class DialogueManager : MonoBehaviour
     }
     public void EndDialogue()
     {
-        Debug.Log("End of conversation");
+
+        Debug.Log("End of conversation in DialogueManager");
+        //dialogueTrigger.nextDialogue();
     }
 
 }
