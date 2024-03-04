@@ -8,12 +8,14 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue dialogue;
 
 
+    //create dedicated function to start the dialogue (break up the code)
+    //
+
     public void Start()
     {
-        if (dialogue.orderNum == 0)
-        {
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-        }
+ 
+    FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+    
     }
     public void TriggerDialogue()
     {

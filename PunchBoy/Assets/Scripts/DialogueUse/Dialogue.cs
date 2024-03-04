@@ -9,6 +9,6 @@ public class Dialogue {
     public int orderNum;
     [TextArea(3, 10)]
     public string[] sentences;
-    
+    // speed of the text
    
 }
