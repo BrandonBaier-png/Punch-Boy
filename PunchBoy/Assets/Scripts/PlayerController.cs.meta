@@ -3,7 +3,9 @@ guid: f3d0b7020d7b8ef489e07606d3c5905c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - movePoint: {instanceID: 0}
+  - fireFistPrefab: {fileID: 8883597255996872221, guid: 375434e3ddb2c624aa7cfe72cbc3a0f3, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
