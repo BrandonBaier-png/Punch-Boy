@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using UnityEngine.InputSystem;
+using Unity.VisualScripting;
+using static InputScript;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IMovementActions
 {
-    private float tileMove = 500;
+    private int xPOS = 0;
+    private int yPOS = 0;
     public Transform movePoint;
     public GameObject fireFistPrefab;
     public GameObject basicPunchPrefab;
@@ -14,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private float basicCooldown = 0.0f;
     private float counterCooldown = 0.0f;
     private float fireCooldown = 0.0f;
+    private float moveCooldown = 0.0f;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,26 +32,39 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W) && xPOS < 3 && moveCooldown <= 0)
         {
             MovePlayer(Vector3.forward);
+            xPOS++;
+            moveCooldown = .3f;
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A) && yPOS > 0 && moveCooldown <= 0)
         {
             MovePlayer(Vector3.left);
+            yPOS--;
+            moveCooldown = .3f;
         }
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && xPOS > 0 && moveCooldown <= 0)
         {
             MovePlayer(Vector3.back);
+            xPOS--;
+            moveCooldown = .3f;
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D) && yPOS < 3 && moveCooldown <= 0)
         {
             MovePlayer(Vector3.right);
+            yPOS++;
+            moveCooldown = .3f;
         }
-        
+
+        if (moveCooldown > 0)
+        {
+            moveCooldown -= Time.deltaTime;
+        }
+
         //Basic punch skill
         if (Input.GetKeyDown(KeyCode.J) && basicCooldown <= 0)
         {
@@ -92,14 +112,16 @@ public class PlayerController : MonoBehaviour
             counterDuration = fireCooldown - Time.deltaTime;
         }
 
-        
     }
 
     private void MovePlayer(Vector3 direction)
     {
-        transform.position += (direction * tileMove * Time.deltaTime);
+        transform.position += (direction * 1);
     }
 
-
+    public void OnPlayerMove(InputAction.CallbackContext context)
+    {
+        throw new System.NotImplementedException();
+    }
 
 }
