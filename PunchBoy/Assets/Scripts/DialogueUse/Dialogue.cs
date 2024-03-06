@@ -4,6 +4,11 @@ using UnityEngine;
 
 [System.Serializable]
 public class Dialogue {
+    
     public string name;
+    public int orderNum;
+    [TextArea(3, 10)]
     public string[] sentences;
+    // speed of the text
+   
 }
