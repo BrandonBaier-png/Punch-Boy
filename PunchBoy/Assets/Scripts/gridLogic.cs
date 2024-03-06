@@ -33,7 +33,8 @@ public class gridLogic : MonoBehaviour
             for (int z = 0; z < gridSize.z; z++)
             {
                 var spawnedTile = Instantiate(tilePrefab, new Vector3(x, gridHeight, z), Quaternion.identity);
-                spawnedTile.name = $"Tile {x} {z}";
+                spawnedTile.name = $"Tile{x}{z}";
+                spawnedTile.GetInstanceID();
 
                 myRenderer =  spawnedTile.GetComponent<MeshRenderer>();
                 if ((x + z) % 2 == 1) {
@@ -46,6 +47,6 @@ public class gridLogic : MonoBehaviour
             }
         }
     }
-
+    
 }
 
