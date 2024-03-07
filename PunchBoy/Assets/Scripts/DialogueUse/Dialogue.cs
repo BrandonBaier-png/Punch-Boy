@@ -1,3 +1,4 @@
+using OpenCover.Framework.Model;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,28 +9,41 @@ using UnityEngine;
 public class Dialogue {
 
 
-    public enum Characters
-    {
-        PunchBoy,
-        NewKing
-    }
+    public enum Characters {PunchBoy, NewKing};
+
     public Characters currentCharacter;
-    public Dictionary<string, string> characterInfo = new Dictionary<string, string>();
+    //public Dictionary<string, string> characterText = new Dictionary<string, string>();
+    public Dictionary<int, string> characterText = new();
+    
+
+    void Start()
+    {
+
+    }
+
 
     void dialogueInfo()
     {
-        switch(currentCharacter)
+
+        switch (currentCharacter)
         {
             case Characters.PunchBoy:
-                Debug.Log("Punch Boy Called");
+                name = "Punch Boy";
                 break;
 
             case Characters.NewKing:
-                Debug.Log("New King Called");
+                name = "New King";
                 break;
         }
     }
+
+
     
+    string punchBoy1()
+    {
+        currentCharacter = Characters.PunchBoy;
+        return "done";
+    }
     
     public string name;
     public int orderNum;
@@ -38,3 +52,5 @@ public class Dialogue {
     // speed of the text
    
 }
+
+

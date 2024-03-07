@@ -14,35 +14,33 @@ public class DialogueTrigger : MonoBehaviour
     public void Start()
     {
  
-    FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+    
     
     }
     public void TriggerDialogue()
     {
 
-        
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
 
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
 
-        if (dialogue.orderNum == currentTextNum)
-        {
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-        }
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        
     }
 
-    public void nextDialogue(Dialogue dialogue)
-    {
+    //public void nextDialogue(Dialogue dialogue)
+    //{
 
-        currentTextNum += 1;
-        //Debug.Log("End of conversation within DialogueTrack");
-        if (dialogue.orderNum == currentTextNum)
-        {
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-        }
-        //Debug.Log("End of conversation");
+    //    currentTextNum += 1;
+    //    //Debug.Log("End of conversation within DialogueTrack");
+    //    if (dialogue.orderNum == currentTextNum)
+    //    {
+    //        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+    //    }
+    //    //Debug.Log("End of conversation");
 
-    }
+    //}
 }
