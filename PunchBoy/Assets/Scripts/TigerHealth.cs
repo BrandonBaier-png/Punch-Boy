@@ -14,14 +14,14 @@ public class TigerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health <= 0)
+        if (health <= 0)
         {
             Destroy(gameObject);
         }
+        Debug.Log(health);
     }
     private void OnTriggerEnter(UnityEngine.Collider other)
     {
         health -= 50;
-        Debug.Log(health);
     }
 }

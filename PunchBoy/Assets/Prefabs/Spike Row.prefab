@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8143731278223680562}
   - component: {fileID: 8925614886505067347}
+  - component: {fileID: 8513468656270275243}
   m_Layer: 0
   m_Name: Spike Row
   m_TagString: Spike Row
@@ -48,6 +49,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa176a17a7a808f4aab8a4922ceec0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
+  spikeRow: {fileID: 0}
+--- !u!95 &8513468656270275243
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3962382820722422364}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b91413a621f710c4b924b503651037b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &387594603932444431
 PrefabInstance:
   m_ObjectHideFlags: 0
