@@ -8,6 +8,7 @@ public class DestroyOutOfBounds : MonoBehaviour
     private float topBound = 2;
     private float lowerBound = -10;
     private int counter = 0;
+    private Vector3 row1 = new Vector3(1.816654f, -2.45f, 0.65f);
     private Vector3 row2 = new Vector3(1.816654f, -2.45f, -0.82f);
     private Vector3 row3 = new Vector3(1.816654f, -2.45f, -1.82f);
     private Vector3 row4 = new Vector3(1.816654f, -2.45f, -2.75f);
@@ -22,21 +23,57 @@ public class DestroyOutOfBounds : MonoBehaviour
     void Update()
     {
 
+        switch (counter)
+        {
+            case 0:
+                if (transform.position.y > topBound)
+                {
+                    gameObject.transform.position = row2;
+                    ++counter;
+                }
+                break; 
+            case 1:
+                if (transform.position.y > topBound)
+                {
+                    gameObject.transform.position = row3;
+                    ++counter;
+                }
+                break;
+            case 2:
+                if (transform.position.y > topBound)
+                {
+                    gameObject.transform.position = row4;
+                    ++counter;
+                }
+                break;
+            case 3:
+                if (transform.position.y > topBound)
+                {
+                    Destroy(gameObject);
+                }
+                break;
+        }
+    }
+}
+
+
+
+/*
         if (transform.position.y > topBound && counter == 0)
         {
-            /*Destroy(gameObject);*/
+            *//*Destroy(gameObject);*//*
             gameObject.transform.position = row2;
             ++counter;
         }
         else if (transform.position.y > topBound && counter == 1)
         {
-            /*Destroy(gameObject);*/
+            *//*Destroy(gameObject);*//*
             gameObject.transform.position = row3;
             ++counter;
         }
         else if (transform.position.y > topBound && counter == 2)
         {
-            /*Destroy(gameObject);*/
+            *//*Destroy(gameObject);*//*
             gameObject.transform.position = row4;
             ++counter;
         }
@@ -46,12 +83,8 @@ public class DestroyOutOfBounds : MonoBehaviour
         }
         else if (transform.position.y < lowerBound)
         {
-            /*Destroy(gameObject);*/
-        }
-    }
-}
-
-
+            *//*Destroy(gameObject);*//*
+        }*/
 
 
 /*using System.Collections;

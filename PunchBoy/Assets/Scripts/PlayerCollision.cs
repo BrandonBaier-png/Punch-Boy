@@ -16,8 +16,8 @@ public class PlayerCollision : MonoBehaviour
         
     }
 
-   private void OnTriggerEnter(UnityEngine.Collider other)
+  /* private void OnTriggerEnter(UnityEngine.Collider other)
    {
        Destroy(gameObject);
-   }
+   }*/
 }
