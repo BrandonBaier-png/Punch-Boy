@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroyOutOfBounds : MonoBehaviour
 {
 
-    private float topBound = 2;
+    private float topBound = -0.64f;
     private float lowerBound = -10;
     private int counter = 0;
     private Vector3 row1 = new Vector3(1.816654f, -2.45f, 0.65f);
