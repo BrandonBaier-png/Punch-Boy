@@ -379,7 +379,7 @@ Transform:
   m_GameObject: {fileID: 752686159}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 1.468, y: -0.031000253, z: 1.538}
+  m_LocalPosition: {x: 0, y: 0, z: 1.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -477,6 +477,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 30, y: -43.383, z: 0.001}
+--- !u!1 &1002484038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1002484040}
+  - component: {fileID: 1002484039}
+  m_Layer: 0
+  m_Name: 2dGrid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!156049354 &1002484039
+Grid:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002484038}
+  m_Enabled: 1
+  m_CellSize: {x: 1, y: 1, z: 1}
+  m_CellGap: {x: 0, y: 0, z: 0}
+  m_CellLayout: 0
+  m_CellSwizzle: 0
+--- !u!4 &1002484040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002484038}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1209605977
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,12 +637,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1209605977}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d0b7020d7b8ef489e07606d3c5905c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe7864e6c39cdbd45b3ddd90559360c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   movePoint: {fileID: 0}
-  fireFistPrefab: {fileID: 8883597255996872221, guid: 375434e3ddb2c624aa7cfe72cbc3a0f3, type: 3}
-  basicPunchPrefab: {fileID: 8883597255996872221, guid: cbfc80d0ae79b094997759e2b97409d1, type: 3}
+  fireFistPrefab: {fileID: 0}
+  basicPunchPrefab: {fileID: 0}
 --- !u!1 &1797220938
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +774,7 @@ GameObject:
   - component: {fileID: 1946817821}
   - component: {fileID: 1946817823}
   m_Layer: 0
-  m_Name: grid
+  m_Name: 3dGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -789,3 +833,4 @@ SceneRoots:
   - {fileID: 1946817822}
   - {fileID: 1797220942}
   - {fileID: 752686161}
+  - {fileID: 1002484040}
