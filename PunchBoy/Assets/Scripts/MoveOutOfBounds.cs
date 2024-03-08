@@ -5,13 +5,13 @@ using UnityEngine;
 public class DestroyOutOfBounds : MonoBehaviour
 {
 
-    private float topBound = -0.64f;
-    private float lowerBound = -10;
+    private float topBound = -1.50f;
+    //private float lowerBound = -10;
     private int counter = 0;
-    private Vector3 row1 = new Vector3(1.816654f, -2.45f, 0.65f);
-    private Vector3 row2 = new Vector3(1.816654f, -2.45f, -0.82f);
-    private Vector3 row3 = new Vector3(1.816654f, -2.45f, -1.82f);
-    private Vector3 row4 = new Vector3(1.816654f, -2.45f, -2.75f);
+    private Vector3 row1 = new Vector3(1.816654f, -1.89f, 0.65f);
+    private Vector3 row2 = new Vector3(1.816654f, -1.89f, -0.82f);
+    private Vector3 row3 = new Vector3(1.816654f, -1.89f, -1.82f);
+    private Vector3 row4 = new Vector3(1.816654f, -1.89f, -2.75f);
     private Vector3[] positions = new Vector3[3];
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,7 @@ public class DestroyOutOfBounds : MonoBehaviour
             case 0:
                 if (transform.position.y > topBound)
                 {
+
                     gameObject.transform.position = row2;
                     ++counter;
                 }
@@ -35,6 +36,7 @@ public class DestroyOutOfBounds : MonoBehaviour
             case 1:
                 if (transform.position.y > topBound)
                 {
+         
                     gameObject.transform.position = row3;
                     ++counter;
                 }
@@ -42,6 +44,7 @@ public class DestroyOutOfBounds : MonoBehaviour
             case 2:
                 if (transform.position.y > topBound)
                 {
+
                     gameObject.transform.position = row4;
                     ++counter;
                 }
@@ -54,6 +57,7 @@ public class DestroyOutOfBounds : MonoBehaviour
                 break;
         }
     }
+   
 }
 
 
