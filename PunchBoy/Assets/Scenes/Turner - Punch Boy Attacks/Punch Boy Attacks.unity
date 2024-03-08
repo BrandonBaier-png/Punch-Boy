@@ -1039,7 +1039,7 @@ Transform:
   m_GameObject: {fileID: 1209605977}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 1, y: 0.5, z: 1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1054,10 +1054,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1209605977}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe7864e6c39cdbd45b3ddd90559360c3, type: 3}
+  m_Script: {fileID: 11500000, guid: f3d0b7020d7b8ef489e07606d3c5905c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePoint: {fileID: 0}
+  movePoint: {fileID: 1444550623}
   fireFistPrefab: {fileID: 8883597255996872221, guid: 375434e3ddb2c624aa7cfe72cbc3a0f3, type: 3}
   basicPunchPrefab: {fileID: 8883597255996872221, guid: cbfc80d0ae79b094997759e2b97409d1, type: 3}
 --- !u!1 &1278260770
