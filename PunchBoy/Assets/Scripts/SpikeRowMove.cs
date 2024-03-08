@@ -5,8 +5,8 @@ using UnityEngine;
 public class SpikeRowMove : MonoBehaviour
 {
 
-    private float speed = 10.0f;
-    private bool isHit = false;
+    public float speed = 10.0f;
+    //private bool isHit = false;
     public GameObject spikeRow;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class SpikeRowMove : MonoBehaviour
 
    void OnTriggerEnter(UnityEngine.Collider other)
     {
-        isHit = true;   
+        //isHit = true;   
         DetectCollisions.Destroy(other);
     }
 

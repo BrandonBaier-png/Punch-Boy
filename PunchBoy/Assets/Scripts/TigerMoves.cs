@@ -5,7 +5,7 @@ using static SpikeRowMove;
 using static DestroyOutOfBounds;
 using static DetectCollisions;
 using static PlayerCollision;
-using static PlayerHealth;
+
 
 
 public class TigerMoves : MonoBehaviour
