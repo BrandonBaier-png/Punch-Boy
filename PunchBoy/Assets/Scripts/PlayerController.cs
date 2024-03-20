@@ -13,11 +13,13 @@ public class PlayerController : MonoBehaviour, IMovementActions
     public Transform movePoint;
     public GameObject fireFistPrefab;
     public GameObject basicPunchPrefab;
+    public GameObject sweepPrefab;
 
-    private bool isCountering = false;
-    private float counterDuration = 0.0f;
+    Vector3 left;
+    Vector3 right;
+
     private float basicCooldown = 0.0f;
-    private float counterCooldown = 0.0f;
+    private float sweepCooldown = 0.0f;
     private float fireCooldown = 0.0f;
     private float moveCooldown = 0.0f;
 
@@ -25,12 +27,15 @@ public class PlayerController : MonoBehaviour, IMovementActions
     // Start is called before the first frame update
     void Start()
     {
-
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        left = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
+        right = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
 
         if (Input.GetKeyDown(KeyCode.W) && xPOS < 3 && moveCooldown <= 0)
         {
@@ -66,29 +71,29 @@ public class PlayerController : MonoBehaviour, IMovementActions
         }
 
         //Basic punch skill
-        if (Input.GetKeyDown(KeyCode.J) && basicCooldown <= 0)
+        if (Input.GetKeyDown(KeyCode.J) && basicCooldown <= 0 && moveCooldown <= 0)
         {
             basicCooldown = 1.0f;
             Instantiate(basicPunchPrefab, transform.position, basicPunchPrefab.transform.rotation);
+            moveCooldown = .5f;
         }
 
-        //Counter skill
-        if (Input.GetKeyDown(KeyCode.K) && counterCooldown <= 0)
+        //Sweep skill
+        if (Input.GetKeyDown(KeyCode.K) && sweepCooldown <= 0 && moveCooldown <= 0)
         {
-            counterDuration = 2.0f;
-            if (counterDuration > 0)
-            {
-                isCountering = true;
-            }
-
-            counterCooldown = 4.0f;
+            sweepCooldown = 5.0f;
+            Instantiate(sweepPrefab, left, sweepPrefab.transform.rotation);
+            Instantiate(sweepPrefab, transform.position, sweepPrefab.transform.rotation);
+            Instantiate(sweepPrefab, right, sweepPrefab.transform.rotation);
+            moveCooldown = .83f;
         }
 
         //Fire punch skill
-        if (Input.GetKeyDown(KeyCode.L) && fireCooldown <= 0)
+        if (Input.GetKeyDown(KeyCode.L) && fireCooldown <= 0 && moveCooldown <= 0)
         {
             fireCooldown = 5.0f;
             Instantiate(fireFistPrefab, transform.position, fireFistPrefab.transform.rotation);
+            moveCooldown = .83f;
         }
 
         if (basicCooldown > 0)
@@ -96,20 +101,14 @@ public class PlayerController : MonoBehaviour, IMovementActions
             basicCooldown = basicCooldown - Time.deltaTime;
         }
 
-        if (counterCooldown > 0)
+        if (sweepCooldown > 0)
         {
-            counterCooldown = counterCooldown - Time.deltaTime;
+            sweepCooldown = sweepCooldown - Time.deltaTime;
         }
 
         if (fireCooldown > 0)
         {
             fireCooldown = fireCooldown - Time.deltaTime;
-
-        }
-
-        if (counterDuration > 0)
-        {
-            counterDuration = fireCooldown - Time.deltaTime;
         }
 
     }
