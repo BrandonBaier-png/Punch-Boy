@@ -6,6 +6,9 @@ using UnityEngine;
 
 public class SuperSpunch : MonoBehaviour
 {
+    Rigidbody rigidbodyDespawner;
+    
+
     private float waitTime = 0;
     public float speed = 10.0f;
     //private bool isHit = false;
@@ -44,7 +47,13 @@ public class SuperSpunch : MonoBehaviour
         DetectCollisions.Destroy(other);
     }
 
-   public void moveSpikes(GameObject spikesToMove)
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Destructor destructor = collision.collider.GetComponent<>()
+        //EnemyController e = collision.collider.GetComponent<EnemyController>();
+    }
+
+        public void moveSpikes(GameObject spikesToMove)
     {
        
        transform.Translate(Vector2.up * Time.deltaTime * speed);
