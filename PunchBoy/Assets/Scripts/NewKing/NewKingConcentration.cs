@@ -1,12 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class NewKingConcentration : MonoBehaviour
 {
+    UnityEvent takeDamage = new UnityEvent();
+    private float bossConcentration = 50;
+
     // How many temporary hitpoints the boss has
     // bossConcentration reaching zero before the attack happens means the attack will cancel
-    private float bossConcentration = 50;
+
     // Start is called before the first frame update
     void Start()
     {
