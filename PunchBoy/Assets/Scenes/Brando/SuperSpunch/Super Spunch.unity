@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 35415244}
   - component: {fileID: 35415243}
+  - component: {fileID: 35415245}
   m_Layer: 0
   m_Name: BossAttackManager
   m_TagString: Untagged
@@ -169,6 +170,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &35415245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35415242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 348e1cbf44634254293a8608632e1dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PummelObject: {fileID: 8878265079013092832, guid: 19a273e6e4ec2df43989f87aa24a81d5, type: 3}
 --- !u!1 &136845248
 GameObject:
   m_ObjectHideFlags: 0
