@@ -42,6 +42,12 @@ public class Boss : MonoBehaviour
             Debug.Log(bossHealth);
             Destroy(other.gameObject);
         }
+
+        if (bossHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+        Debug.Log(bossHealth);
     }
 
     private void BossHit(float damage)

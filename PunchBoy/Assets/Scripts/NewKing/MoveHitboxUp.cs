@@ -23,4 +23,22 @@ public class MoveHitboxUp : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        print("HIT SOMETHING");
+
+        if (collision.tag == "Player")
+        {
+            print("PLAYER HAS BEEN HIT");
+        }
+
+        if (player != null)
+        {
+            print("Player Should be EXTRA dead");
+            Destroy(collision.gameObject);
+        }
+        //EnemyController e = collision.collider.GetComponent<EnemyController>();
+    }
 }
