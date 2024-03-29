@@ -25,6 +25,7 @@ public class SuperSpunch : MonoBehaviour
     public GameObject spikeRow;
     private Vector3 spawnPos = new Vector3(1.5f, -2, 1.5f);
     private float topBound = 10;
+    public float BASECOOLDOWN = 3;
     public float attackCooldown = 3;
     private bool readyToAttack = false;
     public float bossConcen = 20;
@@ -48,6 +49,7 @@ public class SuperSpunch : MonoBehaviour
         if (attackCooldown <= 0 && bossConcen > 0)
         {
             Invoke("spawnSpikes", 0);
+            attackCooldown = BASECOOLDOWN;
         }
         else
         {

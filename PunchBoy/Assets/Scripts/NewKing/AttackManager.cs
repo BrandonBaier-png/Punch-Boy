@@ -25,29 +25,29 @@ public class AttackManager : MonoBehaviour
     //Attack Info
     private bool attacking = false;
     private int attackTally = 0;
-    public const float ATTACKCOOLDOWN = 3;
+    public const float BASECOOLDOWN = 3;
     public float attackCooldown = 3;
 
     private Queue<int> attackQueue = new Queue<int>();
 
     // Start is called before the first frame update
-    
+
     void Start()
     {
-        attackQueue.Enqueue(0);
-        attackQueue.Enqueue(1);
-        attackQueue.Enqueue(2);
-        attackQueue.Enqueue(3);
-
+        EnqueueBossAttacks();
+        //Adding methods to the attackManager delegate
+        //Whenever attackManager is called, CountAttack is also called;
         attackManager += CountAttack;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //When the cooldown is less than zero, New King is ready to attack
+        
         if (attackCooldown <= 0)
         {
-            attackCooldown = ATTACKCOOLDOWN;
+            attackCooldown = BASECOOLDOWN;
             InitiateAttack();
             SetAttack(true);
             attackManager.Invoke();
@@ -55,6 +55,11 @@ public class AttackManager : MonoBehaviour
         else
         {
             attackCooldown -= Time.deltaTime;
+        }
+
+        if (attackQueue.Count == 0)
+        {
+            EnqueueBossAttacks();
         }
     }
 
@@ -64,11 +69,8 @@ public class AttackManager : MonoBehaviour
         // need to call superspunch the c# file
         // Idk what needs to happen
         print(attackQueue.Dequeue());
-        
-        //if (attackQueue.Count)
-        //{
-            
-        //}
+        print("Items in Queue" + attackQueue.Count);
+    
     }
     void SetAttack(bool value)
     {
@@ -81,5 +83,13 @@ public class AttackManager : MonoBehaviour
     {
         attackTally++;
         print("Delegate has been called");
+    }
+
+    void EnqueueBossAttacks()
+    {
+        attackQueue.Enqueue(0);
+        attackQueue.Enqueue(1);
+        attackQueue.Enqueue(2);
+        attackQueue.Enqueue(3);
     }
 }
