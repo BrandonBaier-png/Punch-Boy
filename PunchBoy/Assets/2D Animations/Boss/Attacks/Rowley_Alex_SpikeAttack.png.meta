@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 586b6b7fac6ec1e4c8e654df1204bbc0
+guid: 6605b7c8f1ce675418a30339ad34b088
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -162,13 +162,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tiger_Idle_Animation_Spritesheet_0
+      name: Rowley_Alex_SpikeAttack_0
       rect:
         serializedVersion: 2
-        x: 182
-        y: 3430
-        width: 592
-        height: 464
+        x: 0
+        y: 256
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +176,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b2806d0e62d2a448af49f6ab0e288a6
-      internalID: 689607348
+      spriteID: 79b85de0320bc834990f482b1fbaa8a3
+      internalID: 2108938572
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiger_Idle_Animation_Spritesheet_1
+      name: Rowley_Alex_SpikeAttack_1
       rect:
         serializedVersion: 2
-        x: 1914
-        y: 3434
-        width: 580
-        height: 456
+        x: 128
+        y: 256
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68cbbdee63ff8164db1ccaa4dd6b5800
-      internalID: 1596947644
+      spriteID: 5278222d37c07ad4b8810074d47cb6d3
+      internalID: 954049056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiger_Idle_Animation_Spritesheet_2
+      name: Rowley_Alex_SpikeAttack_2
       rect:
         serializedVersion: 2
-        x: 3627
-        y: 3438
-        width: 591
-        height: 452
+        x: 256
+        y: 256
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 44ed6985f69f217408a615675b1ab8ff
-      internalID: -1600930330
+      spriteID: 2f81d66c20150c242b59f77adea88656
+      internalID: 1060856511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiger_Idle_Animation_Spritesheet_3
+      name: Rowley_Alex_SpikeAttack_3
       rect:
         serializedVersion: 2
-        x: 5358
-        y: 3442
-        width: 584
-        height: 444
+        x: 384
+        y: 256
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -239,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a4c2b5546b22214591a9101849980fa
-      internalID: 1162214045
+      spriteID: 50ee695e69294a748bf34d27fd11e82e
+      internalID: 934440808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiger_Idle_Animation_Spritesheet_4
+      name: Rowley_Alex_SpikeAttack_4
       rect:
         serializedVersion: 2
-        x: 174
-        y: 2358
-        width: 580
-        height: 432
+        x: 512
+        y: 256
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,20 +260,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfedff30d118d0f4cb58fc1b692743aa
-      internalID: -1208650949
+      spriteID: 73214d4819ca21e49ade4bb54fdd85cd
+      internalID: -1442404341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiger_Idle_Animation_Spritesheet_5
+      name: Rowley_Alex_SpikeAttack_5
       rect:
         serializedVersion: 2
-        x: 1902
-        y: 2358
-        width: 580
-        height: 432
+        x: 0
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -281,20 +281,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60aee2cba0bf0be42a9cbfe8836c8a0f
-      internalID: -78135834
+      spriteID: 8ee41c2e6f935464fa04237bf2857c61
+      internalID: 803938394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiger_Idle_Animation_Spritesheet_6
+      name: Rowley_Alex_SpikeAttack_6
       rect:
         serializedVersion: 2
-        x: 3634
-        y: 2346
-        width: 580
-        height: 444
+        x: 128
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09976e8fcd7c00640b8ed409c3d582d8
-      internalID: 1706184576
+      spriteID: 040136fe315e1114587b0a98581b5d1b
+      internalID: -185920753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiger_Idle_Animation_Spritesheet_7
+      name: Rowley_Alex_SpikeAttack_7
       rect:
         serializedVersion: 2
-        x: 5355
-        y: 2342
-        width: 591
-        height: 452
+        x: 256
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -323,20 +323,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3200e0d21354f054db5d13a6ef3b2a4f
-      internalID: -3740647
+      spriteID: 64a356131f4240d40b98a08aa94f98f0
+      internalID: -46223747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiger_Idle_Animation_Spritesheet_8
+      name: Rowley_Alex_SpikeAttack_8
       rect:
         serializedVersion: 2
-        x: 182
-        y: 1238
-        width: 592
-        height: 460
+        x: 384
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -344,20 +344,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64b451ff7f55395488dbb23d90d1a3e4
-      internalID: -1304306496
+      spriteID: 69ca3045ed6654040a5c4e9f1a4ceaf2
+      internalID: 1560491969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tiger_Idle_Animation_Spritesheet_9
+      name: Rowley_Alex_SpikeAttack_9
       rect:
         serializedVersion: 2
-        x: 1910
-        y: 1234
-        width: 592
-        height: 464
+        x: 512
+        y: 128
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -365,8 +365,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 509909e88f3506e4593a7338a5a122ef
-      internalID: -538999190
+      spriteID: 80f47148b924ded4583a5d1e5626ce8c
+      internalID: -488948913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rowley_Alex_SpikeAttack_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c49856b10e61a468ee5626f93c63af
+      internalID: 462065630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rowley_Alex_SpikeAttack_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8038a9ea96516e748a149b805058ce8a
+      internalID: -593327516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rowley_Alex_SpikeAttack_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e6c0e4687360a74aa525e4828beae70
+      internalID: -1669026435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rowley_Alex_SpikeAttack_13
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abc9629105fc3e043a342c70170caac1
+      internalID: -1560551756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rowley_Alex_SpikeAttack_14
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b2415b8be30404ba472b6860a3bf18
+      internalID: 1301305141
       vertices: []
       indices: 
       edges: []
@@ -382,16 +487,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Tiger_Idle_Animation_Spritesheet_0: 689607348
-      Tiger_Idle_Animation_Spritesheet_1: 1596947644
-      Tiger_Idle_Animation_Spritesheet_2: -1600930330
-      Tiger_Idle_Animation_Spritesheet_3: 1162214045
-      Tiger_Idle_Animation_Spritesheet_4: -1208650949
-      Tiger_Idle_Animation_Spritesheet_5: -78135834
-      Tiger_Idle_Animation_Spritesheet_6: 1706184576
-      Tiger_Idle_Animation_Spritesheet_7: -3740647
-      Tiger_Idle_Animation_Spritesheet_8: -1304306496
-      Tiger_Idle_Animation_Spritesheet_9: -538999190
+      Rowley_Alex_SpikeAttack_0: 2108938572
+      Rowley_Alex_SpikeAttack_1: 954049056
+      Rowley_Alex_SpikeAttack_10: 462065630
+      Rowley_Alex_SpikeAttack_11: -593327516
+      Rowley_Alex_SpikeAttack_12: -1669026435
+      Rowley_Alex_SpikeAttack_13: -1560551756
+      Rowley_Alex_SpikeAttack_14: 1301305141
+      Rowley_Alex_SpikeAttack_2: 1060856511
+      Rowley_Alex_SpikeAttack_3: 934440808
+      Rowley_Alex_SpikeAttack_4: -1442404341
+      Rowley_Alex_SpikeAttack_5: 803938394
+      Rowley_Alex_SpikeAttack_6: -185920753
+      Rowley_Alex_SpikeAttack_7: -46223747
+      Rowley_Alex_SpikeAttack_8: 1560491969
+      Rowley_Alex_SpikeAttack_9: -488948913
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
