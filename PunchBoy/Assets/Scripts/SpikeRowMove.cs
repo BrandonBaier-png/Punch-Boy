@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class SpikeRowMove : MonoBehaviour
 {
-    private float waitTime = 0;
+    private float waitTime = 1;
     public float speed = 10.0f;
     //private bool isHit = false;
     public GameObject spikeRow;
@@ -20,22 +20,21 @@ public class SpikeRowMove : MonoBehaviour
     void Update()
     {
         /*transform.Translate(Vector2.up * Time.deltaTime * speed);*/
-
-        if (gameObject.transform.position.y >= -1.51 && waitTime <= 0)
+        //was -1.51
+        Debug.Log(gameObject.transform.position.y);
+        if (gameObject.transform.position.y >= -1.88 && waitTime <= 0 && gameObject.transform.position.y <= -1.875)
         {
             waitTime = 1.0f;
         }
         if (waitTime >= 0)
         {
-           // Debug.Log(waitTime);
+            //Debug.Log(waitTime);
             waitTime -= Time.deltaTime;
         }
         if (waitTime <= 0)
         {
             moveSpikes(gameObject);
         }
-
-
     }
 
    void OnTriggerEnter(UnityEngine.Collider other)
@@ -46,9 +45,7 @@ public class SpikeRowMove : MonoBehaviour
 
    public void moveSpikes(GameObject spikesToMove)
     {
-       
-       transform.Translate(Vector2.up * Time.deltaTime * speed);
-        
+        transform.Translate(Vector2.up * Time.deltaTime * speed); 
     }
 
    /* IEnumerator Wait(float seconds)

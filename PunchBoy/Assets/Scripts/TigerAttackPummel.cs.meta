@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 348e1cbf44634254293a8608632e1dcc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - PummelObject: {fileID: 8878265079013092832, guid: 19a273e6e4ec2df43989f87aa24a81d5, type: 3}
+  - PunchBoy: {fileID: 2800000, guid: 12bc2d67b75b26f4aae34c7292a9dc6d, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
