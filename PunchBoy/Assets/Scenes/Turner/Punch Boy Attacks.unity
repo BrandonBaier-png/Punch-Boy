@@ -952,6 +952,7 @@ GameObject:
   - component: {fileID: 1209605979}
   - component: {fileID: 1209605978}
   - component: {fileID: 1209605982}
+  - component: {fileID: 1209605983}
   m_Layer: 0
   m_Name: punchBoy
   m_TagString: Untagged
@@ -1039,7 +1040,7 @@ Transform:
   m_GameObject: {fileID: 1209605977}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1054,12 +1055,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 1209605977}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3d0b7020d7b8ef489e07606d3c5905c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe7864e6c39cdbd45b3ddd90559360c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePoint: {fileID: 1444550623}
+  movePoint: {fileID: 0}
   fireFistPrefab: {fileID: 8883597255996872221, guid: 375434e3ddb2c624aa7cfe72cbc3a0f3, type: 3}
   basicPunchPrefab: {fileID: 8883597255996872221, guid: cbfc80d0ae79b094997759e2b97409d1, type: 3}
+  sweepPrefab: {fileID: 8883597255996872221, guid: 81160daa6b715d24eaa16451fc5d80e6, type: 3}
+--- !u!114 &1209605983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209605977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4dc554b10e9434d8c2c2689080f355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Wave1Prefab: {fileID: 8364311906625506186, guid: 628583110d2f104458bdfcbe5bb59ba9, type: 3}
+  Wave2Prefab: {fileID: 8301138045493930009, guid: 6651f1ac1956ce141837ce710480c67c, type: 3}
+  Wave3Prefab: {fileID: 7429573846391468474, guid: de648bf7d290a1c48b101f9726c4dbfb, type: 3}
+  Wave4Prefab: {fileID: 3752425959887593844, guid: 4247e3c1e1ff8ad4fa6dba9335f607c8, type: 3}
 --- !u!1 &1278260770
 GameObject:
   m_ObjectHideFlags: 0

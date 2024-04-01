@@ -32,5 +32,12 @@ public class Boss : MonoBehaviour
             Debug.Log(bossHealth);
             Destroy(other.gameObject);
         }
+
+        if (other.CompareTag("Sweep"))
+        {
+            bossHealth = bossHealth - 10;
+            Debug.Log(bossHealth);
+            Destroy(other.gameObject);
+        }
     }
 }
