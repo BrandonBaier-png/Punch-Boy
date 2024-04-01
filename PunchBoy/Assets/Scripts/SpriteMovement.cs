@@ -13,7 +13,10 @@ public class SpriteMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameObject.Find("punchBoy").transform.position.z == 0)
+        if (GameObject.Find("punchBoy") == null) { 
+            Destroy(gameObject);
+        }
+        else if (GameObject.Find("punchBoy").transform.position.z == 0)
         {
             if (GameObject.Find("punchBoy").transform.position.x == 0)
             {
