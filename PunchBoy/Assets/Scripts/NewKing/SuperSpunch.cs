@@ -84,4 +84,9 @@ public class SuperSpunch : MonoBehaviour
         Instantiate(spikeRow, spawnPos, spikeRow.transform.rotation);
 
     }
+
+    public void CurrentAttack(bool value)
+    {
+        activeAttack = true;
+    }
 }

@@ -72,7 +72,26 @@ public class AttackManager : MonoBehaviour
     // When called, calls the attack 
     void InitiateAttack()
     {
-        print(attackQueue.Dequeue());
+        switch (attackQueue.Dequeue())
+        {
+            case 0:
+                print("ATTACK 1");
+                break;
+
+            case 1:
+                print("ATTACK 2");
+                break;
+
+            case 2:
+                print("ATTACK 3");
+                break;
+
+            case 3:
+                print("ATTACK 4");
+                break;
+        }
+
+
         print("Items in Queue" + attackQueue.Count);
 
     }
@@ -96,4 +115,32 @@ public class AttackManager : MonoBehaviour
         attackQueue.Enqueue(2);
         attackQueue.Enqueue(3);
     }
+
+    public void AddOnSuperSpunch()
+    {
+
+    }
+    public void RemoveOnSuperSpunch()
+    {
+
+    }
+    public void AddOnSpunch()
+    {
+
+    }
+    public void RemoveOnSpunch()
+    {
+
+    }
+
+    public void AddOnPummel()
+    {
+
+    }
+    public void RemoveOnPummel()
+    {
+
+    }
+
+
 }

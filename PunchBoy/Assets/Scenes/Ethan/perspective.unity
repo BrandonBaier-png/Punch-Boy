@@ -593,6 +593,7 @@ GameObject:
   - component: {fileID: 831036126}
   - component: {fileID: 831036128}
   - component: {fileID: 831036127}
+  - component: {fileID: 831036129}
   m_Layer: 0
   m_Name: AttackManagerObject
   m_TagString: Untagged
@@ -644,6 +645,19 @@ MonoBehaviour:
   BASECOOLDOWN: 3
   attackCooldown: 3
   bossConcen: 20
+--- !u!114 &831036129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831036124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 670402b2f9ae5944cb91bf7d9c3f2244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 3
 --- !u!1 &1034529618
 GameObject:
   m_ObjectHideFlags: 0
