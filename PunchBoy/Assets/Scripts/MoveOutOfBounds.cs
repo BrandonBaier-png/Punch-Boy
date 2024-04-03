@@ -28,7 +28,7 @@ public class DestroyOutOfBounds : MonoBehaviour
             case 0:
                 if (transform.position.y > topBound)
                 {
-
+                    GameObject.Find("Spike Row Animation").transform.position = new Vector3(-14.941f, -3.405f, -3.978167f);
                     gameObject.transform.position = row2;
                     ++counter;
                 }
