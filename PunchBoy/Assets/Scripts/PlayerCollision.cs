@@ -16,8 +16,12 @@ public class PlayerCollision : MonoBehaviour
         
     }
 
-  /* private void OnTriggerEnter(UnityEngine.Collider other)
-   {
-       Destroy(gameObject);
-   }*/
+    private void OnTriggerEnter(UnityEngine.Collider other)
+    {
+        if (other.CompareTag("TigerSwipe"))
+        {
+            Destroy(other.gameObject);
+            Debug.Log("Punch Boy got hit");
+        }
+    }
 }

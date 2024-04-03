@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
     // Start is called before the first frame update
     void Start()
     {
-       
+
     }
 
     // Update is called once per frame
@@ -75,17 +75,15 @@ public class PlayerController : MonoBehaviour, IMovementActions
         {
             basicCooldown = 1.0f;
             Instantiate(basicPunchPrefab, transform.position, basicPunchPrefab.transform.rotation);
-            moveCooldown = .5f;
+            moveCooldown = .3f;
         }
 
         //Sweep skill
         if (Input.GetKeyDown(KeyCode.K) && sweepCooldown <= 0 && moveCooldown <= 0)
         {
             sweepCooldown = 5.0f;
-            Instantiate(sweepPrefab, left, sweepPrefab.transform.rotation);
-            Instantiate(sweepPrefab, transform.position, sweepPrefab.transform.rotation);
-            Instantiate(sweepPrefab, right, sweepPrefab.transform.rotation);
-            moveCooldown = .83f;
+            StartCoroutine(SweepRoutine());
+            moveCooldown = .3f;
         }
 
         //Fire punch skill
@@ -93,7 +91,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
         {
             fireCooldown = 5.0f;
             Instantiate(fireFistPrefab, transform.position, fireFistPrefab.transform.rotation);
-            moveCooldown = .83f;
+            moveCooldown = .3f;
         }
 
         if (basicCooldown > 0)
@@ -123,7 +121,17 @@ public class PlayerController : MonoBehaviour, IMovementActions
         throw new System.NotImplementedException();
     }
 
-    
+    IEnumerator SweepRoutine()
+    {
+        Instantiate(sweepPrefab, left, sweepPrefab.transform.rotation);
+        yield return new WaitForSeconds(.08f);
+
+        Instantiate(sweepPrefab, transform.position, sweepPrefab.transform.rotation);
+        yield return new WaitForSeconds(.08f);
+
+        Instantiate(sweepPrefab, right, sweepPrefab.transform.rotation);
+        yield return new WaitForSeconds(.08f);
+    }
 
 }
 
