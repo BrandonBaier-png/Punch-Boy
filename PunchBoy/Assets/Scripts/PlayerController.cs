@@ -8,6 +8,7 @@ using static InputScript;
 
 public class PlayerController : MonoBehaviour, IMovementActions
 {
+    Animator animator;
     private int xPOS = 0;
     private int yPOS = 0;
     public Transform movePoint;
@@ -27,7 +28,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
     // Start is called before the first frame update
     void Start()
     {
-
+        animator = GameObject.Find("Spritesheet_Punchboy_Idle_Humphrey_v01_0").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
             MovePlayer(Vector3.forward);
             xPOS++;
             moveCooldown = .3f;
+            animator.SetBool("moveUpBool", true);
         }
 
         if (Input.GetKeyDown(KeyCode.A) && yPOS > 0 && moveCooldown <= 0)
@@ -63,10 +65,13 @@ public class PlayerController : MonoBehaviour, IMovementActions
             MovePlayer(Vector3.right);
             yPOS++;
             moveCooldown = .3f;
+            animator.SetBool("moveDownBool", true);
         }
 
         if (moveCooldown > 0)
         {
+            animator.SetBool("moveUpBool", false);
+            animator.SetBool("moveDownBool", false);
             moveCooldown -= Time.deltaTime;
         }
 
