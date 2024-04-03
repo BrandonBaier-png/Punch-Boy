@@ -20,7 +20,7 @@ public class Boss : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("FireFist"))
+        if (other.CompareTag("FireFist") || other.CompareTag("Sweep"))
         {
             bossHealth = bossHealth - 10;
             Debug.Log(bossHealth);

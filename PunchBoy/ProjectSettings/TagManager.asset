@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Spike
+  - FireFist
+  - BasicPunch
+  - TigerSwipe
+  - Sweep
   layers:
   - Default
   - TransparentFX
