@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public delegate void BossHit();
 public class Boss : MonoBehaviour
 {
     public float bossHealth = 500;

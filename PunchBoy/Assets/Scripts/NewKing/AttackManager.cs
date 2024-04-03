@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 //static SuperSpunch might cause issues idk if it will
 using static SuperSpunch;
@@ -15,19 +16,20 @@ using static SuperSpunch;
  * 
  */
 
+
 public delegate void AttackCalled();
 
 public class AttackManager : MonoBehaviour
 {
-    AttackCalled attackManager;
+    AttackCalled onAttackCalled;
 
     private float Timer = 5;
-    //Attack Info
+    //SORT OUT THESE VARIABLES LATER
+
     private bool attacking = false;
     private int attackTally = 0;
     public const float BASECOOLDOWN = 3;
     public float attackCooldown = 3;
-
     private Queue<int> attackQueue = new Queue<int>();
 
     // Start is called before the first frame update
@@ -37,7 +39,7 @@ public class AttackManager : MonoBehaviour
         EnqueueBossAttacks();
         //Adding methods to the attackManager delegate
         //Whenever attackManager is called, CountAttack is also called;
-        attackManager += CountAttack;
+        onAttackCalled += CountAttack;
     }
 
     // Update is called once per frame
@@ -50,7 +52,7 @@ public class AttackManager : MonoBehaviour
             attackCooldown = BASECOOLDOWN;
             InitiateAttack();
             SetAttack(true);
-            attackManager.Invoke();
+            onAttackCalled.Invoke();
         }
         else
         {
@@ -66,9 +68,36 @@ public class AttackManager : MonoBehaviour
     // When called, calls the attack 
     void InitiateAttack()
     {
-        // need to call superspunch the c# file
-        // Idk what needs to happen
-        print(attackQueue.Dequeue());
+        switch (attackQueue.Dequeue())
+        {
+            case 0:
+                print("ATTACK 1");
+                AddOnSpunch();
+                onAttackCalled.Invoke();
+                RemoveOnSpunch();
+
+                break;
+
+            case 1:
+                //print("ATTACK 2");
+                AddOnSuperSpunch();
+                onAttackCalled.Invoke();
+                RemoveOnSuperSpunch();
+                break;
+
+            case 2:
+                print("ATTACK 3");
+                AddOnPummel();
+                onAttackCalled.Invoke();
+                RemoveOnPummel();
+                break;
+
+            case 3:
+                print("ATTACK 4");
+                break;
+        }
+
+
         print("Items in Queue" + attackQueue.Count);
 
     }
@@ -82,14 +111,47 @@ public class AttackManager : MonoBehaviour
     void CountAttack()
     {
         attackTally++;
-        print("Delegate has been called");
+       // print("Delegate has been called");
     }
 
     void EnqueueBossAttacks()
     {
+
         attackQueue.Enqueue(0);
         attackQueue.Enqueue(1);
         attackQueue.Enqueue(2);
         attackQueue.Enqueue(3);
     }
+
+    public void AddOnSuperSpunch()
+    {
+        print("Attack 2 FROM DELEGATE");
+        SuperSpunch superSpunch = new SuperSpunch();
+        superSpunch.CurrentAttack(true);
+        //onAttackCalled += SuperSpunch.CurrentAttack(true);
+        //Add the required function calls here
+    }
+    public void RemoveOnSuperSpunch()
+    {
+        //Remove the required function calls here
+    }
+    public void AddOnSpunch()
+    {
+
+    }
+    public void RemoveOnSpunch()
+    {
+
+    }
+
+    public void AddOnPummel()
+    {
+
+    }
+    public void RemoveOnPummel()
+    {
+
+    }
+
+
 }

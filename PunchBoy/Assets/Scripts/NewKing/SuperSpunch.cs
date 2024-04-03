@@ -29,7 +29,7 @@ public class SuperSpunch : MonoBehaviour
     public float attackCooldown = 3;
     private bool readyToAttack = false;
     public float bossConcen = 20;
-
+    private bool activeAttack = false;
 
     // Start is called before the first frame update
     void Start()
@@ -42,24 +42,39 @@ public class SuperSpunch : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            Invoke("spawnSpikes", 0);
-            //Debug.Log("SPIKES SPAWNED");
+            activeAttack = true;
         }
 
+        if (activeAttack)
+        {
+            SuperSpunchCountdown();
+        }
+    }
+
+    void SuperSpunchCountdown()
+    {
         if (attackCooldown <= 0 && bossConcen > 0)
         {
             Invoke("spawnSpikes", 0);
-            attackCooldown = BASECOOLDOWN;
+            //attackCooldown = BASECOOLDOWN;
+            ResetSuperSpunch();
         }
         else
         {
             attackCooldown -= Time.deltaTime;
+            
         }
+    }
+
+    void ResetSuperSpunch()
+    {
+        activeAttack = false;
+        attackCooldown = BASECOOLDOWN;
+
     }
 
     void OnTriggerEnter(UnityEngine.Collider other)
     {
-        //isHit = true;   
         DetectCollisions.Destroy(other);
     }
     public void spawnSpikes()
@@ -67,5 +82,10 @@ public class SuperSpunch : MonoBehaviour
 
         Instantiate(spikeRow, spawnPos, spikeRow.transform.rotation);
 
+    }
+
+    public void CurrentAttack(bool value)
+    {
+        activeAttack = value;
     }
 }
