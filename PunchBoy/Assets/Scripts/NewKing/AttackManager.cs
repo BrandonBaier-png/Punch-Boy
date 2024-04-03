@@ -51,10 +51,10 @@ public class AttackManager : MonoBehaviour
         {
             attackCooldown = BASECOOLDOWN;
             InitiateAttack();
-            SetAttack(true);
-            onAttackCalled.Invoke();
+            SetAttacking(true);
+            //onAttackCalled.Invoke();
         }
-        else
+        else if (!attacking)
         {
             attackCooldown -= Time.deltaTime;
         }
@@ -71,37 +71,26 @@ public class AttackManager : MonoBehaviour
         switch (attackQueue.Dequeue())
         {
             case 0:
-                print("ATTACK 1");
-                AddOnSpunch();
-                onAttackCalled.Invoke();
-                RemoveOnSpunch();
-
-                break;
-
+                StartCoroutine(CoSpunch());
+                break;         
             case 1:
                 //print("ATTACK 2");
-                AddOnSuperSpunch();
-                onAttackCalled.Invoke();
-                RemoveOnSuperSpunch();
+                StartCoroutine(CoSuperSpunch());
                 break;
-
             case 2:
                 print("ATTACK 3");
-                AddOnPummel();
-                onAttackCalled.Invoke();
-                RemoveOnPummel();
+                StartCoroutine(CoPummel());
                 break;
-
             case 3:
                 print("ATTACK 4");
+                StartCoroutine(CoSwipe());
                 break;
         }
-
-
-        print("Items in Queue" + attackQueue.Count);
-
+        //print("Items in Queue" + attackQueue.Count);
     }
-    void SetAttack(bool value)
+
+    
+    void SetAttacking(bool value)
     {
         attacking = value;
     }
@@ -116,42 +105,40 @@ public class AttackManager : MonoBehaviour
 
     void EnqueueBossAttacks()
     {
-
+        //MAKE RANDOM
         attackQueue.Enqueue(0);
         attackQueue.Enqueue(1);
         attackQueue.Enqueue(2);
         attackQueue.Enqueue(3);
     }
-
-    public void AddOnSuperSpunch()
+    IEnumerator CoSpunch()
     {
-        print("Attack 2 FROM DELEGATE");
-        SuperSpunch superSpunch = new SuperSpunch();
-        superSpunch.CurrentAttack(true);
-        //onAttackCalled += SuperSpunch.CurrentAttack(true);
-        //Add the required function calls here
+        print("Spunch Message 1");
+        yield return new WaitForSeconds(5);
+        print("Spunch Message 2");
+        SetAttacking(false);
     }
-    public void RemoveOnSuperSpunch()
+    IEnumerator CoSuperSpunch()
     {
-        //Remove the required function calls here
+        print("Super Spunch Message 1");
+        yield return new WaitForSeconds(5);
+        print("Super Spunch Message 2");
+        SetAttacking(false);
     }
-    public void AddOnSpunch()
+    
+    IEnumerator CoPummel()
     {
-
-    }
-    public void RemoveOnSpunch()
+        print("Pummel Message 1");
+        yield return new WaitForSeconds(5);
+        print("Pummel Message 2");
+        SetAttacking(false);
+    } 
+    IEnumerator CoSwipe()
     {
-
+        print("Swipe Message 1");
+        yield return new WaitForSeconds(5);
+        print("swipe Message 2");
+        SetAttacking(false);
     }
-
-    public void AddOnPummel()
-    {
-
-    }
-    public void RemoveOnPummel()
-    {
-
-    }
-
 
 }
