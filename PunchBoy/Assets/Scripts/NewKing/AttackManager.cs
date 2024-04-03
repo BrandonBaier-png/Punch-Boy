@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 //static SuperSpunch might cause issues idk if it will
 using static SuperSpunch;
@@ -15,18 +16,23 @@ using static SuperSpunch;
  * 
  */
 
+
 public delegate void AttackCalled();
 
 public class AttackManager : MonoBehaviour
 {
     AttackCalled attackManager;
 
+
+    //private Dictionary<>;
     private float Timer = 5;
     //Attack Info
+
     private bool attacking = false;
     private int attackTally = 0;
     public const float BASECOOLDOWN = 3;
     public float attackCooldown = 3;
+    
 
     private Queue<int> attackQueue = new Queue<int>();
 
@@ -66,8 +72,6 @@ public class AttackManager : MonoBehaviour
     // When called, calls the attack 
     void InitiateAttack()
     {
-        // need to call superspunch the c# file
-        // Idk what needs to happen
         print(attackQueue.Dequeue());
         print("Items in Queue" + attackQueue.Count);
 

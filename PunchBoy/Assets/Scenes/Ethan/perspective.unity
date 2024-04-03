@@ -512,7 +512,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762248700}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -582,10 +582,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348e1cbf44634254293a8608632e1dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 0
-  done: 0
-  call: 0
-  PummelObject: {fileID: 0}
 --- !u!1 &831036124
 GameObject:
   m_ObjectHideFlags: 0
