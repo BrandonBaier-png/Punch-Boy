@@ -21,7 +21,7 @@ public delegate void AttackCalled();
 
 public class AttackManager : MonoBehaviour
 {
-    AttackCalled attackManager;
+    AttackCalled onAttackCalled;
 
 
     //private Dictionary<>;
@@ -43,7 +43,7 @@ public class AttackManager : MonoBehaviour
         EnqueueBossAttacks();
         //Adding methods to the attackManager delegate
         //Whenever attackManager is called, CountAttack is also called;
-        attackManager += CountAttack;
+        onAttackCalled += CountAttack;
     }
 
     // Update is called once per frame
@@ -56,7 +56,7 @@ public class AttackManager : MonoBehaviour
             attackCooldown = BASECOOLDOWN;
             InitiateAttack();
             SetAttack(true);
-            attackManager.Invoke();
+            onAttackCalled.Invoke();
         }
         else
         {
@@ -76,14 +76,24 @@ public class AttackManager : MonoBehaviour
         {
             case 0:
                 print("ATTACK 1");
+                AddOnSpunch();
+                onAttackCalled.Invoke();
+                RemoveOnSpunch();
+
                 break;
 
             case 1:
                 print("ATTACK 2");
+                AddOnSuperSpunch();
+                onAttackCalled.Invoke();
+                RemoveOnSuperSpunch();
                 break;
 
             case 2:
                 print("ATTACK 3");
+                AddOnPummel();
+                onAttackCalled.Invoke();
+                RemoveOnPummel();
                 break;
 
             case 3:
@@ -116,13 +126,13 @@ public class AttackManager : MonoBehaviour
         attackQueue.Enqueue(3);
     }
 
-    public void AddOnSuperSpunch()
+    public void AddOnSuperSpunch(AttackCalled)
     {
-
+        //Add the required function calls here
     }
     public void RemoveOnSuperSpunch()
     {
-
+        //Remove the required function calls here
     }
     public void AddOnSpunch()
     {
