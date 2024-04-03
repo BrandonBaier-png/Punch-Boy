@@ -23,17 +23,13 @@ public class AttackManager : MonoBehaviour
 {
     AttackCalled onAttackCalled;
 
-
-    //private Dictionary<>;
     private float Timer = 5;
-    //Attack Info
+    //SORT OUT THESE VARIABLES LATER
 
     private bool attacking = false;
     private int attackTally = 0;
     public const float BASECOOLDOWN = 3;
     public float attackCooldown = 3;
-    
-
     private Queue<int> attackQueue = new Queue<int>();
 
     // Start is called before the first frame update
@@ -83,7 +79,7 @@ public class AttackManager : MonoBehaviour
                 break;
 
             case 1:
-                print("ATTACK 2");
+                //print("ATTACK 2");
                 AddOnSuperSpunch();
                 onAttackCalled.Invoke();
                 RemoveOnSuperSpunch();
@@ -115,19 +111,24 @@ public class AttackManager : MonoBehaviour
     void CountAttack()
     {
         attackTally++;
-        print("Delegate has been called");
+       // print("Delegate has been called");
     }
 
     void EnqueueBossAttacks()
     {
+
         attackQueue.Enqueue(0);
         attackQueue.Enqueue(1);
         attackQueue.Enqueue(2);
         attackQueue.Enqueue(3);
     }
 
-    public void AddOnSuperSpunch(AttackCalled)
+    public void AddOnSuperSpunch()
     {
+        print("Attack 2 FROM DELEGATE");
+        SuperSpunch superSpunch = new SuperSpunch();
+        superSpunch.CurrentAttack(true);
+        //onAttackCalled += SuperSpunch.CurrentAttack(true);
         //Add the required function calls here
     }
     public void RemoveOnSuperSpunch()

@@ -75,7 +75,6 @@ public class SuperSpunch : MonoBehaviour
 
     void OnTriggerEnter(UnityEngine.Collider other)
     {
-        //isHit = true;   
         DetectCollisions.Destroy(other);
     }
     public void spawnSpikes()
@@ -87,6 +86,6 @@ public class SuperSpunch : MonoBehaviour
 
     public void CurrentAttack(bool value)
     {
-        activeAttack = true;
+        activeAttack = value;
     }
 }
