@@ -61,8 +61,7 @@ public class SuperSpunch : MonoBehaviour
         }
         else
         {
-            attackCooldown -= Time.deltaTime;
-            
+            attackCooldown -= Time.deltaTime; 
         }
     }
 
@@ -79,9 +78,7 @@ public class SuperSpunch : MonoBehaviour
     }
     public void spawnSpikes()
     {
-
         Instantiate(spikeRow, spawnPos, spikeRow.transform.rotation);
-
     }
 
     public void CurrentAttack(bool value)

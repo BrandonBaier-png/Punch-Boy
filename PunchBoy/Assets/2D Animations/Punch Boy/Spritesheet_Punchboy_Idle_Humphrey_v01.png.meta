@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -160,7 +160,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Spritesheet_Punchboy_Idle_Humphrey_v01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 99
+        width: 63.2
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c464881ce5b73d479a0dde636aa609e
+      internalID: -1940603759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Punchboy_Idle_Humphrey_v01_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 99
+        width: 63.2
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4943169ce419994291168bd8863f256
+      internalID: 304678012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Punchboy_Idle_Humphrey_v01_2
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 99
+        width: 63.2
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd653468dce98d44af844dce132db3a
+      internalID: -1995059881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Punchboy_Idle_Humphrey_v01_3
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 99
+        width: 63.2
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ffdcb404d7d34e4fa25bfa931476f2f
+      internalID: 1884762747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Punchboy_Idle_Humphrey_v01_4
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 99
+        width: 63.2
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2518d5ed8588c740a6e91053cd900fe
+      internalID: -1992960134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Punchboy_Idle_Humphrey_v01_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 63.2
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 952f7d57d6552b74bafa55834f6c29c2
+      internalID: 976825331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Punchboy_Idle_Humphrey_v01_6
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 0
+        width: 63.2
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22c19b61124d9614c9ec6de867b1c71b
+      internalID: 445684497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_Punchboy_Idle_Humphrey_v01_7
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 0
+        width: 63.2
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6acade429e69fc940a81497aa9f429bd
+      internalID: 16347813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -171,7 +339,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Spritesheet_Punchboy_Idle_Humphrey_v01_0: -1940603759
+      Spritesheet_Punchboy_Idle_Humphrey_v01_1: 304678012
+      Spritesheet_Punchboy_Idle_Humphrey_v01_2: -1995059881
+      Spritesheet_Punchboy_Idle_Humphrey_v01_3: 1884762747
+      Spritesheet_Punchboy_Idle_Humphrey_v01_4: -1992960134
+      Spritesheet_Punchboy_Idle_Humphrey_v01_5: 976825331
+      Spritesheet_Punchboy_Idle_Humphrey_v01_6: 445684497
+      Spritesheet_Punchboy_Idle_Humphrey_v01_7: 16347813
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
