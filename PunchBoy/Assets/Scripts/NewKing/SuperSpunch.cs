@@ -20,7 +20,7 @@ public class SuperSpunch : MonoBehaviour
 
     //time before attack is unleashed
     private float waitTime = 10;
-
+    public Animator animator;
     public float speed = 10.0f;
     //private bool isHit = false;
     public GameObject spikeRow;

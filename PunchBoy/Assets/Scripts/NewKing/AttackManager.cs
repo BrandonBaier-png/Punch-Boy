@@ -22,6 +22,7 @@ public delegate void AttackDel();
 
 public class AttackManager : MonoBehaviour
 {
+    public Animator animator;
     public UnityEvent AttackEvent;
     AttackDel attackDel;
 
@@ -121,31 +122,38 @@ public class AttackManager : MonoBehaviour
     }
     IEnumerator CoSpunch()
     {
+        animator.SetBool("Spunch", true);
         print("Spunch Message 1");
         yield return new WaitForSeconds(2);
         print("Spunch Message 2");
+        animator.SetBool("Spunch", false);
         SetAttacking(false);
     }
     IEnumerator CoSuperSpunch()
     {
-        
+        animator.SetBool("SuperSpunchPreoaring", true);
         print("Super Spunch Message 1");
         yield return new WaitForSeconds(2);
+        animator.SetBool("SuperSpunchPreoaring", false);
         print("Super Spunch Message 2");
         SetAttacking(false);
     }
     
     IEnumerator CoPummel()
     {
+        animator.SetBool("PummelStart", true);
         print("Pummel Message 1");
         yield return new WaitForSeconds(2);
+        animator.SetBool("PummelStart", false);
         print("Pummel Message 2");
         SetAttacking(false);
     } 
     IEnumerator CoSwipe()
     {
+        animator.SetBool("SwipeStart", true);
         print("Swipe Message 1");
         yield return new WaitForSeconds(2);
+        animator.SetBool("SwipeStart", false);
         print("swipe Message 2");
         SetAttacking(false);
     }
