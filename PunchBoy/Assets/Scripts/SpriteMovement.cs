@@ -120,7 +120,24 @@ public class SpriteMovement : MonoBehaviour
             animator.SetBool("moveUpBool", false);
             animator.SetBool("moveRightBool", false);
             animator.SetBool("moveLeftBool", false);
+            animator.SetBool("punchBool", false);
+            animator.SetBool("sweepBool", false);
+            animator.SetBool("firePunchBool", false);
         }
-
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            animator.SetBool("punchBool", true);
+            aniCooldown = .3f;
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            animator.SetBool("sweepBool", true);
+            aniCooldown = .3f;
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            animator.SetBool("firePunchBool", true);
+            aniCooldown = .3f;
+        }
     }
 }

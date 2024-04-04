@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a86f304785665c04b8aed0fe9c053061
+guid: 03c038b8dca3c714988255be576148a8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,45 +107,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -162,13 +123,139 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteSheet_PunchBoy_Punch_Humphrey_v01_0
+      name: Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47bf00c7d0d53f44eb3e3318ebd90400
+      internalID: -1700539695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a4df1d8c08d2a40bb7ca18da587fdf
+      internalID: 431940651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32cd0b5e66f5d0c46a48ee9d6f066682
+      internalID: -228712583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ddf15e4f2c5f84499caf2db3754b461
+      internalID: 370180090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e985588ccc0b42842b4a1e78bc766c7c
+      internalID: -1419463173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_5
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5f585f1049450243beed43d08b728d9
+      internalID: -1401727163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 96
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,41 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd16d615de93a454683d6c3da75d9336
-      internalID: -625036640
+      spriteID: cc094c292ae85b041829471778fc6d54
+      internalID: -925150404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet_PunchBoy_Punch_Humphrey_v01_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 243d53c0b631c7c4e9e97aefec3f0bba
-      internalID: 541810505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_PunchBoy_Punch_Humphrey_v01_2
+      name: Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_7
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 64
-        height: 96
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,29 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ca91f18ab4110b4295654385b34c94e
-      internalID: -1784151162
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteSheet_PunchBoy_Punch_Humphrey_v01_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4706eeb676537834ea495aade6e3c1fa
-      internalID: -529521893
+      spriteID: ebc1e8655fdf05f4b971d6924852dd62
+      internalID: 183193016
       vertices: []
       indices: 
       edges: []
@@ -256,10 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SpriteSheet_PunchBoy_Punch_Humphrey_v01_0: -625036640
-      SpriteSheet_PunchBoy_Punch_Humphrey_v01_1: 541810505
-      SpriteSheet_PunchBoy_Punch_Humphrey_v01_2: -1784151162
-      SpriteSheet_PunchBoy_Punch_Humphrey_v01_3: -529521893
+      Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_0: -1700539695
+      Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_1: 431940651
+      Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_2: -228712583
+      Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_3: 370180090
+      Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_4: -1419463173
+      Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_5: -1401727163
+      Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_6: -925150404
+      Alissa Kufahl_PunchBoy_FirePunch_SpriteV1_7: 183193016
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
