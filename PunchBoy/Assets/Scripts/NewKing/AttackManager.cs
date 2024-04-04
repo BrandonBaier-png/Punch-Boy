@@ -131,10 +131,10 @@ public class AttackManager : MonoBehaviour
     }
     IEnumerator CoSuperSpunch()
     {
-        animator.SetBool("SuperSpunchPreoaring", true);
+        animator.SetBool("SuperSpunchPreparing", true);
         print("Super Spunch Message 1");
         yield return new WaitForSeconds(2);
-        animator.SetBool("SuperSpunchPreoaring", false);
+        animator.SetBool("SuperSpunchPreparing", false);
         print("Super Spunch Message 2");
         SetAttacking(false);
     }
