@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
+
 //static SuperSpunch might cause issues idk if it will
-using static SuperSpunch;
+
 
 /*
  * IAttack Manager
@@ -16,15 +18,21 @@ using static SuperSpunch;
  * 
  */
 
-
-public delegate void AttackCalled();
+public delegate void AttackDel();
 
 public class AttackManager : MonoBehaviour
 {
-    AttackCalled onAttackCalled;
+    public UnityEvent AttackEvent;
+    AttackDel attackDel;
+
+    SuperSpunch superSpunch;
 
     private float Timer = 5;
     //SORT OUT THESE VARIABLES LATER
+
+    public GameObject spikeRow;
+    private Vector3 spawnPos = new Vector3(1.5f, -2, 1.5f);
+
 
     private bool attacking = false;
     private int attackTally = 0;
@@ -37,9 +45,10 @@ public class AttackManager : MonoBehaviour
     void Start()
     {
         EnqueueBossAttacks();
+
         //Adding methods to the attackManager delegate
         //Whenever attackManager is called, CountAttack is also called;
-        onAttackCalled += CountAttack;
+        attackDel += CountAttack;
     }
 
     // Update is called once per frame
@@ -52,7 +61,7 @@ public class AttackManager : MonoBehaviour
             attackCooldown = BASECOOLDOWN;
             InitiateAttack();
             SetAttacking(true);
-            //onAttackCalled.Invoke();
+            attackDel.Invoke();
         }
         else if (!attacking)
         {
@@ -70,11 +79,12 @@ public class AttackManager : MonoBehaviour
     {
         switch (attackQueue.Dequeue())
         {
-            case 0:
+            case 1:
                 StartCoroutine(CoSpunch());
                 break;         
-            case 1:
-                //print("ATTACK 2");
+            case 0:
+                AttackEvent.Invoke();
+                GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
                 StartCoroutine(CoSuperSpunch());
                 break;
             case 2:
@@ -86,7 +96,6 @@ public class AttackManager : MonoBehaviour
                 StartCoroutine(CoSwipe());
                 break;
         }
-        //print("Items in Queue" + attackQueue.Count);
     }
 
     
@@ -100,7 +109,6 @@ public class AttackManager : MonoBehaviour
     void CountAttack()
     {
         attackTally++;
-       // print("Delegate has been called");
     }
 
     void EnqueueBossAttacks()
@@ -114,14 +122,15 @@ public class AttackManager : MonoBehaviour
     IEnumerator CoSpunch()
     {
         print("Spunch Message 1");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         print("Spunch Message 2");
         SetAttacking(false);
     }
     IEnumerator CoSuperSpunch()
     {
+        
         print("Super Spunch Message 1");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         print("Super Spunch Message 2");
         SetAttacking(false);
     }
@@ -129,14 +138,14 @@ public class AttackManager : MonoBehaviour
     IEnumerator CoPummel()
     {
         print("Pummel Message 1");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         print("Pummel Message 2");
         SetAttacking(false);
     } 
     IEnumerator CoSwipe()
     {
         print("Swipe Message 1");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         print("swipe Message 2");
         SetAttacking(false);
     }

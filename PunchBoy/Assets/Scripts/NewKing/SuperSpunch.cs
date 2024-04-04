@@ -16,6 +16,7 @@ using UnityEngine;
 public class SuperSpunch : MonoBehaviour
 {
     Rigidbody rigidbodyDespawner;
+    
 
     //time before attack is unleashed
     private float waitTime = 10;
@@ -30,16 +31,20 @@ public class SuperSpunch : MonoBehaviour
     private bool readyToAttack = false;
     public float bossConcen = 20;
     private bool activeAttack = false;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        //attackCalled += EnableAttack();
         // moveSpikes(gameObject);
     }
+
 
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.M))
         {
             activeAttack = true;
@@ -47,12 +52,14 @@ public class SuperSpunch : MonoBehaviour
 
         if (activeAttack)
         {
+            //print("SUPERSPUNCH ACTIVE");
             SuperSpunchCountdown();
         }
     }
 
     void SuperSpunchCountdown()
     {
+        
         if (attackCooldown <= 0 && bossConcen > 0)
         {
             Invoke("spawnSpikes", 0);
@@ -78,11 +85,18 @@ public class SuperSpunch : MonoBehaviour
     }
     public void spawnSpikes()
     {
+
         Instantiate(spikeRow, spawnPos, spikeRow.transform.rotation);
     }
 
     public void CurrentAttack(bool value)
     {
+        //print("SUPERSPUNCHCALLED");
         activeAttack = value;
+    }
+    public void EnableAttack()
+    {
+        print("SUPERSPUNCHCALLEDTHISI ONE!!!");
+        activeAttack = true;    
     }
 }
