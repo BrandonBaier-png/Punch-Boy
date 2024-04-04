@@ -28,7 +28,6 @@ public class SpikeRowMove : MonoBehaviour
         }
         if (waitTime >= 0)
         {
-            //Debug.Log(waitTime);
             waitTime -= Time.deltaTime;
         }
         if (waitTime <= 0)
