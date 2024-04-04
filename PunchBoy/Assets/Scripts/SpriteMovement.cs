@@ -96,22 +96,22 @@ public class SpriteMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.W)) {
             animator.SetBool("moveUpBool", true);
-            aniCooldown = .25f;
+            aniCooldown = .3f;
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
             animator.SetBool("moveLeftBool", true);
-            aniCooldown = .25f;
+            aniCooldown = .3f;
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
             animator.SetBool("moveRightBool", true);
-            aniCooldown = .25f;
+            aniCooldown = .3f;
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
             animator.SetBool("moveDownBool", true);
-            aniCooldown = .25f;
+            aniCooldown = .3f;
         }
         if (aniCooldown > 0) { aniCooldown -= Time.deltaTime; }
         if (aniCooldown <= 0)
