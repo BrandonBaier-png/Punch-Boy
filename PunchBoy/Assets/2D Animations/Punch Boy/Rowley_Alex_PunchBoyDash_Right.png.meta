@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Rowley_Alex_PunchBoyDash_Right_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 125.333336
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cdf987c2ca622b4da247988fc8c3ed5
+      internalID: 477140807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rowley_Alex_PunchBoyDash_Right_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 125.333336
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21e62f0e3a34cb4c8cac9f9f9aa8644
+      internalID: 84384770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rowley_Alex_PunchBoyDash_Right_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 125.333336
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30d82b98fb6769419d37a3ee6942c4d
+      internalID: -1591860830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +195,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rowley_Alex_PunchBoyDash_Right_0: 477140807
+      Rowley_Alex_PunchBoyDash_Right_1: 84384770
+      Rowley_Alex_PunchBoyDash_Right_2: -1591860830
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

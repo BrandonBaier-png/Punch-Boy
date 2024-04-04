@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SpriteMovement : MonoBehaviour
 {
+    private float aniCooldown = 0.0f;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -90,6 +93,33 @@ public class SpriteMovement : MonoBehaviour
             {
                 gameObject.transform.position = new Vector3(-10.98f, -0.72f, 0);
             }
+        }
+        if (Input.GetKeyDown(KeyCode.W)) {
+            animator.SetBool("moveUpBool", true);
+            aniCooldown = .3f;
+        }
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            animator.SetBool("moveLeftBool", true);
+            aniCooldown = .3f;
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            animator.SetBool("moveRightBool", true);
+            aniCooldown = .3f;
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            animator.SetBool("moveDownBool", true);
+            aniCooldown = .3f;
+        }
+        if (aniCooldown > 0) { aniCooldown -= Time.deltaTime; }
+        if (aniCooldown <= 0)
+        {
+            animator.SetBool("moveDownBool", false);
+            animator.SetBool("moveUpBool", false);
+            animator.SetBool("moveRightBool", false);
+            animator.SetBool("moveLeftBool", false);
         }
 
     }
