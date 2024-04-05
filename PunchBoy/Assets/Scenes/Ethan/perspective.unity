@@ -1396,7 +1396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3962382820722422364, guid: e71ee84686a5c3a48a198919d71ddc0d, type: 3}
       propertyPath: m_Name
-      value: SwipeGameObject
+      value: SpunchGameObject
       objectReference: {fileID: 0}
     - target: {fileID: 3962382820722422364, guid: e71ee84686a5c3a48a198919d71ddc0d, type: 3}
       propertyPath: m_Layer
@@ -1598,7 +1598,7 @@ GameObject:
   - component: {fileID: 1034529624}
   m_Layer: 0
   m_Name: punchBoy
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

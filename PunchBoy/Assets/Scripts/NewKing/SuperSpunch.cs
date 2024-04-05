@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 /*
@@ -15,6 +16,7 @@ using UnityEngine;
  */
 public class SuperSpunch : MonoBehaviour
 {
+
     Rigidbody rigidbodyDespawner;
     
 
@@ -79,10 +81,7 @@ public class SuperSpunch : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(UnityEngine.Collider other)
-    {
-        DetectCollisions.Destroy(other);
-    }
+    
     public void spawnSpikes()
     {
 

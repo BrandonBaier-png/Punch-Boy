@@ -18,11 +18,25 @@ public class PunchBoyHealth : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        print("Punch boy health " + health);
+        //print("Punch boy health " + health);
         Debug.Log(health);
     }
-    private void OnTriggerEnter(UnityEngine.Collider other)
+
+
+
+    void OnTriggerEnter(UnityEngine.Collider collision)
     {
-        health -= 50;
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        if (collision.tag == "Spike")
+        {
+            dealtDamage();
+            
+        }
+    }
+
+    public void dealtDamage()
+    {
+        health -= 25;
+        //print("PUNCHBOY HAS DIED :3");
     }
 }

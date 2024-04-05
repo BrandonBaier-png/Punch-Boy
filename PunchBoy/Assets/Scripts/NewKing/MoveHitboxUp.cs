@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 
 
 public class MoveHitboxUp : MonoBehaviour
 {
+    public UnityEvent HitPunchBoy;
+
     private float speed = 30;
     private float topBound = 10;
     // Start is called before the first frame update
@@ -26,21 +29,5 @@ public class MoveHitboxUp : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider collision)
-    {
-        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-        print("HIT SOMETHING");
-
-        if (collision.tag == "Player")
-        {
-            print("PLAYER HAS BEEN HIT");
-        }
-
-        if (player != null)
-        {
-            print("Player Should be EXTRA dead");
-            Destroy(collision.gameObject);
-        }
-        //EnemyController e = collision.collider.GetComponent<EnemyController>();
-    }
+    
 }

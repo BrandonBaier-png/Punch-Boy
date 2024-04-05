@@ -89,7 +89,6 @@ public class AttackManager : MonoBehaviour
                 StartCoroutine(CoSpunch());
                 break;         
             case 0:
-                
                 //GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
                 //AttackEvent.Invoke();
                 StartCoroutine(CoSuperSpunch());
