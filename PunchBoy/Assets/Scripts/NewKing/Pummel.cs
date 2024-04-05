@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pumme : MonoBehaviour
+public class Pummel : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,10 @@ public class Pumme : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void WheresTheClass()
+    {
+        print("where");
     }
 }

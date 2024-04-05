@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TigerSwipe : MonoBehaviour
@@ -10,6 +12,7 @@ public class TigerSwipe : MonoBehaviour
     public GameObject Wave2Prefab;
     public GameObject Wave3Prefab;
     public GameObject Wave4Prefab;
+    private bool activeAttack = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +27,14 @@ public class TigerSwipe : MonoBehaviour
         {
             StartCoroutine(SwipeAttackRoutine());
         }
+
+        if (activeAttack)
+        {
+            //print("SUPERSPUNCH ACTIVE");
+            StartCoroutine(SwipeAttackRoutine());
+        }
     }
+    
 
     IEnumerator SwipeAttackRoutine()
     {
@@ -73,5 +83,13 @@ public class TigerSwipe : MonoBehaviour
         yield return new WaitForSeconds(.05f);
         spawnPos[0] = spawnPos[0] - 1;
         spawnPos[2] = spawnPos[2] - .5f;
+
+        activeAttack = false;
+    }
+
+    void TestEnableAttack()
+    {
+        Instantiate(Wave4Prefab, spawnPos, Wave4Prefab.transform.rotation);
+        activeAttack = true;
     }
 }

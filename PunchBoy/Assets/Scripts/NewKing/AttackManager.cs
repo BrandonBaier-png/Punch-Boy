@@ -23,10 +23,15 @@ public delegate void AttackDel();
 public class AttackManager : MonoBehaviour
 {
     public Animator animator;
-    public UnityEvent AttackEvent;
+
+    public UnityEvent SwipeEvent;
+    public UnityEvent SuperSpunchEvent;
+    public UnityEvent SpunchEvent;
+    public UnityEvent PummelEvent;
+   
     AttackDel attackDel;
 
-    SuperSpunch superSpunch;
+
 
     private float Timer = 5;
     //SORT OUT THESE VARIABLES LATER
@@ -84,8 +89,9 @@ public class AttackManager : MonoBehaviour
                 StartCoroutine(CoSpunch());
                 break;         
             case 0:
-                AttackEvent.Invoke();
-                GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
+                
+                //GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
+                //AttackEvent.Invoke();
                 StartCoroutine(CoSuperSpunch());
                 break;
             case 2:
@@ -94,6 +100,7 @@ public class AttackManager : MonoBehaviour
                 break;
             case 3:
                 print("ATTACK 4");
+                
                 StartCoroutine(CoSwipe());
                 break;
         }
@@ -133,6 +140,11 @@ public class AttackManager : MonoBehaviour
     {
         animator.SetBool("SuperSpunchPreparing", true);
         print("Super Spunch Message 1");
+
+
+        GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
+        SuperSpunchEvent.Invoke();
+
         yield return new WaitForSeconds(2);
         animator.SetBool("SuperSpunchPreparing", false);
         print("Super Spunch Message 2");
@@ -143,6 +155,7 @@ public class AttackManager : MonoBehaviour
     {
         animator.SetBool("PummelStart", true);
         print("Pummel Message 1");
+
         yield return new WaitForSeconds(2);
         animator.SetBool("PummelStart", false);
         print("Pummel Message 2");
@@ -152,6 +165,10 @@ public class AttackManager : MonoBehaviour
     {
         animator.SetBool("SwipeStart", true);
         print("Swipe Message 1");
+
+        GameObject SwipeGameObject = GameObject.Find("SwipeGameObject");
+        SwipeEvent.Invoke();
+
         yield return new WaitForSeconds(2);
         animator.SetBool("SwipeStart", false);
         print("swipe Message 2");

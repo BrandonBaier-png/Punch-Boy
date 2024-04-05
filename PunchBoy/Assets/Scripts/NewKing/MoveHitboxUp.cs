@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+
+
 public class MoveHitboxUp : MonoBehaviour
 {
     private float speed = 30;
