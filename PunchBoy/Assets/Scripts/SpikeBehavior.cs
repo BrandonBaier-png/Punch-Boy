@@ -12,7 +12,7 @@ using UnityEngine;
  */
 public class SpikeBehavior : MonoBehaviour
 {
-    public Animator anim;
+    private Animator anim;
 
     
     // Start is called before the first frame update
@@ -25,6 +25,7 @@ public class SpikeBehavior : MonoBehaviour
     void Update()
     {
   /*      anim.Play("Spunch Row", 0, 0);*/
+  
     }
 
    public void playAnimation(GameObject spike)

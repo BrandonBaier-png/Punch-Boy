@@ -1008,6 +1008,7 @@ GameObject:
   - component: {fileID: 696164375}
   - component: {fileID: 696164376}
   - component: {fileID: 696164377}
+  - component: {fileID: 696164378}
   m_Layer: 0
   m_Name: Spike Row Animation
   m_TagString: Untagged
@@ -1058,7 +1059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b80f703327dc04b847e22c82ca6aa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 27567375}
 --- !u!114 &696164376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,6 +1083,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ee0db4c29130444ac9beb1507afb40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &696164378
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696164372}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d822fe27fe0e1d045aa041028cf6cb82, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &776695485
 GameObject:
   m_ObjectHideFlags: 0
@@ -2367,7 +2388,7 @@ Transform:
   m_GameObject: {fileID: 1416442814}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.71, y: 1.27, z: 0}
+  m_LocalPosition: {x: -10.71, y: 1.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3265,6 +3286,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spike 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2377684319167562980, guid: ac2f49a8ffccf3b40949a00102d1b6e7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2738372884950735750, guid: ac2f49a8ffccf3b40949a00102d1b6e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.4160185
@@ -3311,6 +3336,10 @@ PrefabInstance:
       objectReference: {fileID: 24911547}
     - target: {fileID: 6261301240472059388, guid: ac2f49a8ffccf3b40949a00102d1b6e7, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6261301240472059388, guid: ac2f49a8ffccf3b40949a00102d1b6e7, type: 3}
+      propertyPath: m_CullingMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
