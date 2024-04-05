@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyOutOfBounds : MonoBehaviour
+public class ResetOutOfBounds : MonoBehaviour
 {
                             //was -1.50
-    private float topBound = 2f;
+    private float topBound = -1.51f;
     //private float lowerBound = -10;
     private int counter = 0;
     private Vector3 row1 = new Vector3(1.816654f, -1.89f, 0.65f);

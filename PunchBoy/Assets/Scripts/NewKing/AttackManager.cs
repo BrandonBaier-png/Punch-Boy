@@ -29,7 +29,7 @@ public class AttackManager : MonoBehaviour
     public UnityEvent SpunchEvent;
     public UnityEvent PummelEvent;
    
-    AttackDel attackDel;
+    //AttackDel attackDel;
 
 
 
@@ -54,7 +54,7 @@ public class AttackManager : MonoBehaviour
 
         //Adding methods to the attackManager delegate
         //Whenever attackManager is called, CountAttack is also called;
-        attackDel += CountAttack;
+        //attackDel += CountAttack;
     }
 
     // Update is called once per frame
@@ -67,7 +67,7 @@ public class AttackManager : MonoBehaviour
             attackCooldown = BASECOOLDOWN;
             InitiateAttack();
             SetAttacking(true);
-            attackDel.Invoke();
+            //attackDel.Invoke();
         }
         else if (!attacking)
         {

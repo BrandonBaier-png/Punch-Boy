@@ -720,7 +720,7 @@ GameObject:
   - component: {fileID: 730241721}
   - component: {fileID: 730241720}
   m_Layer: 0
-  m_Name: AlissaKufahl_Background_NoStageV2
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1032,7 +1032,7 @@ GameObject:
   - component: {fileID: 797729216}
   - component: {fileID: 797729219}
   m_Layer: 0
-  m_Name: Spritesheet_Punchboy_Idle_Humphrey_v01_0
+  m_Name: PunchBoySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1200,9 +1200,9 @@ MonoBehaviour:
   SwipeEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436549004}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: 
+      - m_Target: {fileID: 1436549006}
+        m_TargetAssemblyTypeName: TigerSwipe, Assembly-CSharp
+        m_MethodName: EnableAttack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2353,7 +2353,7 @@ GameObject:
   - component: {fileID: 1829014376}
   - component: {fileID: 1829014378}
   m_Layer: 0
-  m_Name: TigerStill_AlexRowley_v1
+  m_Name: NewKingSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

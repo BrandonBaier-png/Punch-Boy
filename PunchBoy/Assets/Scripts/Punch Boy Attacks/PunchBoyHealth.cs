@@ -19,7 +19,7 @@ public class PunchBoyHealth : MonoBehaviour
             Destroy(gameObject);
         }
         //print("Punch boy health " + health);
-        Debug.Log(health);
+        //Debug.Log(health);
     }
 
 

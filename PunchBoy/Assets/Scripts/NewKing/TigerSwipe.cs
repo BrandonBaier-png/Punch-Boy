@@ -32,6 +32,7 @@ public class TigerSwipe : MonoBehaviour
         {
             //print("SUPERSPUNCH ACTIVE");
             StartCoroutine(SwipeAttackRoutine());
+            CurrentAttack(false);
         }
     }
     
@@ -87,9 +88,15 @@ public class TigerSwipe : MonoBehaviour
         activeAttack = false;
     }
 
-    void TestEnableAttack()
+    public void CurrentAttack(bool value)
     {
-        Instantiate(Wave4Prefab, spawnPos, Wave4Prefab.transform.rotation);
+        //print("SUPERSPUNCHCALLED");
+        activeAttack = value;
+    }
+
+    public void EnableAttack()
+    {
+        //Instantiate(Wave4Prefab, spawnPos, Wave4Prefab.transform.rotation);
         activeAttack = true;
     }
 }
