@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TigerHealth : MonoBehaviour
+public class PummelMove : MonoBehaviour
 {
-    private float health = 5000;
+    public float speed = .5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,14 +14,13 @@ public class TigerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
-        {
+        gameObject.transform.Translate(Vector2.down * Time.deltaTime * speed);
+        if (transform.position.y <= -2) {
             Destroy(gameObject);
         }
-        Debug.Log(health);
     }
-    private void OnTriggerEnter(UnityEngine.Collider other)
-    {
-        health -= 50;
+    void OnTriggerEnter(UnityEngine.Collider other)
+    {  
+        DetectCollisions.Destroy(other);
     }
 }
