@@ -1485,7 +1485,7 @@ PrefabInstance:
     - target: {fileID: 8925614886505067347, guid: e71ee84686a5c3a48a198919d71ddc0d, type: 3}
       propertyPath: spikeRow
       value: 
-      objectReference: {fileID: 1299481026}
+      objectReference: {fileID: 3435307497643036634, guid: f41498bc4c443ae4fa70754c0dc261b8, type: 3}
     - target: {fileID: 8925614886505067347, guid: e71ee84686a5c3a48a198919d71ddc0d, type: 3}
       propertyPath: m_Enabled
       value: 1

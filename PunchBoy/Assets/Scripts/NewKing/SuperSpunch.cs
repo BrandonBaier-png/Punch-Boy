@@ -41,8 +41,6 @@ public class SuperSpunch : MonoBehaviour
         //attackCalled += EnableAttack();
         // moveSpikes(gameObject);
     }
-
-
     // Update is called once per frame
     void Update()
     {
@@ -58,7 +56,6 @@ public class SuperSpunch : MonoBehaviour
             SuperSpunchCountdown();
         }
     }
-
     void SuperSpunchCountdown()
     {
         
@@ -73,21 +70,17 @@ public class SuperSpunch : MonoBehaviour
             attackCooldown -= Time.deltaTime; 
         }
     }
-
     void ResetSuperSpunch()
     {
         activeAttack = false;
         attackCooldown = BASECOOLDOWN;
 
-    }
-
-    
+    } 
     public void spawnSpikes()
     {
 
         Instantiate(spikeRow, spawnPos, spikeRow.transform.rotation);
     }
-
     public void CurrentAttack(bool value)
     {
         //print("SUPERSPUNCHCALLED");

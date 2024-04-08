@@ -21,7 +21,7 @@ public class SpikeRowMove : MonoBehaviour
     {
         /*transform.Translate(Vector2.up * Time.deltaTime * speed);*/
         //was -1.51
-        Debug.Log(gameObject.transform.position.y);
+        //Debug.Log(gameObject.transform.position.y);
         if (gameObject.transform.position.y >= -1.88 && waitTime <= 0 && gameObject.transform.position.y <= -1.875)
         {
             waitTime = 1.0f;
@@ -39,7 +39,7 @@ public class SpikeRowMove : MonoBehaviour
    void OnTriggerEnter(UnityEngine.Collider other)
     {
         //isHit = true;   
-        DetectCollisions.Destroy(other);
+        print("Spunch actually works kidna");
     }
 
    public void moveSpikes(GameObject spikesToMove)
