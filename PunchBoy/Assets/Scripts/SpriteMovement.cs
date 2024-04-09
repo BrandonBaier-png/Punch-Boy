@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class SpriteMovement : MonoBehaviour
 {
@@ -16,8 +17,12 @@ public class SpriteMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown("Q")) {
+            SceneManager.LoadScene("GameOver");
+        }
         if (GameObject.Find("punchBoy") == null) { 
             Destroy(gameObject);
+            SceneManager.LoadScene("GameOver");
         }
         else if (GameObject.Find("punchBoy").transform.position.z == 0)
         {
