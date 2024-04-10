@@ -1005,9 +1005,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 696164373}
-  - component: {fileID: 696164375}
   - component: {fileID: 696164376}
-  - component: {fileID: 696164377}
   m_Layer: 0
   m_Name: Spike Row Animation
   m_TagString: Untagged
@@ -1046,19 +1044,6 @@ Transform:
   - {fileID: 849844422}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &696164375
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696164372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6b80f703327dc04b847e22c82ca6aa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 27567375}
 --- !u!114 &696164376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1069,18 +1054,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8dff6c9123a0274f8d8b7781b1d8722, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &696164377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 696164372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96ee0db4c29130444ac9beb1507afb40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &776695485
@@ -1222,6 +1195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348e1cbf44634254293a8608632e1dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PummelObject: {fileID: 0}
 --- !u!65 &780300389
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1256,6 +1230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossHealth: 500
+  fireFistDamage: 10
+  basicPunchDamage: 5
 --- !u!23 &780300391
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2806,6 +2782,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1769545726 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6261301240472059388, guid: ac2f49a8ffccf3b40949a00102d1b6e7, type: 3}
+  m_PrefabInstance: {fileID: 3510228256191628411}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1840042776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3308,7 +3289,7 @@ PrefabInstance:
     - target: {fileID: 3087824677096268024, guid: ac2f49a8ffccf3b40949a00102d1b6e7, type: 3}
       propertyPath: anim
       value: 
-      objectReference: {fileID: 24911547}
+      objectReference: {fileID: 1769545726}
     - target: {fileID: 6261301240472059388, guid: ac2f49a8ffccf3b40949a00102d1b6e7, type: 3}
       propertyPath: m_Enabled
       value: 0
