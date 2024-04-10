@@ -21,16 +21,16 @@ public class SuperSpunch : MonoBehaviour
     
 
     //time before attack is unleashed
-    private float waitTime = 10;
+    //private float waitTime = 10;
     public Animator animator;
     public float speed = 10.0f;
     //private bool isHit = false;
     public GameObject spikeRow;
     private Vector3 spawnPos = new Vector3(1.5f, -2, 1.5f);
-    private float topBound = 10;
+    //private float topBound = 10;
     public float BASECOOLDOWN = 3;
     public float attackCooldown = 3;
-    private bool readyToAttack = false;
+    //private bool readyToAttack = false;
     public float bossConcen = 20;
     private bool activeAttack = false;
     
@@ -78,7 +78,6 @@ public class SuperSpunch : MonoBehaviour
     } 
     public void spawnSpikes()
     {
-
         Instantiate(spikeRow, spawnPos, spikeRow.transform.rotation);
     }
     public void CurrentAttack(bool value)

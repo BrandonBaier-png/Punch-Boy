@@ -85,10 +85,10 @@ public class AttackManager : MonoBehaviour
     {
         switch (attackQueue.Dequeue())
         {
-            case 1:
+            case 0:
                 StartCoroutine(CoSpunch());
                 break;         
-            case 0:
+            case 1:
                 //GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
                 //AttackEvent.Invoke();
                 StartCoroutine(CoSuperSpunch());
@@ -177,5 +177,16 @@ public class AttackManager : MonoBehaviour
         print("swipe Message 2");
         SetAttacking(false);
     }
+
+    /*
+     * IEnumerator someRoutine() 
+     *  {
+     *  var routine = b.someOtherRoutine();
+     *  yield return routine;
+     *  }
+     * 
+     * 
+     * 
+     */
 
 }
