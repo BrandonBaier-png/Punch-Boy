@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 using UnityEngine.InputSystem;
 using Unity.VisualScripting;
 using static InputScript;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour, IMovementActions
 {
@@ -36,6 +37,11 @@ public class PlayerController : MonoBehaviour, IMovementActions
 
         left = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
         right = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            SceneManager.LoadScene("GameOver");
+        }
 
         if (Input.GetKeyDown(KeyCode.W) && xPOS < 3 && moveCooldown <= 0)
         {

@@ -130,6 +130,10 @@ public class AttackManager : MonoBehaviour
     {
         animator.SetBool("Spunch", true);
         print("Spunch Message 1");
+
+        GameObject SpunchObject = GameObject.Find("SpunchGameObject");
+        SpunchEvent.Invoke();
+
         yield return new WaitForSeconds(2);
         print("Spunch Message 2");
         animator.SetBool("Spunch", false);

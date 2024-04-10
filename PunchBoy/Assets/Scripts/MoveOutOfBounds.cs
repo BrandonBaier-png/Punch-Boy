@@ -13,6 +13,7 @@ public class DestroyOutOfBounds : MonoBehaviour
     private Vector3 row3 = new Vector3(1.816654f, -1.89f, -1.82f);
     private Vector3 row4 = new Vector3(1.816654f, -1.89f, -2.75f);
     private Vector3[] positions = new Vector3[3];
+    private bool activeAttack = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,42 +23,58 @@ public class DestroyOutOfBounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        switch (counter)
+        if (activeAttack == true)
         {
-            case 0:
-                if (transform.position.y > topBound)
-                {
-                   //GameObject.Find("Spike Row Animation").transform.position = new Vector3(-14.941f, -3.405f, -3.978167f);
-                    gameObject.transform.position = row2;
-                    ++counter;
-                }
-                break; 
-            case 1:
-                if (transform.position.y > topBound)
-                {
-         
-                    gameObject.transform.position = row3;
-                    ++counter;
-                }
-                break;
-            case 2:
-                if (transform.position.y > topBound)
-                {
+            switch (counter)
+            {
+                case 0:
+                    if (transform.position.y > topBound)
+                    {
+                        //GameObject.Find("Spike Row Animation").transform.position = new Vector3(-14.941f, -3.405f, -3.978167f);
+                        gameObject.transform.position = row2;
+                        ++counter;
+                    }
+                    break;
+                case 1:
+                    if (transform.position.y > topBound)
+                    {
 
-                    gameObject.transform.position = row4;
-                    ++counter;
-                }
-                break;
-            case 3:
-                if (transform.position.y > topBound)
-                {
-                    Destroy(gameObject);
-                }
-                break;
+                        gameObject.transform.position = row3;
+                        ++counter;
+                    }
+                    break;
+                case 2:
+                    if (transform.position.y > topBound)
+                    {
+
+                        gameObject.transform.position = row4;
+                        ++counter;
+                    }
+                    break;
+                case 3:
+                    if (transform.position.y > topBound)
+                    {
+                        transform.position = row1;
+                        CurrentAttack(false);
+                    }
+                    break;
+            }
         }
     }
+
+    public void CurrentAttack(bool value)
+    {
+       
+        activeAttack = value;
+    }
+
+    public void EnableAttack()
+    {
+        print("SUPERSPUNCHCALLEDTHISI ONE!!!");
+        activeAttack = true;
+    }
 }
+
 
 
 
