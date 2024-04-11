@@ -18,8 +18,16 @@ public class SpikeController : MonoBehaviour
 
     IEnumerator playSpikes()
     {
+
         Debug.Log("getComps start");
         SpikeCoordinates spikeCoordinates = gameObject.GetComponent<SpikeCoordinates>();
+        
+        //the first row of 4 spikes    
+        spikeCoordinates.getSpike(0, 0).GetComponent<SpikeBehavior>();
+        spikeCoordinates.getSpike(0, 1).GetComponent<SpikeBehavior>();
+        spikeCoordinates.getSpike(0, 2).GetComponent<SpikeBehavior>();
+        spikeCoordinates.getSpike(0, 3).GetComponent<SpikeBehavior>();
+
         SpikeBehavior spikeBehavior = gameObject.GetComponent<SpikeBehavior>(); //the coordinates were supposed to go somewhere around here.
         Debug.Log("getComps end");
 
@@ -29,6 +37,5 @@ public class SpikeController : MonoBehaviour
         Debug.Log("deploy called");
 
         yield return null;
-    
     }
 }
