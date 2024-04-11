@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7794593160941765786}
   - component: {fileID: 868560683633333088}
   - component: {fileID: 3955519958360599907}
+  - component: {fileID: 2524661034134014137}
   m_Layer: 0
   m_Name: FireballDisperse
   m_TagString: Untagged
@@ -106,3 +107,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2524661034134014137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451660135886355610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ccce930ab0b99744be4f93ee904aa3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
