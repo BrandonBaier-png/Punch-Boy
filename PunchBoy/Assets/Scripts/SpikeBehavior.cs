@@ -19,17 +19,28 @@ public class SpikeBehavior : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        StartCoroutine(DeploySpike());
     }
 
     // Update is called once per frame
     void Update()
     {
-  /*      anim.Play("Spunch Row", 0, 0);*/
+
     }
 
-   public void playAnimation(GameObject spike)
+   public void playAnimation()
     {
-        anim.Play("Spunch Row", 0, 0);
+        anim.enabled = true;
+       /* anim.Play("Spunch row", 0, 0);*/
+    }
+
+    public IEnumerator DeploySpike()
+    {
+        Debug.Log("waiting");
+        yield return new WaitForSeconds(2);
+        Debug.Log("anim begin");
+        playAnimation();
+        yield return null;
     }
 
 }

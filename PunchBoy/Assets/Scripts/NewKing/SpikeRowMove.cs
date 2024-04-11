@@ -10,6 +10,7 @@ public class SpikeRowMove : MonoBehaviour
     public float speed = 10.0f;
     //private bool isHit = false;
     public GameObject spikeRow;
+    private bool activeAttack = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,24 +20,42 @@ public class SpikeRowMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*transform.Translate(Vector2.up * Time.deltaTime * speed);*/
-        //was -1.51
-        //Debug.Log(gameObject.transform.position.y);
-        if (gameObject.transform.position.y >= -1.88 && waitTime <= 0 && gameObject.transform.position.y <= -1.875)
-        {
-            waitTime = 1.0f;
-        }
-        if (waitTime >= 0)
-        {
-            waitTime -= Time.deltaTime;
-        }
-        if (waitTime <= 0)
+
+        if (activeAttack == true)
         {
             moveSpikes(gameObject);
+            /*transform.Translate(Vector2.up * Time.deltaTime * speed);*/
+            //was -1.51
+            //Debug.Log(gameObject.transform.position.y);
+            if (gameObject.transform.position.y >= 4 && waitTime <= 0)
+            {
+                waitTime = 1.0f;
+            }
+            if (waitTime >= 0)
+            {
+                waitTime -= Time.deltaTime;
+            }
+            if (waitTime <= 0)
+            {
+                moveSpikes(gameObject);
+
+            }
         }
+
+
+    }
+    public void CurrentAttack(bool value)
+    {
+
+        activeAttack = value;
     }
 
-   void OnTriggerEnter(UnityEngine.Collider other)
+    public void EnableAttack()
+    {
+        print("SUPERSPUNCHCALLEDTHISI ONE!!!");
+        activeAttack = true;
+    }
+    void OnTriggerEnter(UnityEngine.Collider other)
     {
         //isHit = true;   
         print("Spunch actually works kidna");

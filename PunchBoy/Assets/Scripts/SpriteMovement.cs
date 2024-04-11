@@ -22,11 +22,9 @@ public class SpriteMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        //if (GameObject.Find("punchBoy") == null) { 
-        //    Destroy(gameObject);
-        //    SceneManager.LoadScene("GameOver");
-        //}
+        //  NOTE - Do not destory the punch boy object, this code will cause a large amount of errors if it is deleted. 
+        //
+        //
         if (GameObject.Find("punchBoy").transform.position.z == 0)
         {
             if (GameObject.Find("punchBoy").transform.position.x == 0)
