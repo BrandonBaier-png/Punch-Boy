@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/* New Spunch
+ * 
+ * This code creates prefabs of hitboxes to test if punch boy is hit by the attacks.
+ * Created via coroutine to wait for the attack to conclude
+ * 
+ */
+
 public class NewSpunch : MonoBehaviour
 {
     public float speed = 10.0f;
@@ -11,37 +19,60 @@ public class NewSpunch : MonoBehaviour
     bool activeAttack = false;
     
     private float[]rowDistances = new float[4];
+    
     // Start is called before the first frame update
     void Start()
     {
-        spikeRow = GameObject.Find("NewSpunchGameObject");
+        spawnPos = this.GetComponent<Rigidbody>().position;
+        rowDistances[0] = 0;
+        rowDistances[1] = 1;
+        rowDistances[2] = 2;
+        rowDistances[3] = 3;
+       // spikeRow = GameObject.Find("SpikeRowWide");
     }
     public void Update()
     {
         if (activeAttack)
         {
-            print("SPUNCH SPIKES HERE");
-            spawnSpikes(1);
-            spawnSpikes(2);
-            spawnSpikes(3);
-            spawnSpikes(4);
+            StartCoroutine(spawnSpikes(4, 1));
             CurrentAttack(false);
+            print("SPUNCH SPIKES HERE");
+
         }
     }
 
     // Update is called once per frame
-    public IEnumerator SpawnSpikeRow(float distance, float waitTime)
-    {
+   
 
-        //spawnSpikes()
-        yield return new WaitForSeconds(waitTime);
+    public IEnumerator spawnSpikes(float numRows,  float waitTime)
+    {
+        
+        //Vector3 newSpawnPos = ;
+        int rowCount = 0;
+        while (rowCount < numRows)
+        {
+            
+            // rowCount is serving as a multipurpose tool here, might break if not careful
+            Vector3 currentSpike = new Vector3(spawnPos.x, spawnPos.y, (spawnPos.z - rowCount));
+            Instantiate(spikeRow, currentSpike, spikeRow.transform.rotation);
+            yield return new WaitForSeconds(1);
+
+            DestroyAllSpikes();
+            rowCount++;
+            yield return new WaitForSeconds(0.5f);
+        }
+        
+        
     }
 
-    public void spawnSpikes(float rowDistance)
+    private void DestroyAllSpikes()
     {
-        Vector3 currentSpike = new Vector3(spawnPos.x, spawnPos.y - rowDistance, spawnPos.z);
-        //Vector3 newSpawnPos = ;
-        Instantiate(spikeRow, spawnPos, spikeRow.transform.rotation);
+        GameObject[] activeSpikes = GameObject.FindGameObjectsWithTag("Spike");
+        foreach (GameObject Spike in activeSpikes)
+        {
+            Destroy(Spike);
+        }
+        
     }
 
     public void CurrentAttack(bool value)
