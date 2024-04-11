@@ -9,7 +9,7 @@ using UnityEngine.Events;
 
 
 /*
- * IAttack Manager
+ * Attack Manager
  * Tasked with randomizing the boss attack choices
  * Attacks are loaded into a queue & picked after a specified delay
  * 
@@ -58,6 +58,11 @@ public class AttackManager : MonoBehaviour
     }
 
     // Update is called once per frame
+
+    /*
+     * Might have to make this update into a coroutine of sorts to prevent it from moving on before ready
+     * 
+     */
     void Update()
     {
         //When the cooldown is less than zero, New King is ready to attack
@@ -67,7 +72,6 @@ public class AttackManager : MonoBehaviour
             attackCooldown = BASECOOLDOWN;
             InitiateAttack();
             SetAttacking(true);
-            //attackDel.Invoke();
         }
         else if (!attacking)
         {
@@ -89,17 +93,12 @@ public class AttackManager : MonoBehaviour
                 StartCoroutine(CoSpunch());
                 break;         
             case 1:
-                //GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
-                //AttackEvent.Invoke();
                 StartCoroutine(CoSuperSpunch());
                 break;
             case 2:
-                print("ATTACK 3");
                 StartCoroutine(CoPummel());
                 break;
             case 3:
-                print("ATTACK 4");
-                
                 StartCoroutine(CoSwipe());
                 break;
         }
@@ -129,20 +128,17 @@ public class AttackManager : MonoBehaviour
     IEnumerator CoSpunch()
     {
         animator.SetBool("Spunch", true);
-        print("Spunch Message 1");
 
         GameObject SpunchObject = GameObject.Find("SpunchGameObject");
         SpunchEvent.Invoke();
 
         yield return new WaitForSeconds(2);
-        print("Spunch Message 2");
         animator.SetBool("Spunch", false);
         SetAttacking(false);
     }
     IEnumerator CoSuperSpunch()
     {
         animator.SetBool("SuperSpunchPreparing", true);
-        print("Super Spunch Message 1");
 
 
         GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
@@ -150,31 +146,26 @@ public class AttackManager : MonoBehaviour
 
         yield return new WaitForSeconds(2);
         animator.SetBool("SuperSpunchPreparing", false);
-        print("Super Spunch Message 2");
         SetAttacking(false);
     }
     
     IEnumerator CoPummel()
     {
         animator.SetBool("PummelStart", true);
-        print("Pummel Message 1");
 
         yield return new WaitForSeconds(2);
         animator.SetBool("PummelStart", false);
-        print("Pummel Message 2");
         SetAttacking(false);
     } 
     IEnumerator CoSwipe()
     {
         animator.SetBool("SwipeStart", true);
-        print("Swipe Message 1");
 
         GameObject SwipeGameObject = GameObject.Find("SwipeGameObject");
         SwipeEvent.Invoke();
 
         yield return new WaitForSeconds(2);
         animator.SetBool("SwipeStart", false);
-        print("swipe Message 2");
         SetAttacking(false);
     }
 
