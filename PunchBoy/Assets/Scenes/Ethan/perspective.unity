@@ -1142,6 +1142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 797729216}
+  fireballPrefab: {fileID: 2544621559125008362, guid: df76c04d4e2243b4298785d77141f621, type: 3}
 --- !u!1 &831036124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1621,7 +1622,7 @@ MonoBehaviour:
   movePoint: {fileID: 0}
   fireFistPrefab: {fileID: 8883597255996872221, guid: 375434e3ddb2c624aa7cfe72cbc3a0f3, type: 3}
   basicPunchPrefab: {fileID: 8883597255996872221, guid: cbfc80d0ae79b094997759e2b97409d1, type: 3}
-  sweepPrefab: {fileID: 0}
+  sweepPrefab: {fileID: 8883597255996872221, guid: 81160daa6b715d24eaa16451fc5d80e6, type: 3}
 --- !u!65 &1034529620
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1805,7 +1806,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1248522273
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,7 +7,12 @@ using UnityEngine.InputSystem;
 public class SpriteMovement : MonoBehaviour
 {
     private float aniCooldown = 0.0f;
+    private float fireballCD = 0.0f;
+    private float sweepCD = 0.0f;
+    private float punchCD = 0.0f;
+
     public Animator animator;
+    public GameObject fireballPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -117,6 +122,9 @@ public class SpriteMovement : MonoBehaviour
             aniCooldown = .3f;
         }
         if (aniCooldown > 0) { aniCooldown -= Time.deltaTime; }
+        if (sweepCD > 0) { sweepCD -= Time.deltaTime; }
+        if (fireballCD > 0) { fireballCD -= Time.deltaTime; }
+        if (punchCD > 0) { punchCD -= Time.deltaTime; }
         if (aniCooldown <= 0)
         {
             animator.SetBool("moveDownBool", false);
@@ -127,20 +135,25 @@ public class SpriteMovement : MonoBehaviour
             animator.SetBool("sweepBool", false);
             animator.SetBool("firePunchBool", false);
         }
-        if (Input.GetKeyDown(KeyCode.J))
+        if (Input.GetKeyDown(KeyCode.J) && punchCD <= 0)
         {
+            punchCD = 1.0f;
             animator.SetBool("punchBool", true);
             aniCooldown = .3f;
         }
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K) && sweepCD <= 0)
         {
+            sweepCD = 5.0f;
             animator.SetBool("sweepBool", true);
             aniCooldown = .3f;
         }
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L) && fireballCD <= 0)
         {
+            fireballCD = 5.0f;
+            Debug.Log("Fire");
             animator.SetBool("firePunchBool", true);
             aniCooldown = .3f;
+            Instantiate(fireballPrefab, transform.position, fireballPrefab.transform.rotation);
         }
     }
 }
