@@ -3,7 +3,9 @@ guid: cdf213d4072e35846bd9adf168473e28
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - PummelPrefab: {fileID: 8878265079013092832, guid: 19a273e6e4ec2df43989f87aa24a81d5, type: 3}
+  - Pummel2d: {fileID: 5264231016075401504, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
