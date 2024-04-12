@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8392099434263101978}
   - component: {fileID: 8733533237709527271}
   - component: {fileID: 6541086006842818753}
-  - component: {fileID: 5693624728029483489}
   - component: {fileID: 5216250501800389364}
   - component: {fileID: 1881833923403144064}
   m_Layer: 0
@@ -86,33 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5693624728029483489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 140573681093482226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f9b37d45164fe44aabbdfde85c0b88e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HitPunchBoy:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 11500000, guid: 7dbae796ad619b744991c14b3795ded6, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!54 &5216250501800389364
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -138,7 +110,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &1881833923403144064
 BoxCollider:

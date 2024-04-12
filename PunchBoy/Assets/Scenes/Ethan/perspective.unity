@@ -347,6 +347,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee6f45e688924764381e40ed34e669e9, type: 3}
+--- !u!1 &136894687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 136894688}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &136894688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136894687}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5, y: 1, z: 2.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &332795389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,13 +1280,13 @@ MonoBehaviour:
   PummelEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1546221624}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 1546221627}
+        m_TargetAssemblyTypeName: TigerPummel, Assembly-CSharp
+        m_MethodName: EnableAttack
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1654,8 +1685,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: -0.71, z: 0}
 --- !u!23 &1034529621
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2047,7 +2078,7 @@ Transform:
   m_GameObject: {fileID: 1358801513}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.5, y: 0, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2272,13 +2303,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478330935}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.35058782, y: -0.39352265, z: 0.14436299, w: 0.83748883}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.29, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1034529623}
-  m_LocalEulerAnglesHint: {x: 44.495, y: -51.458, z: -2.742}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1478330937
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2340,7 +2371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1546221626}
-  - component: {fileID: 1546221625}
+  - component: {fileID: 1546221627}
   m_Layer: 0
   m_Name: PummelGameObject
   m_TagString: Untagged
@@ -2348,18 +2379,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1546221625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546221624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40cafc3d1e2426d4a8ad9ad2777fff92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1546221626
 Transform:
   m_ObjectHideFlags: 0
@@ -2375,6 +2394,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1546221627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546221624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdf213d4072e35846bd9adf168473e28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PummelPrefab: {fileID: 2229207107116478058, guid: 35ee2250f9e8d6346bda6a00386076f4, type: 3}
+  Pummel2d: {fileID: 5264231016075401504, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
 --- !u!1 &1647650985
 GameObject:
   m_ObjectHideFlags: 0
@@ -2764,3 +2797,4 @@ SceneRoots:
   - {fileID: 730241721}
   - {fileID: 448128019}
   - {fileID: 1248522274}
+  - {fileID: 136894688}

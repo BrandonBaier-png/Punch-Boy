@@ -24,11 +24,13 @@ public class AttackManager : MonoBehaviour
 {
     public Animator animator;
 
+    private IEnumerator currentAttack;
+
     public UnityEvent SwipeEvent;
     public UnityEvent SuperSpunchEvent;
     public UnityEvent SpunchEvent;
     public UnityEvent PummelEvent;
-   
+
     //AttackDel attackDel;
 
 
@@ -40,11 +42,15 @@ public class AttackManager : MonoBehaviour
     private Vector3 spawnPos = new Vector3(1.5f, -2, 1.5f);
 
 
+    private List<int> baseAttackList = new List<int>() { 0, 1, 2, 3 };
+    private List<int> attackList = new List<int>();
+    private int secondsBetweenAttack = 4;
     private bool attacking = false;
     private int attackTally = 0;
     public const float BASECOOLDOWN = 3;
     public float attackCooldown = 3;
     private Queue<int> attackQueue = new Queue<int>();
+
 
     // Start is called before the first frame update
 
@@ -80,7 +86,8 @@ public class AttackManager : MonoBehaviour
 
         if (attackQueue.Count == 0)
         {
-            EnqueueBossAttacks();
+            EnqueueBossAttacksFixed();
+            //EnqueueBossAttacks()
         }
     }
 
@@ -90,18 +97,20 @@ public class AttackManager : MonoBehaviour
         switch (attackQueue.Dequeue())
         {
             case 0:
-                StartCoroutine(CoSpunch());
+                currentAttack = CoSpunch();
                 break;         
             case 1:
-                StartCoroutine(CoSuperSpunch());
+                currentAttack = CoSuperSpunch();
                 break;
             case 2:
-                StartCoroutine(CoPummel());
+                currentAttack = CoPummel();
                 break;
             case 3:
-                StartCoroutine(CoSwipe());
+                currentAttack = CoSwipe();
                 break;
         }
+
+        StartCoroutine(currentAttack);
     }
 
     
@@ -117,14 +126,30 @@ public class AttackManager : MonoBehaviour
         attackTally++;
     }
 
-    void EnqueueBossAttacks()
+    void EnqueueBossAttacksFixed()
     {
         //MAKE RANDOM
         attackQueue.Enqueue(0);
         attackQueue.Enqueue(1);
         attackQueue.Enqueue(2);
+        //attackQueue.Enqueue(2);
         attackQueue.Enqueue(3);
     }
+
+    void EnqueueBossAttacks()
+    {
+        attackList = baseAttackList;
+        //for 
+        //int n = rand() % attackList.;
+        //printf("%s\n", array[n]);
+        //MAKE RANDOM
+        attackQueue.Enqueue(0);
+        attackQueue.Enqueue(1);
+        attackQueue.Enqueue(2);
+        //attackQueue.Enqueue(2);
+        attackQueue.Enqueue(3);
+    }
+    // SPUNCH
     IEnumerator CoSpunch()
     {
         animator.SetBool("Spunch", true);
@@ -132,10 +157,11 @@ public class AttackManager : MonoBehaviour
         GameObject SpunchObject = GameObject.Find("SpunchGameObject");
         SpunchEvent.Invoke();
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(secondsBetweenAttack);
         animator.SetBool("Spunch", false);
         SetAttacking(false);
     }
+    // SUPER SPUNCH
     IEnumerator CoSuperSpunch()
     {
         animator.SetBool("SuperSpunchPreparing", true);
@@ -144,19 +170,24 @@ public class AttackManager : MonoBehaviour
         GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
         SuperSpunchEvent.Invoke();
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(secondsBetweenAttack);
+        DestroyAllSpikes();
         animator.SetBool("SuperSpunchPreparing", false);
         SetAttacking(false);
     }
-    
+    // PUMMEL
     IEnumerator CoPummel()
     {
+        //print("PUMMEL START");
         animator.SetBool("PummelStart", true);
-
-        yield return new WaitForSeconds(2);
+        PummelEvent.Invoke();
+        yield return new WaitForSeconds(secondsBetweenAttack);
         animator.SetBool("PummelStart", false);
         SetAttacking(false);
-    } 
+        //print("PUMMEL END");
+
+    }
+    // SWIPE
     IEnumerator CoSwipe()
     {
         animator.SetBool("SwipeStart", true);
@@ -164,9 +195,19 @@ public class AttackManager : MonoBehaviour
         GameObject SwipeGameObject = GameObject.Find("SwipeGameObject");
         SwipeEvent.Invoke();
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(secondsBetweenAttack);
         animator.SetBool("SwipeStart", false);
         SetAttacking(false);
+    }
+
+    private void DestroyAllSpikes()
+    {
+        GameObject[] activeSpikes = GameObject.FindGameObjectsWithTag("Spike");
+        foreach (GameObject Spike in activeSpikes)
+        {
+            Destroy(Spike);
+        }
+
     }
 
     /*

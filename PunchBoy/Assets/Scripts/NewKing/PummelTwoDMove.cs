@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pummel : MonoBehaviour
+public class PummelTwoDMove : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,11 +13,6 @@ public class Pummel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    void WheresTheClass()
-    {
-        print("where");
+         transform.Translate(Vector2.down * Time.deltaTime * 2);
     }
 }

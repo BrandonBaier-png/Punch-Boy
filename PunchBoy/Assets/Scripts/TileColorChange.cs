@@ -26,6 +26,9 @@ public class TileColorChange : MonoBehaviour
        
             yield return new WaitForSeconds(fadingSpeed);
         }
+        Color c = rend.color;
+        c.a = 0;
+        rend.color = c;
     }
 
     public void startFadeToRed() {
@@ -35,6 +38,5 @@ public class TileColorChange : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

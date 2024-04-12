@@ -37,6 +37,5 @@ public class PunchBoyHealth : MonoBehaviour
     public void dealtDamage()
     {
         health -= 25;
-        //print("PUNCHBOY HAS DIED :3");
     }
 }
