@@ -14,11 +14,23 @@ public class SpikeBehavior : MonoBehaviour
 {
     public Animator anim;
 
-    
+     SpriteRenderer rend;
+    public float fadeLength = 3f;
+    public float fadingSpeed = 0.05f;
+    public Color startColor;
+    public Color endColor;
+
+
     // Start is called before the first frame update
     void Start()
     {
+
         anim = GetComponent<Animator>();
+        rend = transform.GetChild(0).GetComponent<SpriteRenderer>();
+
+        /* startFadeToRed();*/
+
+  
 /*        StartCoroutine(DeploySpike());*/
     }
 
@@ -36,9 +48,31 @@ public class SpikeBehavior : MonoBehaviour
 
     public IEnumerator DeploySpike()
     {
-        yield return new WaitForSeconds(2);
+        /* yield return ToRed();*/
+/*        startFadeToRed();       */
         playAnimation();
         yield return null;
+
+    }
+
+    IEnumerator ToRed()
+    {
+        rend.color = startColor;
+        for (float i = 0f; i < fadeLength; i += fadingSpeed)
+        {
+            rend.color = Color.Lerp(startColor, endColor, i / fadeLength);
+
+            yield return new WaitForSeconds(fadingSpeed);
+        }
+        Color c = rend.color;
+        c.a = 0;
+        rend.color = c;
+        yield return null;  
+    }
+
+    public void startFadeToRed()
+    {
+        StartCoroutine(ToRed());
     }
 
 }
