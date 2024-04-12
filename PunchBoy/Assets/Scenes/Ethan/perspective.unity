@@ -2371,7 +2371,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1546221626}
-  - component: {fileID: 1546221625}
   - component: {fileID: 1546221627}
   m_Layer: 0
   m_Name: PummelGameObject
@@ -2380,18 +2379,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1546221625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546221624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40cafc3d1e2426d4a8ad9ad2777fff92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1546221626
 Transform:
   m_ObjectHideFlags: 0
@@ -2420,6 +2407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PummelPrefab: {fileID: 2229207107116478058, guid: 35ee2250f9e8d6346bda6a00386076f4, type: 3}
+  Pummel2d: {fileID: 5264231016075401504, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
 --- !u!1 &1647650985
 GameObject:
   m_ObjectHideFlags: 0

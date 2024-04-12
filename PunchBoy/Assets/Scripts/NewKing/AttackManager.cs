@@ -30,7 +30,7 @@ public class AttackManager : MonoBehaviour
     public UnityEvent SuperSpunchEvent;
     public UnityEvent SpunchEvent;
     public UnityEvent PummelEvent;
-   
+
     //AttackDel attackDel;
 
 
@@ -41,12 +41,16 @@ public class AttackManager : MonoBehaviour
     public GameObject spikeRow;
     private Vector3 spawnPos = new Vector3(1.5f, -2, 1.5f);
 
+
+    private List<int> baseAttackList = new List<int>() { 0, 1, 2, 3 };
+    private List<int> attackList = new List<int>();
     private int secondsBetweenAttack = 4;
     private bool attacking = false;
     private int attackTally = 0;
     public const float BASECOOLDOWN = 3;
     public float attackCooldown = 3;
     private Queue<int> attackQueue = new Queue<int>();
+
 
     // Start is called before the first frame update
 
@@ -134,6 +138,10 @@ public class AttackManager : MonoBehaviour
 
     void EnqueueBossAttacks()
     {
+        attackList = baseAttackList;
+        //for 
+        //int n = rand() % attackList.;
+        //printf("%s\n", array[n]);
         //MAKE RANDOM
         attackQueue.Enqueue(0);
         attackQueue.Enqueue(1);
