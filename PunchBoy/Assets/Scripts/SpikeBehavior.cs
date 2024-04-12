@@ -19,7 +19,7 @@ public class SpikeBehavior : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        StartCoroutine(DeploySpike());
+/*        StartCoroutine(DeploySpike());*/
     }
 
     // Update is called once per frame
