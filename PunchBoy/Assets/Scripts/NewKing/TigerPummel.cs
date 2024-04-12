@@ -8,6 +8,8 @@ public class TigerPummel : MonoBehaviour
     float pummelCooldown = 0;
     bool active = false;
     int rounds = 0;
+    private bool activeAttack = false;
+    private float height = 5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,42 +19,52 @@ public class TigerPummel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pummelCooldown <= 0 && GameObject.Find("punchBoy") != null && active == true) {
-            if (GameObject.Find("punchBoy").transform.position.x <= 1 && GameObject.Find("punchBoy").transform.position.x >= 0)
-            {
-                if (GameObject.Find("punchBoy").transform.position.z <= 1 && GameObject.Find("punchBoy").transform.position.z >= 0)
+        if (activeAttack)
+        {
+            print("PUMMEL HAS BEEN CALLED :3");
+            if (pummelCooldown <= 0 && GameObject.Find("punchBoy") != null) {
+                if (GameObject.Find("punchBoy").transform.position.x <= 1 && GameObject.Find("punchBoy").transform.position.x >= 0)
                 {
-                    Instantiate(PummelPrefab, new Vector3(.5f, 10, .5f), Quaternion.identity);
+                    if (GameObject.Find("punchBoy").transform.position.z <= 1 && GameObject.Find("punchBoy").transform.position.z >= 0)
+                    {
+                        Instantiate(PummelPrefab, new Vector3(.5f, height, .5f), Quaternion.identity);
+                    }
+                    else if (GameObject.Find("punchBoy").transform.position.z <= 3 && GameObject.Find("punchBoy").transform.position.z >= 2)
+                    {
+                        Instantiate(PummelPrefab, new Vector3(.5f, height, 2.5f), Quaternion.identity);
+                    }
                 }
-                else if (GameObject.Find("punchBoy").transform.position.z <= 3 && GameObject.Find("punchBoy").transform.position.z >= 2)
-                {
-                    Instantiate(PummelPrefab, new Vector3(.5f, 10, 2.5f), Quaternion.identity);
+                else if (GameObject.Find("punchBoy").transform.position.x <= 3 && GameObject.Find("punchBoy").transform.position.x >= 2) {
+                    if (GameObject.Find("punchBoy").transform.position.z <= 1 && GameObject.Find("punchBoy").transform.position.z >= 0)
+                    {
+                        Instantiate(PummelPrefab, new Vector3(2.5f, height, .5f), Quaternion.identity);
+                    }
+                    else if (GameObject.Find("punchBoy").transform.position.z <= 3 && GameObject.Find("punchBoy").transform.position.z >= 2)
+                    {
+                        Instantiate(PummelPrefab, new Vector3(2.5f, height, 2.5f), Quaternion.identity);
+                    }
                 }
+                pummelCooldown = 1.5f;
+                rounds++;
             }
-            else if (GameObject.Find("punchBoy").transform.position.x <= 3 && GameObject.Find("punchBoy").transform.position.x >= 2) {
-                if (GameObject.Find("punchBoy").transform.position.z <= 1 && GameObject.Find("punchBoy").transform.position.z >= 0)
-                {
-                    Instantiate(PummelPrefab, new Vector3(2.5f, 10, .5f), Quaternion.identity);
-                }
-                else if (GameObject.Find("punchBoy").transform.position.z <= 3 && GameObject.Find("punchBoy").transform.position.z >= 2)
-                {
-                    Instantiate(PummelPrefab, new Vector3(2.5f, 10, 2.5f), Quaternion.identity);
-                }
+            if (pummelCooldown > 0) {
+                pummelCooldown -= Time.deltaTime;
             }
-            pummelCooldown = 1.5f;
-            rounds++;
-        }
-        if (pummelCooldown > 0) {
-            pummelCooldown -= Time.deltaTime;
-        }
-        if (rounds >= 4) { 
-            active = false;
-            rounds = 0;
+            if (rounds >= 4) {
+                rounds = 0;
+                CurrentAttack(false);
+            }
+            
         }
     }
-    public void enableAttack()
+    public void CurrentAttack(bool value)
     {
-        active = true;
+        activeAttack = value;
+    }
+
+    public void EnableAttack()
+    {
+        activeAttack = true;
     }
 }
 
