@@ -103,12 +103,9 @@ public class SpriteMovement : MonoBehaviour
         if (sweepCD > 0) { sweepCD -= Time.deltaTime; }
         if (fireballCD > 0) { fireballCD -= Time.deltaTime; }
         if (punchCD > 0) { punchCD -= Time.deltaTime; }
+        if (aniCooldown > 0) { aniCooldown -= Time.deltaTime; }
         if (aniCooldown <= 0)
         {
-            animator.SetBool("moveDownBool", false);
-            animator.SetBool("moveUpBool", false);
-            animator.SetBool("moveRightBool", false);
-            animator.SetBool("moveLeftBool", false);
             animator.SetBool("punchBool", false);
             animator.SetBool("sweepBool", false);
             animator.SetBool("firePunchBool", false);
