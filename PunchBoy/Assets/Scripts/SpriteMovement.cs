@@ -100,26 +100,6 @@ public class SpriteMovement : MonoBehaviour
                 gameObject.transform.position = new Vector3(-10.98f, -0.72f, 0);
             }
         }
-        if (Input.GetKeyDown(KeyCode.W)) {
-            animator.SetBool("moveUpBool", true);
-            aniCooldown = .3f;
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            animator.SetBool("moveLeftBool", true);
-            aniCooldown = .3f;
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            animator.SetBool("moveRightBool", true);
-            aniCooldown = .3f;
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            animator.SetBool("moveDownBool", true);
-            aniCooldown = .3f;
-        }
-        if (aniCooldown > 0) { aniCooldown -= Time.deltaTime; }
         if (sweepCD > 0) { sweepCD -= Time.deltaTime; }
         if (fireballCD > 0) { fireballCD -= Time.deltaTime; }
         if (punchCD > 0) { punchCD -= Time.deltaTime; }

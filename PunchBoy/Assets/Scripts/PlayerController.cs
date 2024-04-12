@@ -9,12 +9,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour, IMovementActions
 {
-    private int xPOS = 0;
+private int xPOS = 0;
     private int yPOS = 0;
     public Transform movePoint;
     public GameObject fireFistPrefab;
     public GameObject basicPunchPrefab;
     public GameObject sweepPrefab;
+    public Animator animator;
 
     Vector3 left;
     Vector3 right;
@@ -38,13 +39,14 @@ public class PlayerController : MonoBehaviour, IMovementActions
         left = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
         right = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (GameObject.Find("punchBoy") == null)
         {
             SceneManager.LoadScene("GameOver");
         }
 
         if (Input.GetKeyDown(KeyCode.W) && xPOS < 3 && moveCooldown <= 0)
         {
+            animator.SetBool("moveUpBool", true);
             MovePlayer(Vector3.forward);
             xPOS++;
             moveCooldown = .3f;
@@ -52,6 +54,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
 
         if (Input.GetKeyDown(KeyCode.A) && yPOS > 0 && moveCooldown <= 0)
         {
+            animator.SetBool("moveLeftBool", true);
             MovePlayer(Vector3.left);
             yPOS--;
             moveCooldown = .3f;
@@ -59,6 +62,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
 
         if (Input.GetKeyDown(KeyCode.S) && xPOS > 0 && moveCooldown <= 0)
         {
+            animator.SetBool("moveDownBool", true);
             MovePlayer(Vector3.back);
             xPOS--;
             moveCooldown = .3f;
@@ -66,6 +70,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
 
         if (Input.GetKeyDown(KeyCode.D) && yPOS < 3 && moveCooldown <= 0)
         {
+            animator.SetBool("moveRightBool", true);
             MovePlayer(Vector3.right);
             yPOS++;
             moveCooldown = .3f;

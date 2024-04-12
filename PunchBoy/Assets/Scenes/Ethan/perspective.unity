@@ -1666,6 +1666,7 @@ MonoBehaviour:
   fireFistPrefab: {fileID: 8883597255996872221, guid: 375434e3ddb2c624aa7cfe72cbc3a0f3, type: 3}
   basicPunchPrefab: {fileID: 8883597255996872221, guid: cbfc80d0ae79b094997759e2b97409d1, type: 3}
   sweepPrefab: {fileID: 8883597255996872221, guid: 81160daa6b715d24eaa16451fc5d80e6, type: 3}
+  animator: {fileID: 797729216}
 --- !u!65 &1034529620
 BoxCollider:
   m_ObjectHideFlags: 0
