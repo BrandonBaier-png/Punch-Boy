@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 
 //public delegate void HealthChanged(Boss newKing,
@@ -10,8 +11,10 @@ using UnityEngine.Events;
 public delegate void BossHit();
 public class Boss : MonoBehaviour
 {
-    private float bossConcenInitial = 20;
-    private float bossConcen = 20;
+    public UnityEvent BossDamaged;
+
+    //private float bossConcenInitial = 20;
+    //private float bossConcen = 20;
     public float bossHealth = 500;
     public float fireFistDamage = 10;
     public float basicPunchDamage = 5;
@@ -52,9 +55,12 @@ public class Boss : MonoBehaviour
         }
         if (bossHealth <= 0)
         {
-            Destroy(gameObject);
+            SceneManager.LoadScene("GameWin");
         }
         Debug.Log(bossHealth);
+
+        BossDamaged.Invoke();
+
     }
 
     private void BossHit(float damage)

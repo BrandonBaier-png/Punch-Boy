@@ -5,6 +5,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
+
+
 //static SuperSpunch might cause issues idk if it will
 
 
@@ -35,7 +37,7 @@ public class AttackManager : MonoBehaviour
 
 
 
-    private float Timer = 5;
+    //private float Timer = 5;
     //SORT OUT THESE VARIABLES LATER
 
     public GameObject spikeRow;
@@ -45,6 +47,7 @@ public class AttackManager : MonoBehaviour
     private List<int> baseAttackList = new List<int>() { 0, 1, 2, 3 };
     private List<int> attackList = new List<int>();
     private int secondsBetweenAttack = 4;
+    private int secondsBetweenSuperSpunchAttack = 10;
     private bool attacking = false;
     private int attackTally = 0;
     public const float BASECOOLDOWN = 3;
@@ -56,7 +59,8 @@ public class AttackManager : MonoBehaviour
 
     void Start()
     {
-        EnqueueBossAttacks();
+        EnqueueBossAttacksFixed();
+        //EnqueueBossAttacks();
 
         //Adding methods to the attackManager delegate
         //Whenever attackManager is called, CountAttack is also called;
@@ -87,7 +91,7 @@ public class AttackManager : MonoBehaviour
         if (attackQueue.Count == 0)
         {
             EnqueueBossAttacksFixed();
-            //EnqueueBossAttacks()
+            //EnqueueBossAttacks();
         }
     }
 
@@ -103,13 +107,13 @@ public class AttackManager : MonoBehaviour
                 currentAttack = CoSuperSpunch();
                 break;
             case 2:
-                currentAttack = CoPummel();
+                //currentAttack = CoPummel();
+                currentAttack = CoSpunch();
                 break;
             case 3:
                 currentAttack = CoSwipe();
                 break;
         }
-
         StartCoroutine(currentAttack);
     }
 
@@ -129,26 +133,33 @@ public class AttackManager : MonoBehaviour
     void EnqueueBossAttacksFixed()
     {
         //MAKE RANDOM
+        attackQueue.Enqueue(2);
         attackQueue.Enqueue(0);
         attackQueue.Enqueue(1);
-        attackQueue.Enqueue(2);
+        
         //attackQueue.Enqueue(2);
         attackQueue.Enqueue(3);
     }
 
-    void EnqueueBossAttacks()
-    {
-        attackList = baseAttackList;
-        //for 
-        //int n = rand() % attackList.;
-        //printf("%s\n", array[n]);
-        //MAKE RANDOM
-        attackQueue.Enqueue(0);
-        attackQueue.Enqueue(1);
-        attackQueue.Enqueue(2);
-        //attackQueue.Enqueue(2);
-        attackQueue.Enqueue(3);
-    }
+    //void EnqueueBossAttacks()
+    //{
+    //    //int r = new Random().RandomRange(0, attackQueue.Count);
+    //    attackList = baseAttackList;
+    //    //foreach (int i in baseAttackList)
+    //    //{
+    //    //    int attackToQueue = Random.Range(0, attackList.Count);
+    //    //    print("Current attack queue: " + attackToQueue);
+    //    //    //int n = rand() % attackList.;
+    //    //}
+    //    while (attackList.Count > 0)
+    //    {
+    //        //int attackToQueue = Random.Range(0, attackList.Count);
+    //        int attackToQueue = Random.Range(0, attackList.Count);
+    //        print("Current attack queue: " + attackToQueue);// + attackToQueue);
+    //        attackList.Remove(attackToQueue);
+    //        attackQueue.Enqueue(attackToQueue);
+    //    }
+    //}
     // SPUNCH
     IEnumerator CoSpunch()
     {
@@ -170,7 +181,7 @@ public class AttackManager : MonoBehaviour
         GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
         SuperSpunchEvent.Invoke();
 
-        yield return new WaitForSeconds(secondsBetweenAttack);
+        yield return new WaitForSeconds(secondsBetweenSuperSpunchAttack);
         DestroyAllSpikes();
         animator.SetBool("SuperSpunchPreparing", false);
         SetAttacking(false);

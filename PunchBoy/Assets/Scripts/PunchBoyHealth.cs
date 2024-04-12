@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PunchBoyHealth : MonoBehaviour
 {
@@ -14,15 +15,10 @@ public class PunchBoyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
+        
         //print("Punch boy health " + health);
         //Debug.Log(health);
     }
-
-
 
     void OnTriggerEnter(UnityEngine.Collider collision)
     {
@@ -30,7 +26,10 @@ public class PunchBoyHealth : MonoBehaviour
         if (collision.tag == "Spike")
         {
             dealtDamage();
-            
+        }
+        if (health <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
         }
     }
 

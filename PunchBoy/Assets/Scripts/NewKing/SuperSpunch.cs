@@ -18,20 +18,27 @@ public class SuperSpunch : MonoBehaviour
 {
 
     Rigidbody rigidbodyDespawner;
-    
+
+
+    private float BASETEMPBOSSHEALTH = 50;
+    private float TempBossHealth = 50;
 
     //time before attack is unleashed
     //private float waitTime = 10;
     public Animator animator;
     public float speed = 10.0f;
+    public float spunchTimer = 10.0f;
     //private bool isHit = false;
     public GameObject spikeRow;
     private Vector3 spawnPos = new Vector3(1.5f, 1, 1.5f);
     //private float topBound = 10;
     public float BASECOOLDOWN = 3;
     public float attackCooldown = 3;
+
     //private bool readyToAttack = false;
+    public float BASEBOSSCONCEN = 20;
     public float bossConcen = 20;
+
     private bool activeAttack = false;
     
 
@@ -59,13 +66,25 @@ public class SuperSpunch : MonoBehaviour
         
         if (attackCooldown <= 0 && bossConcen > 0)
         {
-            Invoke("spawnSpikes", 0);
+            TempBossHealth = BASETEMPBOSSHEALTH;
+            superSpunchAttack();
+
             //attackCooldown = BASECOOLDOWN;
             ResetSuperSpunch();
         }
         else
         {
             attackCooldown -= Time.deltaTime; 
+        }
+    }
+
+    IEnumerator superSpunchAttack()
+    {
+
+        yield return new WaitForSeconds(spunchTimer);
+        if (TempBossHealth > 0)
+        {
+            Invoke("spawnSpikes", 0);
         }
     }
 
@@ -79,8 +98,10 @@ public class SuperSpunch : MonoBehaviour
         attackCooldown = BASECOOLDOWN;
     } 
     
-
-    
+    public void RemoveTempHitpoints(float damageDealt) 
+    {
+        TempBossHealth -= damageDealt;
+    }
 
     public void CurrentAttack(bool value)
     {
@@ -89,7 +110,7 @@ public class SuperSpunch : MonoBehaviour
     }
     public void EnableAttack()
     {
-        print("SUPERSPUNCHCALLEDTHISI ONE!!!");
+        //print("SUPERSPUNCHCALLEDTHISI ONE!!!");
         activeAttack = true;    
     }
 }
