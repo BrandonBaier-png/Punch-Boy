@@ -6,7 +6,7 @@ public class SpikeCoordinates : MonoBehaviour
 {
     //array positions in X and Y coordinates
     //(row * 4) + y
-    // Start is called before the first frame update
+    //Start is called before the first frame update
     void Start()
     {
 
@@ -20,10 +20,9 @@ public class SpikeCoordinates : MonoBehaviour
 
     public GameObject getSpike(int x, int y)
     {
-        int arrayPos = 0;
-        arrayPos = (x * 4) + y;
-
-        return gameObject.transform.GetChild(arrayPos).gameObject;
+        int pos = 0;
+        pos = (x * 4) + y;
+        return gameObject.transform.GetChild(pos).gameObject;
     }
 }
 

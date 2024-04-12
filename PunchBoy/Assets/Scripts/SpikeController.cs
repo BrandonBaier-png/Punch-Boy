@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SpikeController : MonoBehaviour
 {
+
+    private List<SpikeBehavior> spikeList = new List<SpikeBehavior>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,23 +22,37 @@ public class SpikeController : MonoBehaviour
     IEnumerator playSpikes()
     {
 
-        Debug.Log("getComps start");
-        SpikeCoordinates spikeCoordinates = gameObject.GetComponent<SpikeCoordinates>();
-        
+        SpikeCoordinates spikeCoordinates = gameObject.GetComponent<SpikeCoordinates>(); 
+
         //the first row of 4 spikes    
-        spikeCoordinates.getSpike(0, 0).GetComponent<SpikeBehavior>();
-        spikeCoordinates.getSpike(0, 1).GetComponent<SpikeBehavior>();
-        spikeCoordinates.getSpike(0, 2).GetComponent<SpikeBehavior>();
-        spikeCoordinates.getSpike(0, 3).GetComponent<SpikeBehavior>();
+        SpikeBehavior spikeTest = spikeCoordinates.getSpike(0, 0).GetComponent<SpikeBehavior>();
+        SpikeBehavior spikeTest2 = spikeCoordinates.getSpike(0, 1).GetComponent<SpikeBehavior>();
+        SpikeBehavior spikeTest3 = spikeCoordinates.getSpike(0, 2).GetComponent<SpikeBehavior>();
+        SpikeBehavior spikeTest4 = spikeCoordinates.getSpike(0, 3).GetComponent<SpikeBehavior>();
 
-        SpikeBehavior spikeBehavior = gameObject.GetComponent<SpikeBehavior>(); //the coordinates were supposed to go somewhere around here.
-        Debug.Log("getComps end");
+       // SpikeBehavior spikeBehavior = gameObject.GetComponent<SpikeBehavior>(); 
 
-        yield return new WaitForSeconds(2);
- 
-        StartCoroutine(spikeBehavior.DeploySpike());
-        Debug.Log("deploy called");
+        spikeTest.DeploySpike();
+        spikeTest2.DeploySpike();
+        spikeTest3.DeploySpike();
+        spikeTest4.DeploySpike();
 
         yield return null;
+
+
+
+        /*
+         Debug.Log("getComps start");
+         SpikeCoordinates spikeCoordinates = gameObject.GetComponent<SpikeCoordinates>();
+
+         ArrayList spikeArray = new ArrayList();
+
+         Debug.Log("getComps end");
+
+         yield return new WaitForSeconds(2);
+
+         //StartCoroutine(spikeBehavior.DeploySpike());
+         Debug.Log("deploy called");*/
+
     }
 }

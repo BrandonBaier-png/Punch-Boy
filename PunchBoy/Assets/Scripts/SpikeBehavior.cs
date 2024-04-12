@@ -31,14 +31,12 @@ public class SpikeBehavior : MonoBehaviour
    public void playAnimation()
     {
         anim.enabled = true;
-       /* anim.Play("Spunch row", 0, 0);*/
+        anim.Play("Spunch row", 0, 0);
     }
 
     public IEnumerator DeploySpike()
     {
-        Debug.Log("waiting");
         yield return new WaitForSeconds(2);
-        Debug.Log("anim begin");
         playAnimation();
         yield return null;
     }
