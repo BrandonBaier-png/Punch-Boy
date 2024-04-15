@@ -31,7 +31,7 @@ public class TigerPummel : MonoBehaviour
         {
             while (rounds < 4)
             {
-                
+                PummelInstance();
             }
            
             rounds = 0;
