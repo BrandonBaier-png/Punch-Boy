@@ -76,6 +76,13 @@ private int xPOS = 0;
             moveCooldown = .3f;
         }
 
+        if (moveCooldown <= .05f) {
+            animator.SetBool("moveRightBool", false);
+            animator.SetBool("moveLeftBool", false);
+            animator.SetBool("moveDownBool", false);
+            animator.SetBool("moveUpBool", false);
+        }
+
         if (moveCooldown > 0)
         {
             moveCooldown -= Time.deltaTime;
@@ -86,7 +93,6 @@ private int xPOS = 0;
         {
             basicCooldown = 1.0f;
             Instantiate(basicPunchPrefab, transform.position, basicPunchPrefab.transform.rotation);
-            moveCooldown = .3f;
         }
 
         //Sweep skill
@@ -94,7 +100,6 @@ private int xPOS = 0;
         {
             sweepCooldown = 5.0f;
             StartCoroutine(SweepRoutine());
-            moveCooldown = .3f;
         }
 
         //Fire punch skill
@@ -102,7 +107,6 @@ private int xPOS = 0;
         {
             fireCooldown = 5.0f;
             Instantiate(fireFistPrefab, transform.position, fireFistPrefab.transform.rotation);
-            moveCooldown = .3f;
         }
 
         if (basicCooldown > 0)
