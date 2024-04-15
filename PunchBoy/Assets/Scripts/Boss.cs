@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 //public delegate void HealthChanged(Boss newKing,
@@ -15,9 +16,12 @@ public class Boss : MonoBehaviour
 
     //private float bossConcenInitial = 20;
     //private float bossConcen = 20;
-    public float bossHealth = 500;
-    public float fireFistDamage = 10;
-    public float basicPunchDamage = 5;
+    public Image healthBar;
+
+    private float bossHealth = 200;
+    private float currentHealth = 200;
+    private float fireFistDamage = 10;
+    private float basicPunchDamage = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +42,7 @@ public class Boss : MonoBehaviour
             BossHit(fireFistDamage);
             Debug.Log(bossHealth);
             Destroy(other.gameObject);
+            UpdateHealth();
         }
 
         if (other.CompareTag("BasicPunch"))
@@ -45,14 +50,9 @@ public class Boss : MonoBehaviour
             BossHit(basicPunchDamage);
             Debug.Log(bossHealth);
             Destroy(other.gameObject);
+            UpdateHealth();
         }
 
-        if (other.CompareTag("Sweep"))
-        {
-            bossHealth = bossHealth - 10;
-            Debug.Log(bossHealth);
-            Destroy(other.gameObject);
-        }
         if (bossHealth <= 0)
         {
             SceneManager.LoadScene("GameWin");
@@ -65,6 +65,11 @@ public class Boss : MonoBehaviour
 
     private void BossHit(float damage)
     {
-        bossHealth -= damage;
+        currentHealth -= damage;
+    }
+
+    public void UpdateHealth()
+    {
+        healthBar.fillAmount = currentHealth / bossHealth;
     }
 }
