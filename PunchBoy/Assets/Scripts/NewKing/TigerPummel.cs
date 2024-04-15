@@ -29,10 +29,7 @@ public class TigerPummel : MonoBehaviour
          */
         if (activeAttack)
         {
-            while (rounds < 4)
-            {
-                PummelInstance();
-            }
+            StartCoroutine(CallPummelAttack());
            
             rounds = 0;
             CurrentAttack(false);
@@ -40,15 +37,22 @@ public class TigerPummel : MonoBehaviour
         }
     }
 
-    IEnumerator PummelAttack()
+    IEnumerator CallPummelAttack()
     {
-        yield return new WaitForSeconds(secondsBetweenAttack);
+        while (rounds < 4)
+        {
+            rounds++;
+            PummelAttack();
+            
+            yield return new WaitForSeconds(1.5f);
+        }
+        
+        
     }
 
-    public void PummelInstance()
+    public void PummelAttack()
     {
-        if (pummelCooldown <= 0 && GameObject.Find("punchBoy") != null)
-        {
+  
             print("PUMMEL HAS BEEN CALLED :3");
             if (GameObject.Find("punchBoy").transform.position.x <= 1 && GameObject.Find("punchBoy").transform.position.x >= 0)
             {
@@ -76,13 +80,9 @@ public class TigerPummel : MonoBehaviour
                     Instantiate(Pummel2d, new Vector3(-11.5f, 3.64f, 0f), Quaternion.identity);
                 }
             }
-            pummelCooldown = 1.5f;
-            rounds++;
-        }
-        else
-        {
-            pummelCooldown -= Time.deltaTime;
-        }
+
+        rounds++;
+        
     }
 
     public void CurrentAttack(bool value)
