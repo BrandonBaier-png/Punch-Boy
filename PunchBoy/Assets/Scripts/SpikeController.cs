@@ -10,7 +10,7 @@ public class SpikeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       /* StartCoroutine(playSpikes());*/
+        StartCoroutine(playSpikes());
     }
 
     // Update is called once per frame
@@ -26,11 +26,14 @@ public class SpikeController : MonoBehaviour
     IEnumerator playSpikes()
     {
 
+        yield return new WaitForSeconds(1);
+
+
         SpikeCoordinates spikeCoordinates = GameObject.Find("Spike Row Animation").GetComponent<SpikeCoordinates>();
 
-   /*     TileColorChange tilecolor = GameObject.Find("TileChange").GetComponent<TileColorChange>();*/
 
         //the first row of spikes    
+
         SpikeBehavior spike1 = spikeCoordinates.getSpike(0, 0).GetComponent<SpikeBehavior>();
         SpikeBehavior spike2 = spikeCoordinates.getSpike(0, 1).GetComponent<SpikeBehavior>();
         SpikeBehavior spike3 = spikeCoordinates.getSpike(0, 2).GetComponent<SpikeBehavior>();

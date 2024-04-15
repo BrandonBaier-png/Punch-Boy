@@ -48,8 +48,10 @@ public class SpikeBehavior : MonoBehaviour
 
     public IEnumerator DeploySpike()
     {
-        /* yield return ToRed();*/
-/*        startFadeToRed();       */
+        yield return ToRed();
+
+        /*startFadeToRed();*/
+
         playAnimation();
         yield return null;
 
@@ -57,6 +59,7 @@ public class SpikeBehavior : MonoBehaviour
 
     IEnumerator ToRed()
     {
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
         rend.color = startColor;
         for (float i = 0f; i < fadeLength; i += fadingSpeed)
         {
@@ -67,6 +70,7 @@ public class SpikeBehavior : MonoBehaviour
         Color c = rend.color;
         c.a = 0;
         rend.color = c;
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
         yield return null;  
     }
 
