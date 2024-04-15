@@ -816,10 +816,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 078e226e5e25f4540a0c1bc9bc5c5778, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -1132,9 +1132,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  bossHealth: 500
-  fireFistDamage: 10
-  basicPunchDamage: 5
+  healthBar: {fileID: 1462939010}
 --- !u!23 &762248703
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1212,7 +1210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348e1cbf44634254293a8608632e1dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PummelObject: {fileID: 0}
+  PummelObject: {fileID: 8878265079013092832, guid: 19a273e6e4ec2df43989f87aa24a81d5, type: 3}
 --- !u!1 &797729215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &831036126
 Transform:
   m_ObjectHideFlags: 0
@@ -1926,6 +1924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dbae796ad619b744991c14b3795ded6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PBHealthBar: {fileID: 638198013}
 --- !u!1 &1067630463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,13 +2423,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 2db8618d530f65d449cf3a8f876975dd, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1462939011

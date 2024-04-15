@@ -8,7 +8,7 @@ public class TigerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -17,7 +17,7 @@ public class TigerHealth : MonoBehaviour
 
     }
     void OnTriggerEnter(UnityEngine.Collider other)
-    {  
+    {
         DetectCollisions.Destroy(other);
     }
 }

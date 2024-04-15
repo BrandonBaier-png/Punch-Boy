@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PunchBoyHealth : MonoBehaviour
 {
-    private float health = 100;
+    private float maxHealth = 100;
+    private float currentHealth = 100;
+    public Image PBHealthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +19,7 @@ public class PunchBoyHealth : MonoBehaviour
     void Update()
     {
         
+
         //print("Punch boy health " + health);
         //Debug.Log(health);
     }
@@ -26,15 +30,22 @@ public class PunchBoyHealth : MonoBehaviour
         if (collision.tag == "Spike")
         {
             dealtDamage();
+            UpdateHealth();
         }
-        if (health <= 0)
+        if (currentHealth <= 0)
         {
+            UpdateHealth();
             SceneManager.LoadScene("GameOver");
         }
     }
 
     public void dealtDamage()
     {
-        health -= 25;
+        currentHealth -= 25;
+    }
+
+    public void UpdateHealth()
+    {
+        PBHealthBar.fillAmount = currentHealth / maxHealth;
     }
 }
