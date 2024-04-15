@@ -39,8 +39,4 @@ public class moveScreenNStuff : MonoBehaviour
 
 
     }
-
-    public void Begin() {
-        SceneManager.LoadScene("perspective");
-    }
 }
