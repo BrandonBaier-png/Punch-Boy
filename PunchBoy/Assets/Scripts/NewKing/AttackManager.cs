@@ -47,7 +47,7 @@ public class AttackManager : MonoBehaviour
     private List<int> baseAttackList = new List<int>() { 0, 1, 2, 3 };
     private List<int> attackList = new List<int>();
     private int secondsBetweenAttack = 4;
-    private int secondsBetweenSuperSpunchAttack = 10;
+    private int secondsBetweenSuperSpunchAttack = 4;
     private bool attacking = false;
     private int attackTally = 0;
     public const float BASECOOLDOWN = 3;
@@ -107,8 +107,8 @@ public class AttackManager : MonoBehaviour
                 currentAttack = CoSuperSpunch();
                 break;
             case 2:
-                //currentAttack = CoPummel();
-                currentAttack = CoSpunch();
+                currentAttack = CoPummel();
+                //currentAttack = CoSpunch();
                 break;
             case 3:
                 currentAttack = CoSwipe();
@@ -132,13 +132,24 @@ public class AttackManager : MonoBehaviour
 
     void EnqueueBossAttacksFixed()
     {
+        /*
+         * 0 - Spunch
+         * 1 - Super Spunch
+         * 2 - Pummmel (currently also Spunch)
+         * 3 - Swipe
+         */
+
         //MAKE RANDOM
+        //attackQueue.Enqueue(2);
         attackQueue.Enqueue(2);
-        attackQueue.Enqueue(0);
+        attackQueue.Enqueue(2);
         attackQueue.Enqueue(1);
+        attackQueue.Enqueue(3);
+        attackQueue.Enqueue(0);
+        
         
         //attackQueue.Enqueue(2);
-        attackQueue.Enqueue(3);
+        
     }
 
     //void EnqueueBossAttacks()
@@ -180,6 +191,8 @@ public class AttackManager : MonoBehaviour
 
         GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
         SuperSpunchEvent.Invoke();
+
+
 
         yield return new WaitForSeconds(secondsBetweenSuperSpunchAttack);
         DestroyAllSpikes();

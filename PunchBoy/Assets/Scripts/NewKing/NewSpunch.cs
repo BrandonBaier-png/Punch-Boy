@@ -8,6 +8,7 @@ using UnityEngine;
  * This code creates prefabs of hitboxes to test if punch boy is hit by the attacks.
  * Created via coroutine to wait for the attack to conclude
  * 
+ * Author - Brandon Baier 
  */
 
 public class NewSpunch : MonoBehaviour

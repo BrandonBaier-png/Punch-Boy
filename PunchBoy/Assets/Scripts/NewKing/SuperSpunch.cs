@@ -16,18 +16,18 @@ using UnityEngine.Events;
  */
 public class SuperSpunch : MonoBehaviour
 {
-
     Rigidbody rigidbodyDespawner;
-
 
     private float BASETEMPBOSSHEALTH = 50;
     private float TempBossHealth = 50;
 
+    
+    public int BASESPUNCHTIMER = 3;
+    public int spunchTimer = 3;
+
     //time before attack is unleashed
     //private float waitTime = 10;
     public Animator animator;
-    public float speed = 10.0f;
-    public float spunchTimer = 10.0f;
     //private bool isHit = false;
     public GameObject spikeRow;
     private Vector3 spawnPos = new Vector3(1.5f, 1, 1.5f);
@@ -56,41 +56,28 @@ public class SuperSpunch : MonoBehaviour
         if (activeAttack)
         {
             //print("SUPERSPUNCH ACTIVE");
-            SuperSpunchCountdown();
-        }
-    }
-
-
-    void SuperSpunchCountdown()
-    {
-        
-        if (attackCooldown <= 0 && bossConcen > 0)
-        {
-            TempBossHealth = BASETEMPBOSSHEALTH;
-            superSpunchAttack();
-
-            //attackCooldown = BASECOOLDOWN;
-            ResetSuperSpunch();
-        }
-        else
-        {
-            attackCooldown -= Time.deltaTime; 
+            StartCoroutine(superSpunchAttack());
+            CurrentAttack(false);
         }
     }
 
     IEnumerator superSpunchAttack()
     {
-
+        print("Waiting for boss countdown");
         yield return new WaitForSeconds(spunchTimer);
         if (TempBossHealth > 0)
         {
             Invoke("spawnSpikes", 0);
+            
         }
+        yield return new WaitForSeconds(1);
+
     }
 
     public void spawnSpikes()
     {
         Instantiate(spikeRow, spawnPos, spikeRow.transform.rotation);
+        ResetAttack();
     }
     void ResetSuperSpunch()
     {
@@ -108,9 +95,18 @@ public class SuperSpunch : MonoBehaviour
         //print("SUPERSPUNCHCALLED");
         activeAttack = value;
     }
+
     public void EnableAttack()
     {
+        print("Super Spunch Enabled");
         //print("SUPERSPUNCHCALLEDTHISI ONE!!!");
         activeAttack = true;    
+    }
+
+
+    public void ResetAttack()
+    {
+        TempBossHealth = BASETEMPBOSSHEALTH;
+        spunchTimer = BASESPUNCHTIMER;
     }
 }
