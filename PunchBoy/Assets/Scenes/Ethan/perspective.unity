@@ -378,6 +378,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &190377263
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 805245569840248601, guid: 54072f3ea6d2d6f4b90ff708d24f6c88, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.276018
+      objectReference: {fileID: 0}
+    - target: {fileID: 805245569840248601, guid: 54072f3ea6d2d6f4b90ff708d24f6c88, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.024747
+      objectReference: {fileID: 0}
+    - target: {fileID: 805245569840248601, guid: 54072f3ea6d2d6f4b90ff708d24f6c88, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.978167
+      objectReference: {fileID: 0}
+    - target: {fileID: 805245569840248601, guid: 54072f3ea6d2d6f4b90ff708d24f6c88, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 805245569840248601, guid: 54072f3ea6d2d6f4b90ff708d24f6c88, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 805245569840248601, guid: 54072f3ea6d2d6f4b90ff708d24f6c88, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 805245569840248601, guid: 54072f3ea6d2d6f4b90ff708d24f6c88, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 805245569840248601, guid: 54072f3ea6d2d6f4b90ff708d24f6c88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 805245569840248601, guid: 54072f3ea6d2d6f4b90ff708d24f6c88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 805245569840248601, guid: 54072f3ea6d2d6f4b90ff708d24f6c88, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5182215631389109917, guid: 54072f3ea6d2d6f4b90ff708d24f6c88, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5793971384239306313, guid: 54072f3ea6d2d6f4b90ff708d24f6c88, type: 3}
+      propertyPath: m_Name
+      value: Spike Row Animation
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 54072f3ea6d2d6f4b90ff708d24f6c88, type: 3}
 --- !u!1 &332795389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2816,3 +2877,4 @@ SceneRoots:
   - {fileID: 448128019}
   - {fileID: 1248522274}
   - {fileID: 136894688}
+  - {fileID: 190377263}
