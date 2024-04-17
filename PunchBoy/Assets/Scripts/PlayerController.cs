@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 using UnityEngine.InputSystem;
 using Unity.VisualScripting;
 using static InputScript;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour, IMovementActions
 {
-private int xPOS = 0;
+    private int xPOS = 0;
     private int yPOS = 0;
     public Transform movePoint;
     public GameObject fireFistPrefab;
@@ -17,12 +17,16 @@ private int xPOS = 0;
     public GameObject sweepPrefab;
     public Animator animator;
 
+    public Image punchIcon;
+    public Image sweepIcon;
+    public Image fireIcon;
+
     Vector3 left;
     Vector3 right;
 
-    private float basicCooldown = 0.0f;
-    private float sweepCooldown = 0.0f;
-    private float fireCooldown = 0.0f;
+    private float basicCooldown = 1.0f;
+    private float sweepCooldown = 5.0f;
+    private float fireCooldown = 5.0f;
     private float moveCooldown = 0.0f;
 
 
@@ -76,7 +80,8 @@ private int xPOS = 0;
             moveCooldown = .3f;
         }
 
-        if (moveCooldown <= .05f) {
+        if (moveCooldown <= .05f)
+        {
             animator.SetBool("moveRightBool", false);
             animator.SetBool("moveLeftBool", false);
             animator.SetBool("moveDownBool", false);
@@ -89,39 +94,42 @@ private int xPOS = 0;
         }
 
         //Basic punch skill
-        if (Input.GetKeyDown(KeyCode.J) && basicCooldown <= 0 && moveCooldown <= 0)
+        if (Input.GetKeyDown(KeyCode.J) && basicCooldown >= 1.0f && moveCooldown <= 0)
         {
-            basicCooldown = 1.0f;
+            basicCooldown = 0;
             Instantiate(basicPunchPrefab, transform.position, basicPunchPrefab.transform.rotation);
         }
 
         //Sweep skill
-        if (Input.GetKeyDown(KeyCode.K) && sweepCooldown <= 0 && moveCooldown <= 0)
+        if (Input.GetKeyDown(KeyCode.K) && sweepCooldown >= 5.0f && moveCooldown <= 0)
         {
-            sweepCooldown = 5.0f;
+            sweepCooldown = 0;
             StartCoroutine(SweepRoutine());
         }
 
         //Fire punch skill
-        if (Input.GetKeyDown(KeyCode.L) && fireCooldown <= 0 && moveCooldown <= 0)
+        if (Input.GetKeyDown(KeyCode.L) && fireCooldown >= 5.0f && moveCooldown <= 0)
         {
-            fireCooldown = 5.0f;
+            fireCooldown = 0;
             Instantiate(fireFistPrefab, transform.position, fireFistPrefab.transform.rotation);
         }
 
-        if (basicCooldown > 0)
+        if (basicCooldown <= 1.0f)
         {
-            basicCooldown = basicCooldown - Time.deltaTime;
+            basicCooldown += Time.deltaTime;
+            UpdatePunch();
         }
 
-        if (sweepCooldown > 0)
+        if (sweepCooldown <= 5.0f)
         {
-            sweepCooldown = sweepCooldown - Time.deltaTime;
+            sweepCooldown += Time.deltaTime;
+            UpdateSweep();
         }
 
-        if (fireCooldown > 0)
+        if (fireCooldown <= 5.0f)
         {
-            fireCooldown = fireCooldown - Time.deltaTime;
+            fireCooldown += Time.deltaTime;
+            UpdateFire();
         }
 
     }
@@ -148,5 +156,18 @@ private int xPOS = 0;
         yield return new WaitForSeconds(.08f);
     }
 
-}
+    public void UpdatePunch()
+    {
+        punchIcon.fillAmount = basicCooldown / 1.0f;
+    }
 
+    public void UpdateSweep()
+    {
+        sweepIcon.fillAmount = sweepCooldown / 5.0f;
+    }
+
+    public void UpdateFire()
+    {
+        fireIcon.fillAmount = fireCooldown / 5.0f;
+    }
+}
