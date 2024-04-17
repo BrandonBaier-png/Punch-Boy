@@ -29,21 +29,23 @@ public class SpikeController : MonoBehaviour
         yield return new WaitForSeconds(1);
 
 
+        GroupAttack g1 = gameObject.AddComponent<GroupAttack>();
+        GroupAttack g2 = gameObject.AddComponent<GroupAttack>();
+        GroupAttack g3 = gameObject.AddComponent<GroupAttack>();
+        GroupAttack g4 = gameObject.AddComponent<GroupAttack>();
+
+
         SpikeCoordinates spikeCoordinates = GameObject.Find("Spike Row Animation").GetComponent<SpikeCoordinates>();
 
 
         //the first row of spikes    
-
-        SpikeBehavior spike1 = spikeCoordinates.getSpike(0, 0).GetComponent<SpikeBehavior>();
-        SpikeBehavior spike2 = spikeCoordinates.getSpike(0, 1).GetComponent<SpikeBehavior>();
-        SpikeBehavior spike3 = spikeCoordinates.getSpike(0, 2).GetComponent<SpikeBehavior>();
-        SpikeBehavior spike4 = spikeCoordinates.getSpike(0, 3).GetComponent<SpikeBehavior>();
-
+        g1.add(0, 0).add(0, 1).add(0, 2).add(0, 3); //can add whatever spikes needed
+ 
         //the second row of spikes
-        SpikeBehavior spike5 = spikeCoordinates.getSpike(1, 0).GetComponent<SpikeBehavior>();
-        SpikeBehavior spike6 = spikeCoordinates.getSpike(1, 1).GetComponent<SpikeBehavior>();
-        SpikeBehavior spike7 = spikeCoordinates.getSpike(1, 2).GetComponent<SpikeBehavior>();
-        SpikeBehavior spike8 = spikeCoordinates.getSpike(1, 3).GetComponent<SpikeBehavior>();
+        g2.add(1, 0);
+        g2.add(1, 1);
+        g2.add(1, 2);
+        g2.add(1, 3);
 
         //the third row of spikes    
         SpikeBehavior spike9 = spikeCoordinates.getSpike(2, 0).GetComponent<SpikeBehavior>();
@@ -59,22 +61,11 @@ public class SpikeController : MonoBehaviour
 
 
         //plays first row
-        StartCoroutine(spike1.DeploySpike());
-        StartCoroutine(spike2.DeploySpike());
-        StartCoroutine(spike3.DeploySpike());
-        StartCoroutine(spike4.DeploySpike());
+        yield return StartCoroutine(g1.attack());
 
-        //waits for 2 seconds
-        yield return new WaitForSeconds(2);
+        yield return StartCoroutine(g2.attack());
+        
 
-        //plays second row
-        StartCoroutine(spike5.DeploySpike());
-        StartCoroutine(spike6.DeploySpike());
-        StartCoroutine(spike7.DeploySpike());
-        StartCoroutine(spike8.DeploySpike());
-
-        //waits for 2 seconds
-        yield return new WaitForSeconds(2);
 
         //plays third row
         StartCoroutine(spike9.DeploySpike());
