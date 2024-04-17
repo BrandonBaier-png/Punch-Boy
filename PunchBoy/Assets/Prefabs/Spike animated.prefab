@@ -124,8 +124,8 @@ MonoBehaviour:
   anim: {fileID: 6261301240472059388}
   fadeLength: 1
   fadingSpeed: 0.05
-  startColor: {r: 0.78431374, g: 0.40392157, b: 0.5686275, a: 0}
-  endColor: {r: 0.9137255, g: 0.13333334, b: 0.11764706, a: 0}
+  startColor: {r: 0.78431374, g: 0.40392157, b: 0.5686275, a: 1}
+  endColor: {r: 0.9137255, g: 0.13333334, b: 0.11764706, a: 1}
 --- !u!114 &-2946728249483279474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3303754354095978567}
   - component: {fileID: 2457960994992136428}
+  - component: {fileID: 7180498187086430855}
   m_Layer: 0
   m_Name: TileChange
   m_TagString: Untagged
@@ -222,3 +223,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &7180498187086430855
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2672808549647728719}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.0000001, z: 0.20000005}
+  m_Center: {x: 0.0000009536743, y: 0, z: 0.00000023841858}

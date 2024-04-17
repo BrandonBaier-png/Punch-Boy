@@ -93,20 +93,5 @@ public class SpikeController : MonoBehaviour
 
         yield return null;
 
-
-
-        /*
-         Debug.Log("getComps start");
-         SpikeCoordinates spikeCoordinates = gameObject.GetComponent<SpikeCoordinates>();
-
-         ArrayList spikeArray = new ArrayList();
-
-         Debug.Log("getComps end");
-
-         yield return new WaitForSeconds(2);
-
-         //StartCoroutine(spikeBehavior.DeploySpike());
-         Debug.Log("deploy called");*/
-
     }
 }

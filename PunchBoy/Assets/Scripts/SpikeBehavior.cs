@@ -14,7 +14,8 @@ public class SpikeBehavior : MonoBehaviour
 {
     public Animator anim;
 
-     SpriteRenderer rend;
+    SpriteRenderer rend;
+    BoxCollider hitBox;
     public float fadeLength = 3f;
     public float fadingSpeed = 0.05f;
     public Color startColor;
@@ -27,11 +28,15 @@ public class SpikeBehavior : MonoBehaviour
 
         anim = GetComponent<Animator>();
         rend = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        hitBox = transform.GetChild(0).GetComponent<BoxCollider>();
+
+
+
 
         /* startFadeToRed();*/
 
-  
-/*        StartCoroutine(DeploySpike());*/
+
+        /*        StartCoroutine(DeploySpike());*/
     }
 
     // Update is called once per frame
@@ -48,18 +53,26 @@ public class SpikeBehavior : MonoBehaviour
 
     public IEnumerator DeploySpike()
     {
-        yield return ToRed();
+      
+        yield return StartCoroutine(ToRed());
+      
+
+        hitBox.enabled = true;
 
         /*startFadeToRed();*/
 
         playAnimation();
+
+        yield return new WaitForSeconds(.95f);
+        hitBox.enabled = false;
         yield return null;
 
     }
 
     IEnumerator ToRed()
     {
-        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        rend.enabled = true;
+
         rend.color = startColor;
         for (float i = 0f; i < fadeLength; i += fadingSpeed)
         {
@@ -70,7 +83,7 @@ public class SpikeBehavior : MonoBehaviour
         Color c = rend.color;
         c.a = 0;
         rend.color = c;
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        rend.enabled = false;
         yield return null;  
     }
 
