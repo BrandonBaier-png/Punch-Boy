@@ -6,9 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Ethan/StartScreen.unity
+    guid: e881b18729a66e441a0ffccaa29fb336
+  - enabled: 1
     path: Assets/Scenes/Ethan/perspective.unity
     guid: a3907da4c339bec4d89948e14409ad50
   - enabled: 1
     path: Assets/Scenes/Ethan/GameOver.unity
     guid: 1d9793d1109c6cf4bbaa3716abb536f0
+  - enabled: 1
+    path: Assets/Scenes/Ethan/GameWin.unity
+    guid: dc3efbaa346b50f43838539747676d91
   m_configObjects: {}

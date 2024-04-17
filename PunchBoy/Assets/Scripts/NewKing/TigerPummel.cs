@@ -39,7 +39,7 @@ public class TigerPummel : MonoBehaviour
 
     IEnumerator CallPummelAttack()
     {
-        while (rounds < 4)
+        while (rounds < 5)
         {
             rounds++;
             PummelAttack();

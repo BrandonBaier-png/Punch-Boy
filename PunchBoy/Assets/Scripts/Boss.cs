@@ -53,7 +53,7 @@ public class Boss : MonoBehaviour
             UpdateHealth();
         }
 
-        if (bossHealth <= 0)
+        if (currentHealth <= 0)
         {
             SceneManager.LoadScene("GameWin");
         }

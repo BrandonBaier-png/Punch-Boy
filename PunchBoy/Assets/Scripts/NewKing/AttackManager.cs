@@ -80,7 +80,7 @@ public class AttackManager : MonoBehaviour
         if (attackCooldown <= 0)
         {
             attackCooldown = BASECOOLDOWN;
-            InitiateAttack();
+            StartCoroutine(InitiateAttack());
             SetAttacking(true);
         }
         else if (!attacking)
@@ -96,7 +96,7 @@ public class AttackManager : MonoBehaviour
     }
 
     // When called, calls the attack 
-    void InitiateAttack()
+    IEnumerator InitiateAttack()
     {
         switch (attackQueue.Dequeue())
         {
@@ -114,7 +114,8 @@ public class AttackManager : MonoBehaviour
                 currentAttack = CoSwipe();
                 break;
         }
-        StartCoroutine(currentAttack);
+        //StartCoroutine(currentAttack);
+        yield return StartCoroutine(currentAttack);
     }
 
     
@@ -192,6 +193,7 @@ public class AttackManager : MonoBehaviour
         GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
         SuperSpunchEvent.Invoke();
 
+        
 
 
         yield return new WaitForSeconds(secondsBetweenSuperSpunchAttack);
@@ -205,6 +207,10 @@ public class AttackManager : MonoBehaviour
         //print("PUMMEL START");
         animator.SetBool("PummelStart", true);
         PummelEvent.Invoke();
+
+        StartCoroutine(waitUntilAttackCleared());
+        
+
         yield return new WaitForSeconds(secondsBetweenAttack);
         animator.SetBool("PummelStart", false);
         SetAttacking(false);
@@ -234,6 +240,15 @@ public class AttackManager : MonoBehaviour
 
     }
 
+    IEnumerator waitUntilAttackCleared()
+    {
+        GameObject[] allSpikes = GameObject.FindGameObjectsWithTag("Spike");
+
+        while (allSpikes.Length > 0)
+        {
+            yield return null;
+        }
+    }
     /*
      * IEnumerator someRoutine() 
      *  {
