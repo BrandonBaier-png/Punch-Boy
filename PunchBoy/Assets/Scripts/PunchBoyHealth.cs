@@ -31,7 +31,7 @@ public class PunchBoyHealth : MonoBehaviour
 
     void OnTriggerEnter(UnityEngine.Collider collision)
     {
-        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        BoxCollider spriteBox = collision.gameObject.GetComponent<BoxCollider>();
         if (collision.tag == "Spike" && ITime <= 0)
         {
             dealtDamage();
@@ -47,6 +47,7 @@ public class PunchBoyHealth : MonoBehaviour
 
     public void dealtDamage()
     {
+        print("Punch Boy Dealt Damage :3");
         currentHealth -= 25;
     }
 
