@@ -6,6 +6,8 @@ public class SpikeController : MonoBehaviour
 {
 
     private List<SpikeBehavior> spikeList = new List<SpikeBehavior>();
+    public Animator spunchTigerAnim;
+    private bool triggerAnim = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +40,8 @@ public class SpikeController : MonoBehaviour
         /*SpikeCoordinates spikeCoordinates = GameObject.Find("Spike Row Animation").GetComponent<SpikeCoordinates>();*/
 
 
-        //fills the first row of spikes    
+        //fills the first row of spikes   
+        spunchTigerAnim.SetTrigger("Spunch");
         g1.add(0, 0).add(0, 1).add(0, 2).add(0, 3).setWaitTime(1); //can add whatever spikes needed
 
         //fills the second row of spikes

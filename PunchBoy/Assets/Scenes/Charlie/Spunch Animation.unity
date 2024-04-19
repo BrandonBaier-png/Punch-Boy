@@ -2705,6 +2705,10 @@ PrefabInstance:
       propertyPath: startColor.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9055130466613369277, guid: 54072f3ea6d2d6f4b90ff708d24f6c88, type: 3}
+      propertyPath: spunchTigerAnim
+      value: 
+      objectReference: {fileID: 1416442817}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
