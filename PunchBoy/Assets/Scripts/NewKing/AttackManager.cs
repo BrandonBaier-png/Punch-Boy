@@ -44,6 +44,7 @@ public class AttackManager : MonoBehaviour
     private Vector3 spawnPos = new Vector3(1.5f, -2, 1.5f);
 
 
+    private bool animationBuffer = false;
     private List<int> baseAttackList = new List<int>() { 0, 1, 2, 3 };
     private List<int> attackList = new List<int>();
     private int secondsBetweenAttack = 4;
@@ -175,19 +176,29 @@ public class AttackManager : MonoBehaviour
     // SPUNCH
     IEnumerator CoSpunch()
     {
-        animator.SetBool("Spunch", true);
+        if (!animationBuffer)
+        {
+            animator.SetTrigger("Spunch");
+            animationBuffer = true;
+        }
 
         GameObject SpunchObject = GameObject.Find("SpunchGameObject");
         SpunchEvent.Invoke();
 
         yield return new WaitForSeconds(secondsBetweenAttack);
-        animator.SetBool("Spunch", false);
+        animator.ResetTrigger("Spunch");
+        animationBuffer = false;
         SetAttacking(false);
     }
     // SUPER SPUNCH
     IEnumerator CoSuperSpunch()
     {
-        animator.SetBool("SuperSpunchPreparing", true);
+        if (!animationBuffer)
+        {
+            animator.SetBool("SuperSpunchPreparing", true);
+            animator.SetTrigger("SuperSpunch");
+            animationBuffer = true;
+        }
 
 
         GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
@@ -199,20 +210,28 @@ public class AttackManager : MonoBehaviour
         yield return new WaitForSeconds(secondsBetweenSuperSpunchAttack);
         DestroyAllSpikes();
         animator.SetBool("SuperSpunchPreparing", false);
+        animator.ResetTrigger("SuperSpunch");
+        animationBuffer = false;
         SetAttacking(false);
     }
     // PUMMEL
     IEnumerator CoPummel()
     {
         //print("PUMMEL START");
-        animator.SetBool("PummelStart", true);
+
+        if (!animationBuffer)
+        {
+            animator.SetTrigger("PummelStarting");
+            animationBuffer = true;
+        }
         PummelEvent.Invoke();
 
         StartCoroutine(waitUntilAttackCleared());
         
 
         yield return new WaitForSeconds(secondsBetweenAttack);
-        animator.SetBool("PummelStart", false);
+        animator.ResetTrigger("PummelStarting");
+        animationBuffer = false;
         SetAttacking(false);
         //print("PUMMEL END");
 
@@ -220,13 +239,18 @@ public class AttackManager : MonoBehaviour
     // SWIPE
     IEnumerator CoSwipe()
     {
-        animator.SetBool("SwipeStart", true);
+        if (!animationBuffer)
+        {
+            animator.SetTrigger("Swipe");
+            animationBuffer = true;
+        }
 
         GameObject SwipeGameObject = GameObject.Find("SwipeGameObject");
         SwipeEvent.Invoke();
 
         yield return new WaitForSeconds(secondsBetweenAttack);
-        animator.SetBool("SwipeStart", false);
+        animator.ResetTrigger("Swipe");
+        animationBuffer = false;
         SetAttacking(false);
     }
 
