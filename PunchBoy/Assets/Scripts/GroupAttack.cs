@@ -6,19 +6,19 @@ using UnityEngine;
 public class GroupAttack : MonoBehaviour, Interface
 {
     SpikeCoordinates spikeCoordinates;
-
+    private float waitTime = 0.5f;
     List<SpikeBehavior> spikeList;
 
     public IEnumerator attack()
     {
-        Debug.Log("loop started");
-        for(int  i = 0; i < spikeList.Count - 1; i++)
+        /*Debug.Log("loop started");*/
+        for(int  i = 0; i < spikeList.Count; i++)
         {
-            Debug.Log("deploying spikes-> " + spikeList[i]);
+           /* Debug.Log("deploying spikes-> " + spikeList[i]);*/
             StartCoroutine(spikeList[i].DeploySpike());
         }
-        Debug.Log("starting coroutine");
-        yield return StartCoroutine(spikeList[spikeList.Count - 1].DeploySpike());
+        /*Debug.Log("starting coroutine");*/
+        yield return new WaitForSeconds(waitTime);
     }
 
     // Start is called before the first frame update
@@ -43,4 +43,11 @@ public class GroupAttack : MonoBehaviour, Interface
     {
         
     }
+
+    public GroupAttack setWaitTime(float newWaitTime)
+    {
+        this.waitTime = newWaitTime;
+        return this;
+    }
+
 }
