@@ -8,6 +8,7 @@ public class SpikeController : MonoBehaviour
     private List<SpikeBehavior> spikeList = new List<SpikeBehavior>();
     public Animator spunchTigerAnim;
     private bool triggerAnim = false;
+    private float spikeWaitTime = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -41,31 +42,43 @@ public class SpikeController : MonoBehaviour
 
 
         //fills the first row of spikes   
-        spunchTigerAnim.SetTrigger("Spunch");
-        g1.add(0, 0).add(0, 1).add(0, 2).add(0, 3).setWaitTime(1); //can add whatever spikes needed
+        g1.add(0, 0).add(0, 1).add(0, 2).add(0, 3).setWaitTime(spikeWaitTime); //can add whatever spikes needed
 
         //fills the second row of spikes
-        g2.add(1, 0).add(1, 1).add(1, 2).add(1, 3).setWaitTime(1);
+  
+        g2.add(1, 0).add(1, 1).add(1, 2).add(1, 3).setWaitTime(spikeWaitTime);
 
         //fills the third row of spikes    
-        g3.add(2, 0).add(2, 1).add(2, 2).add(2, 3).setWaitTime(1);
+        g3.add(2, 0).add(2, 1).add(2, 2).add(2, 3).setWaitTime(spikeWaitTime);
 
         //fills the fourth row of spikes
-        g4.add(3, 0).add(3, 1).add(3, 2).add(3, 3).setWaitTime(1);
+        g4.add(3, 0).add(3, 1).add(3, 2).add(3, 3).setWaitTime(spikeWaitTime);
 
 
 
         //plays first row
+        spunchTigerAnim.SetTrigger("Spunch");
         yield return StartCoroutine(g1.attack());
+        spunchTigerAnim.ResetTrigger("Spunch");
+        yield return new WaitForSeconds(spikeWaitTime);
 
         //plays second row
+        spunchTigerAnim.SetTrigger("Spunch");
         yield return StartCoroutine(g2.attack());
+        spunchTigerAnim.ResetTrigger("Spunch");
+        yield return new WaitForSeconds(spikeWaitTime);
 
         //plays third row
+        spunchTigerAnim.SetTrigger("Spunch");
         yield return StartCoroutine(g3.attack());
+        spunchTigerAnim.ResetTrigger("Spunch");
+        yield return new WaitForSeconds(spikeWaitTime);
 
         //plays fourth row
+        spunchTigerAnim.SetTrigger("Spunch");
         yield return StartCoroutine(g4.attack());
+        spunchTigerAnim.ResetTrigger("Spunch");
+
 
         yield return null;
 
