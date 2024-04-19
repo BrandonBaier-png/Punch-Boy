@@ -39,16 +39,16 @@ public class SpikeController : MonoBehaviour
 
 
         //fills the first row of spikes    
-        g1.add(0, 0).add(0, 1).add(0, 2).add(0, 3).setWaitTime(0.75f); //can add whatever spikes needed
+        g1.add(0, 0).add(0, 1).add(0, 2).add(0, 3).setWaitTime(1); //can add whatever spikes needed
 
         //fills the second row of spikes
         g2.add(1, 0).add(1, 1).add(1, 2).add(1, 3).setWaitTime(1);
 
         //fills the third row of spikes    
-        g3.add(2, 0).add(2, 1).add(2, 2).add(2, 3);
+        g3.add(2, 0).add(2, 1).add(2, 2).add(2, 3).setWaitTime(1);
 
         //fills the fourth row of spikes
-        g4.add(3, 0).add(3, 1).add(3, 2).add(3, 3);
+        g4.add(3, 0).add(3, 1).add(3, 2).add(3, 3).setWaitTime(1);
 
 
 
