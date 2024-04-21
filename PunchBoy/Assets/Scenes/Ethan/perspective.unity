@@ -4184,6 +4184,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spunchTigerAnim: {fileID: 1829014378}
+  PummelPrefab: {fileID: 2229207107116478058, guid: 35ee2250f9e8d6346bda6a00386076f4, type: 3}
+  Pummel2d: {fileID: 5264231016075401504, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
+  secondsBetweenAttack: 2
 --- !u!4 &1903634090
 Transform:
   m_ObjectHideFlags: 0

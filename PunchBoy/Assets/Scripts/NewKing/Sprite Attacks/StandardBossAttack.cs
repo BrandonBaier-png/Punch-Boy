@@ -28,8 +28,8 @@ public class StandardBossAttack : MonoBehaviour
     {
         if (activeAttack)
         {
-            //print("SUPERSPUNCH ACTIVE");
             StartCoroutine(attackPattern());
+            ResetAttack();
             CurrentAttack(false);
         }
     }
@@ -50,4 +50,7 @@ public class StandardBossAttack : MonoBehaviour
     {
         activeAttack = true;
     }
+
+    // Method to be overridden by each class's needs to reset the attack state for the next call
+    public virtual void ResetAttack() { }
 }

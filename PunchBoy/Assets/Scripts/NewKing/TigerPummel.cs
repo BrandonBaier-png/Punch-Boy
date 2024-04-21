@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*
+ * THIS PUMMEL FOCUSES ON THE 3D VERSION OF THE LOGIC, CODE IS BEING TRANSPORTED TO 2D LOGIC IN PummelSprite.cs
+ * 
+ * -Brandon Baier
+ * 
+ */
+
 public class TigerPummel : MonoBehaviour
 {
     [SerializeField] private Object PummelPrefab;

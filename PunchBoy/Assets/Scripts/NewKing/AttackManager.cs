@@ -146,7 +146,9 @@ public class AttackManager : MonoBehaviour
         //attackQueue.Enqueue(2);
 
 
-        attackQueue.Enqueue(2);
+        //attackQueue.Enqueue(2);
+        //attackQueue.Enqueue(2);
+        //attackQueue.Enqueue(2);
         attackQueue.Enqueue(0);
         attackQueue.Enqueue(1);
         attackQueue.Enqueue(2);
@@ -221,7 +223,7 @@ public class AttackManager : MonoBehaviour
     // PUMMEL
     IEnumerator CoPummel()
     {
-        print("PUMMEL START");
+        print("PUMMEL ATTACK MANAGER");
 
         if (!animationBuffer)
         {
@@ -230,7 +232,7 @@ public class AttackManager : MonoBehaviour
         }
         PummelEvent.Invoke();
 
-        StartCoroutine(waitUntilAttackCleared());
+        //StartCoroutine(waitUntilAttackCleared());
         
 
         yield return new WaitForSeconds(secondsBetweenAttack);
