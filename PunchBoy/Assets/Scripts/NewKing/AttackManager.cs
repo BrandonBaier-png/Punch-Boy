@@ -138,7 +138,7 @@ public class AttackManager : MonoBehaviour
         /*
          * 0 - Spunch
          * 1 - Super Spunch
-         * 2 - Pummmel (currently also Spunch)
+         * 2 - Pummmel 
          * 3 - Swipe
          */
 
@@ -146,6 +146,7 @@ public class AttackManager : MonoBehaviour
         //attackQueue.Enqueue(2);
 
 
+        attackQueue.Enqueue(2);
         attackQueue.Enqueue(0);
         attackQueue.Enqueue(1);
         attackQueue.Enqueue(2);
@@ -220,7 +221,7 @@ public class AttackManager : MonoBehaviour
     // PUMMEL
     IEnumerator CoPummel()
     {
-        //print("PUMMEL START");
+        print("PUMMEL START");
 
         if (!animationBuffer)
         {

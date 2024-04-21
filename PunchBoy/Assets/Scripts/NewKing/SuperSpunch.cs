@@ -15,10 +15,7 @@ using UnityEngine.Events;
  * 
  */
 
-public class SpikeInheritor : SpikeController
-{
-  
-}
+
 public class SuperSpunch : MonoBehaviour
 {
     Rigidbody rigidbodyDespawner;
