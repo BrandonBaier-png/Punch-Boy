@@ -99,6 +99,7 @@ public class AttackManager : MonoBehaviour
     // When called, calls the attack 
     IEnumerator InitiateAttack()
     {
+        
         switch (attackQueue.Dequeue())
         {
             case 0:
@@ -143,11 +144,13 @@ public class AttackManager : MonoBehaviour
 
         //MAKE RANDOM
         //attackQueue.Enqueue(2);
-        attackQueue.Enqueue(2);
-        attackQueue.Enqueue(2);
-        attackQueue.Enqueue(1);
-        attackQueue.Enqueue(3);
+
+
         attackQueue.Enqueue(0);
+        attackQueue.Enqueue(1);
+        attackQueue.Enqueue(2);
+        attackQueue.Enqueue(3);
+        
         
         
         //attackQueue.Enqueue(2);

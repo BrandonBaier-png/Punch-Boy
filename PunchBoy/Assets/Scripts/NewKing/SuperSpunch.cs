@@ -14,6 +14,11 @@ using UnityEngine.Events;
  * Author - Brandon Baier 
  * 
  */
+
+public class SpikeInheritor : SpikeController
+{
+  
+}
 public class SuperSpunch : MonoBehaviour
 {
     Rigidbody rigidbodyDespawner;
@@ -67,8 +72,8 @@ public class SuperSpunch : MonoBehaviour
         yield return new WaitForSeconds(spunchTimer);
         if (TempBossHealth > 0)
         {
-            Invoke("spawnSpikes", 0);
-            
+            GroupAttack g1 = gameObject.AddComponent<GroupAttack>();
+
         }
         yield return new WaitForSeconds(1);
 
@@ -109,4 +114,8 @@ public class SuperSpunch : MonoBehaviour
         TempBossHealth = BASETEMPBOSSHEALTH;
         spunchTimer = BASESPUNCHTIMER;
     }
+
+    
+
 }
+

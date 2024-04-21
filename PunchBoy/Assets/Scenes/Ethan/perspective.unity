@@ -982,6 +982,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &604120089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 604120091}
+  - component: {fileID: 604120090}
+  m_Layer: 0
+  m_Name: 2dSpunchGameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &604120090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604120089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb09196da062ecc40a2eda0776a1d795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spunchTigerAnim: {fileID: 1829014378}
+--- !u!4 &604120091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604120089}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.7410192, y: -1.5111254, z: 11.704577}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &614971565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1648,11 +1693,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 797729218}
+  - component: {fileID: 797729219}
+  - component: {fileID: 797729220}
   - component: {fileID: 797729217}
   - component: {fileID: 797729216}
-  - component: {fileID: 797729219}
   - component: {fileID: 797729221}
-  - component: {fileID: 797729220}
   - component: {fileID: 797729222}
   m_Layer: 0
   m_Name: PunchBoySprite
@@ -1902,8 +1947,8 @@ MonoBehaviour:
   SpunchEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2073884577}
-        m_TargetAssemblyTypeName: NewSpunch, Assembly-CSharp
+      - m_Target: {fileID: 604120090}
+        m_TargetAssemblyTypeName: SpikeController, Assembly-CSharp
         m_MethodName: EnableAttack
         m_Mode: 1
         m_Arguments:
@@ -4326,6 +4371,7 @@ SceneRoots:
   - {fileID: 1358801515}
   - {fileID: 2073884578}
   - {fileID: 1000055066}
+  - {fileID: 604120091}
   - {fileID: 1546221626}
   - {fileID: 1436549005}
   - {fileID: 1067630466}

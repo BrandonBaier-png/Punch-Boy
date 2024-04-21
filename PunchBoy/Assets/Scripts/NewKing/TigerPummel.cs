@@ -53,7 +53,7 @@ public class TigerPummel : MonoBehaviour
     public void PummelAttack()
     {
   
-            print("PUMMEL HAS BEEN CALLED :3");
+            print("PUMMEL HAS BEEN CALLED");
             if (GameObject.Find("punchBoy").transform.position.x <= 1 && GameObject.Find("punchBoy").transform.position.x >= 0)
             {
                 if (GameObject.Find("punchBoy").transform.position.z <= 1 && GameObject.Find("punchBoy").transform.position.z >= 0)

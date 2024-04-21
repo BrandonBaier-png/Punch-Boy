@@ -9,6 +9,8 @@ public class SpikeController : MonoBehaviour
     public Animator spunchTigerAnim;
     private bool triggerAnim = false;
     private float spikeWaitTime = 0.5f;
+    private bool activeAttack = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,14 +21,15 @@ public class SpikeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    /*    if(Input.GetKeyDown(KeyCode.M))
+        if (activeAttack)
         {
-             StartCoroutine(playSpikes());
-        }*/
+            //print("SUPERSPUNCH ACTIVE");
+            StartCoroutine(playSpikes());
+            CurrentAttack(false);
+        }
     }
 
-    IEnumerator playSpikes()
+    public IEnumerator playSpikes()
     {
 
         yield return new WaitForSeconds(1);
@@ -82,5 +85,18 @@ public class SpikeController : MonoBehaviour
 
         yield return null;
 
+    }
+
+    public void CurrentAttack(bool value)
+    {
+        //print("SUPERSPUNCHCALLED");
+        activeAttack = value;
+    }
+
+    public void EnableAttack()
+    {
+        print("Super Spunch Enabled");
+        //print("SUPERSPUNCHCALLEDTHISI ONE!!!");
+        activeAttack = true;
     }
 }
