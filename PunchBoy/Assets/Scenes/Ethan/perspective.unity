@@ -2015,8 +2015,8 @@ MonoBehaviour:
   SwipeEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436549006}
-        m_TargetAssemblyTypeName: TigerSwipe, Assembly-CSharp
+      - m_Target: {fileID: 1178230845}
+        m_TargetAssemblyTypeName: StandardBossAttack, Assembly-CSharp
         m_MethodName: EnableAttack
         m_Mode: 1
         m_Arguments:
@@ -2874,6 +2874,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101510137}
   m_CullTransparentMesh: 1
+--- !u!1 &1178230844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1178230846}
+  - component: {fileID: 1178230845}
+  m_Layer: 0
+  m_Name: 2dSwipeController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1178230845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178230844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4bc0a1a8d2df57428b0c70918adb6a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spunchTigerAnim: {fileID: 1829014378}
+--- !u!4 &1178230846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178230844}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.52176, y: -1.0434875, z: 2.6104844}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1248522272
 GameObject:
   m_ObjectHideFlags: 0
@@ -4302,7 +4347,7 @@ Transform:
   m_GameObject: {fileID: 1738350566}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.37, y: 0.85, z: -4.47}
+  m_LocalPosition: {x: -12.37, y: 0.85, z: -6.39}
   m_LocalScale: {x: 4.54, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4943,6 +4988,7 @@ SceneRoots:
   - {fileID: 1000055066}
   - {fileID: 604120091}
   - {fileID: 1903634090}
+  - {fileID: 1178230846}
   - {fileID: 1546221626}
   - {fileID: 1436549005}
   - {fileID: 1067630466}
