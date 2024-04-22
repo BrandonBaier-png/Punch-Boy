@@ -2331,6 +2331,10 @@ MonoBehaviour:
   punchIcon: {fileID: 107756917}
   sweepIcon: {fileID: 1520933878}
   fireIcon: {fileID: 1903277184}
+  source: {fileID: 0}
+  punchAudio: {fileID: 0}
+  sweepAudio: {fileID: 0}
+  fireAudio: {fileID: 0}
 --- !u!65 &1034529620
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3356,7 +3360,7 @@ Transform:
   m_GameObject: {fileID: 1455473449}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.37, y: 0.85, z: -4.47}
+  m_LocalPosition: {x: -12.37, y: 0.85, z: -6.39}
   m_LocalScale: {x: 4.54, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

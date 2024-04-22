@@ -215,7 +215,7 @@ public class AttackManager : MonoBehaviour
 
 
         yield return new WaitForSeconds(secondsBetweenSuperSpunchAttack);
-        DestroyAllSpikes();
+        //DestroyAllSpikes();
         animator.SetBool("SuperSpunchPreparing", false);
         animator.ResetTrigger("SuperSpunch");
         animationBuffer = false;
