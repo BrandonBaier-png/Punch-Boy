@@ -103,6 +103,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
         {
             basicCooldown = 0;
             Instantiate(basicPunchPrefab, transform.position, basicPunchPrefab.transform.rotation);
+            moveCooldown = .3f;
         }
 
         //Sweep skill
@@ -110,6 +111,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
         {
             sweepCooldown = 0;
             StartCoroutine(SweepRoutine());
+            moveCooldown = .3f;
         }
 
         //Fire punch skill
@@ -117,6 +119,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
         {
             fireCooldown = 0;
             Instantiate(fireFistPrefab, transform.position, fireFistPrefab.transform.rotation);
+            moveCooldown = .3f;
         }
 
         if (basicCooldown <= 1.0f)
