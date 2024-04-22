@@ -2331,6 +2331,10 @@ MonoBehaviour:
   punchIcon: {fileID: 107756917}
   sweepIcon: {fileID: 1520933878}
   fireIcon: {fileID: 1903277184}
+  source: {fileID: 0}
+  punchAudio: {fileID: 0}
+  sweepAudio: {fileID: 0}
+  fireAudio: {fileID: 0}
 --- !u!65 &1034529620
 BoxCollider:
   m_ObjectHideFlags: 0
