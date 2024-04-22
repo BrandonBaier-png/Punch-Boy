@@ -29,11 +29,9 @@ public class PlayerController : MonoBehaviour, IMovementActions
     private float fireCooldown = 5.0f;
     private float moveCooldown = 0.0f;
 
-    public AudioSource source;
-    public AudioClip punchAudio;
-    public AudioClip sweepAudio;
-    public AudioClip fireAudio;
-
+    public AudioSource fireAudio;
+    public AudioSource sweepAudio;
+    public AudioSource punchAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -102,6 +100,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
         if (Input.GetKeyDown(KeyCode.J) && basicCooldown >= 1.0f && moveCooldown <= 0)
         {
             basicCooldown = 0;
+            punchAudio.Play();
             Instantiate(basicPunchPrefab, transform.position, basicPunchPrefab.transform.rotation);
         }
 
@@ -109,6 +108,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
         if (Input.GetKeyDown(KeyCode.K) && sweepCooldown >= 5.0f && moveCooldown <= 0)
         {
             sweepCooldown = 0;
+            sweepAudio.Play();
             StartCoroutine(SweepRoutine());
         }
 
@@ -117,10 +117,11 @@ public class PlayerController : MonoBehaviour, IMovementActions
         {
             fireCooldown = 0;
             Instantiate(fireFistPrefab, transform.position, fireFistPrefab.transform.rotation);
+            fireAudio.Play();
         }
 
         if (basicCooldown <= 1.0f)
-        {
+        { 
             basicCooldown += Time.deltaTime;
             UpdatePunch();
         }

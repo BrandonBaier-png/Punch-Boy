@@ -20,7 +20,7 @@ public class SpikeInheritor : StandardBossAttack
     private float height = 5f;
     public int secondsBetweenAttack = 2;
 
-    
+    public AudioSource spikeAudio;
 
     public override IEnumerator attackPattern()
     {
@@ -38,6 +38,7 @@ public class SpikeInheritor : StandardBossAttack
         {
             rounds++;
             StartCoroutine(PummelAttack());
+            StartCoroutine(AudioController());
 
             yield return new WaitForSeconds(1.5f);
         }
@@ -109,5 +110,12 @@ public class SpikeInheritor : StandardBossAttack
     public override void ResetAttack()
     {
         rounds = 0;
+    }
+
+    IEnumerator AudioController()
+    {
+        yield return new WaitForSeconds(1.0f);
+
+        spikeAudio.Play();
     }
 }

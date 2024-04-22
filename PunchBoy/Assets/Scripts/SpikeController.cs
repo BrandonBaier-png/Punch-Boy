@@ -11,6 +11,8 @@ public class SpikeController : MonoBehaviour
     private float spikeWaitTime = 0.5f;
     private bool activeAttack = false;
 
+    public AudioSource spikesAudio;
+
 
     // Start is called before the first frame update
     void Start()
@@ -60,24 +62,28 @@ public class SpikeController : MonoBehaviour
 
 
         //plays first row
+        spikesAudio.Play();
         spunchTigerAnim.SetTrigger("Spunch");
         yield return StartCoroutine(g1.attack());
         spunchTigerAnim.ResetTrigger("Spunch");
         yield return new WaitForSeconds(spikeWaitTime);
 
         //plays second row
+        spikesAudio.Play();
         spunchTigerAnim.SetTrigger("Spunch");
         yield return StartCoroutine(g2.attack());
         spunchTigerAnim.ResetTrigger("Spunch");
         yield return new WaitForSeconds(spikeWaitTime);
 
         //plays third row
+        spikesAudio.Play();
         spunchTigerAnim.SetTrigger("Spunch");
         yield return StartCoroutine(g3.attack());
         spunchTigerAnim.ResetTrigger("Spunch");
         yield return new WaitForSeconds(spikeWaitTime);
 
         //plays fourth row
+        spikesAudio.Play();
         spunchTigerAnim.SetTrigger("Spunch");
         yield return StartCoroutine(g4.attack());
         spunchTigerAnim.ResetTrigger("Spunch");
