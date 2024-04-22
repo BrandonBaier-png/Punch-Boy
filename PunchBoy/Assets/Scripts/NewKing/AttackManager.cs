@@ -227,7 +227,7 @@ public class AttackManager : MonoBehaviour
 
         if (!animationBuffer)
         {
-            animator.SetTrigger("PummelStarting");
+            animator.SetTrigger("PummelStart");
             animationBuffer = true;
         }
         PummelEvent.Invoke();
@@ -236,7 +236,7 @@ public class AttackManager : MonoBehaviour
         
 
         yield return new WaitForSeconds(secondsBetweenAttack);
-        animator.ResetTrigger("PummelStarting");
+        animator.ResetTrigger("PummelStart");
         animationBuffer = false;
         SetAttacking(false);
         //print("PUMMEL END");
