@@ -148,17 +148,16 @@ public class AttackManager : MonoBehaviour
 
         //attackQueue.Enqueue(2);
         //attackQueue.Enqueue(2);
-        attackQueue.Enqueue(3);
+        attackQueue.Enqueue(2);
         attackQueue.Enqueue(0);
-        //attackQueue.Enqueue(2);
         attackQueue.Enqueue(1);
         attackQueue.Enqueue(2);
         attackQueue.Enqueue(3);
-
-
-
+        
+        
+        
         //attackQueue.Enqueue(2);
-
+        
     }
 
     //void EnqueueBossAttacks()
@@ -215,7 +214,7 @@ public class AttackManager : MonoBehaviour
 
 
         yield return new WaitForSeconds(secondsBetweenSuperSpunchAttack);
-        //DestroyAllSpikes();
+        DestroyAllSpikes();
         animator.SetBool("SuperSpunchPreparing", false);
         animator.ResetTrigger("SuperSpunch");
         animationBuffer = false;
