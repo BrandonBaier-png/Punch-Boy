@@ -51,7 +51,7 @@ public class SwipeSprite : StandardBossAttack
         wave1row1.add(0, 0).setWaitTime(secondsBetweenAttack);
         wave1row2.add(0, 1).add(1, 1).setWaitTime(secondsBetweenAttack);
         wave1row3.add(0, 2).add(1, 2).add(2, 2).setWaitTime(secondsBetweenAttack);
-        wave1row4.add(0, 3).add(1, 3).add(2, 3).add(3, 3).setWaitTime(secondsBetweenAttackWave);
+        wave1row4.add(0, 3).add(1, 3).add(2, 3).add(3, 3).setWaitTime(secondsBetweenAttackWave); //extra delay to wait for the previous spikes to return
 
         wave2row4.add(0, 3).setWaitTime(secondsBetweenAttack);
         wave2row3.add(0, 2).add(1, 2).setWaitTime(secondsBetweenAttack);
@@ -66,54 +66,5 @@ public class SwipeSprite : StandardBossAttack
         yield return StartCoroutine(wave2row3.attack());
         yield return StartCoroutine(wave2row2.attack());
         yield return StartCoroutine(wave2row1.attack());
-
-        ////spawnPos = new Vector3(0, .5f, 3);
-
-        //yield return new WaitForSeconds(1);
-
-        //Instantiate(Wave1Prefab, spawnPos, Wave1Prefab.transform.rotation);
-        //yield return new WaitForSeconds(.05f);
-        //spawnPos[0] = spawnPos[0] + 1;
-        //spawnPos[2] = spawnPos[2] - .5f;
-
-        //Instantiate(Wave2Prefab, spawnPos, Wave2Prefab.transform.rotation);
-        //yield return new WaitForSeconds(.05f);
-        //spawnPos[0] = spawnPos[0] + 1;
-        //spawnPos[2] = spawnPos[2] - .5f;
-
-        //Instantiate(Wave3Prefab, spawnPos, Wave3Prefab.transform.rotation);
-        //yield return new WaitForSeconds(.05f);
-        //spawnPos[0] = spawnPos[0] + 1;
-        //spawnPos[2] = spawnPos[2] - .5f;
-
-        //Instantiate(Wave4Prefab, spawnPos, Wave4Prefab.transform.rotation);
-        //yield return new WaitForSeconds(.05f);
-        //spawnPos[0] = 3;
-        //spawnPos[2] = 3;
-
-        //yield return new WaitForSeconds(.75f);
-
-        //Instantiate(Wave1Prefab, spawnPos, Wave1Prefab.transform.rotation);
-        //yield return new WaitForSeconds(.05f);
-        //spawnPos[0] = spawnPos[0] - 1;
-        //spawnPos[2] = spawnPos[2] - .5f;
-
-        //Instantiate(Wave2Prefab, spawnPos, Wave2Prefab.transform.rotation);
-        //yield return new WaitForSeconds(.05f);
-        //spawnPos[0] = spawnPos[0] - 1;
-        //spawnPos[2] = spawnPos[2] - .5f;
-
-        //Instantiate(Wave3Prefab, spawnPos, Wave3Prefab.transform.rotation);
-        //yield return new WaitForSeconds(.05f);
-        //spawnPos[0] = spawnPos[0] - 1;
-        //spawnPos[2] = spawnPos[2] - .5f;
-
-        //Instantiate(Wave4Prefab, spawnPos, Wave4Prefab.transform.rotation);
-        //yield return new WaitForSeconds(.05f);
-        //spawnPos[0] = spawnPos[0] - 1;
-        //spawnPos[2] = spawnPos[2] - .5f;
-
-        //activeAttack = false;
-        //yield return null;
     }
 }
