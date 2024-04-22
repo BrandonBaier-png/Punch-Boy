@@ -3,7 +3,11 @@ guid: db4dc554b10e9434d8c2c2689080f355
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Wave1Prefab: {fileID: 8364311906625506186, guid: 6a7c30090c7173b42a774a6d96829e3f, type: 3}
+  - Wave2Prefab: {fileID: 8301138045493930009, guid: 6651f1ac1956ce141837ce710480c67c, type: 3}
+  - Wave3Prefab: {fileID: 7429573846391468474, guid: 56535840ae178c94bb6641f1599c3d8e, type: 3}
+  - Wave4Prefab: {fileID: 3752425959887593844, guid: e2116303757240e4a88535463c63776f, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

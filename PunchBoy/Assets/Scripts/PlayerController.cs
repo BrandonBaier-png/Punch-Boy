@@ -29,6 +29,11 @@ public class PlayerController : MonoBehaviour, IMovementActions
     private float fireCooldown = 5.0f;
     private float moveCooldown = 0.0f;
 
+    public AudioSource source;
+    public AudioClip punchAudio;
+    public AudioClip sweepAudio;
+    public AudioClip fireAudio;
+
 
     // Start is called before the first frame update
     void Start()
