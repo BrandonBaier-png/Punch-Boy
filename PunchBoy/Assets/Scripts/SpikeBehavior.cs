@@ -56,7 +56,7 @@ public class SpikeBehavior : MonoBehaviour
       
         yield return StartCoroutine(ToRed());
       
-
+        // Seems like this code is causing issues / breaking it, not sure why
         hitBox.enabled = true;
 
         /*startFadeToRed();*/

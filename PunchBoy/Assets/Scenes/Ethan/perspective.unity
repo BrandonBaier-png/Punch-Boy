@@ -510,7 +510,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -44.7, y: 46.5}
+  m_AnchoredPosition: {x: -44.69995, y: 46.5}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &126221337
@@ -1886,8 +1886,8 @@ MonoBehaviour:
   SwipeEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1436549006}
-        m_TargetAssemblyTypeName: TigerSwipe, Assembly-CSharp
+      - m_Target: {fileID: 1233963702}
+        m_TargetAssemblyTypeName: StandardBossAttack, Assembly-CSharp
         m_MethodName: EnableAttack
         m_Mode: 1
         m_Arguments:
@@ -2614,6 +2614,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101510137}
   m_CullTransparentMesh: 1
+--- !u!1 &1233963700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1233963701}
+  - component: {fileID: 1233963702}
+  m_Layer: 0
+  m_Name: 2dSwipeController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1233963701
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233963700}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.074922, y: -0.17902993, z: 3.0122252}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1233963702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233963700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4bc0a1a8d2df57428b0c70918adb6a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spunchTigerAnim: {fileID: 1829014378}
 --- !u!1 &1248522272
 GameObject:
   m_ObjectHideFlags: 0
@@ -4519,6 +4564,7 @@ SceneRoots:
   - {fileID: 1000055066}
   - {fileID: 604120091}
   - {fileID: 1903634090}
+  - {fileID: 1233963701}
   - {fileID: 1546221626}
   - {fileID: 1436549005}
   - {fileID: 1067630466}

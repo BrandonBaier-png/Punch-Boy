@@ -148,16 +148,17 @@ public class AttackManager : MonoBehaviour
 
         //attackQueue.Enqueue(2);
         //attackQueue.Enqueue(2);
-        attackQueue.Enqueue(2);
+        attackQueue.Enqueue(3);
         attackQueue.Enqueue(0);
+        //attackQueue.Enqueue(2);
         attackQueue.Enqueue(1);
         attackQueue.Enqueue(2);
         attackQueue.Enqueue(3);
-        
-        
-        
+
+
+
         //attackQueue.Enqueue(2);
-        
+
     }
 
     //void EnqueueBossAttacks()
