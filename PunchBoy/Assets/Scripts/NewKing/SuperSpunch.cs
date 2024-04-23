@@ -42,7 +42,8 @@ public class SuperSpunch : MonoBehaviour
     public float bossConcen = 20;
 
     private bool activeAttack = false;
-    
+
+    public AudioSource spikeAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -78,6 +79,7 @@ public class SuperSpunch : MonoBehaviour
 
     public void spawnSpikes()
     {
+        spikeAudio.Play();
         Instantiate(spikeRow, spawnPos, spikeRow.transform.rotation);
         ResetAttack();
     }

@@ -14,6 +14,8 @@ public class TigerSwipe : MonoBehaviour
     public GameObject Wave4Prefab;
     private bool activeAttack = false;
 
+    public AudioSource swipeAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,7 @@ public class TigerSwipe : MonoBehaviour
 
         yield return new WaitForSeconds(1);
 
+        swipeAudio.Play();
         Instantiate(Wave1Prefab, spawnPos, Wave1Prefab.transform.rotation);
         yield return new WaitForSeconds(.05f);
         spawnPos[0] = spawnPos[0] + 1;
@@ -65,6 +68,7 @@ public class TigerSwipe : MonoBehaviour
 
         yield return new WaitForSeconds(.75f);
 
+        swipeAudio.Play();
         Instantiate(Wave1Prefab, spawnPos, Wave1Prefab.transform.rotation);
         yield return new WaitForSeconds(.05f);
         spawnPos[0] = spawnPos[0] - 1;
