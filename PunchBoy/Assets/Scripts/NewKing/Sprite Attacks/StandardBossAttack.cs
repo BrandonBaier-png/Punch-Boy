@@ -53,4 +53,9 @@ public class StandardBossAttack : MonoBehaviour
 
     // Method to be overridden by each class's needs to reset the attack state for the next call
     public virtual void ResetAttack() { }
+
+    public bool AttackStatus()
+    {
+        return activeAttack;
+    }
 }

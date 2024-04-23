@@ -1690,19 +1690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BossDamaged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1358801516}
-        m_TargetAssemblyTypeName: SuperSpunch, Assembly-CSharp
-        m_MethodName: RemoveTempHitpoints
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 10
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   healthBar: {fileID: 1462939010}
 --- !u!23 &762248703
 MeshRenderer:
@@ -2030,8 +2018,8 @@ MonoBehaviour:
   SuperSpunchEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1358801516}
-        m_TargetAssemblyTypeName: SuperSpunch, Assembly-CSharp
+      - m_Target: {fileID: 1711761625}
+        m_TargetAssemblyTypeName: StandardBossAttack, Assembly-CSharp
         m_MethodName: EnableAttack
         m_Mode: 1
         m_Arguments:
@@ -4322,6 +4310,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1711761624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1711761626}
+  - component: {fileID: 1711761625}
+  m_Layer: 0
+  m_Name: 2dSuperSpunchController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1711761625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711761624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f406cafe2a8d86e44b5911d63d18fcc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spunchTigerAnim: {fileID: 1829014378}
+--- !u!4 &1711761626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711761624}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5530941, y: -0.9538199, z: 9.612583}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1738350566
 GameObject:
   m_ObjectHideFlags: 0
@@ -4989,6 +5022,7 @@ SceneRoots:
   - {fileID: 604120091}
   - {fileID: 1903634090}
   - {fileID: 1178230846}
+  - {fileID: 1711761626}
   - {fileID: 1546221626}
   - {fileID: 1436549005}
   - {fileID: 1067630466}

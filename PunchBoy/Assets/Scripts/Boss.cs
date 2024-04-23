@@ -9,10 +9,13 @@ using UnityEngine.UI;
 //public delegate void HealthChanged(Boss newKing,
 //    int oldHealth, int newHealth);
 
-public delegate void BossHit();
+
+public delegate void BossHit(float damage);
 public class Boss : MonoBehaviour
 {
+    SuperSpunchSprite superSpunchSprite;
     public UnityEvent BossDamaged;
+    public BossHit onBossHit;
 
     //private float bossConcenInitial = 20;
     //private float bossConcen = 20;
@@ -39,7 +42,12 @@ public class Boss : MonoBehaviour
     {
         if (other.CompareTag("FireFist") || other.CompareTag("Sweep"))
         {
-            BossHit(fireFistDamage);
+
+
+            // the bossHits below were BossHit before
+
+
+            dealBossDamage(fireFistDamage);
             Debug.Log(bossHealth);
             Destroy(other.gameObject);
             UpdateHealth();
@@ -47,7 +55,7 @@ public class Boss : MonoBehaviour
 
         if (other.CompareTag("BasicPunch"))
         {
-            BossHit(basicPunchDamage);
+            dealBossDamage(basicPunchDamage);
             Debug.Log(bossHealth);
             Destroy(other.gameObject);
             UpdateHealth();
@@ -59,13 +67,34 @@ public class Boss : MonoBehaviour
         }
         Debug.Log(bossHealth);
 
-        BossDamaged.Invoke();
 
     }
 
-    private void BossHit(float damage)
+    private void dealBossDamage(float damage)
     {
         currentHealth -= damage;
+        if (onBossHit != null)
+        {
+            onBossHit.Invoke(damage);
+        }
+    }
+
+    public void AddOnHealthChanged(BossHit bossHit)
+    {
+        print("Found Da boss");
+
+        onBossHit += bossHit;
+        //currentHealth -= damage;
+        
+    }
+
+    public void RemoveOnHealthChanged(BossHit bossHit)
+    {
+        print("REMOVED Da boss");
+
+        onBossHit -= bossHit;
+        //currentHealth -= damage;
+
     }
 
     public void UpdateHealth()

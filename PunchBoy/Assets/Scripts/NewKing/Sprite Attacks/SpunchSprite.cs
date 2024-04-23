@@ -8,7 +8,7 @@ public class SpikeController : MonoBehaviour
     private List<SpikeBehavior> spikeList = new List<SpikeBehavior>();
     public Animator spunchTigerAnim;
     private bool triggerAnim = false;
-    private float spikeWaitTime = 0.5f;
+    private float spikeWaitTime = 0.7f;
     private bool activeAttack = false;
 
     public AudioSource spikesAudio;

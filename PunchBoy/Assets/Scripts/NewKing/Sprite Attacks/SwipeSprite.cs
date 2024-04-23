@@ -12,6 +12,7 @@ using UnityEngine;
 
 public class SwipeSprite : StandardBossAttack
 {
+
     float secondsBetweenAttack = 0.2f;
     float secondsBetweenAttackWave = 0.7f;
     // Start is called before the first frame update
@@ -22,11 +23,10 @@ public class SwipeSprite : StandardBossAttack
 
     public override IEnumerator attackPattern()
     {
-        print("Pummel attackPattern Override has been called");
+        //print("Pummel attackPattern Override has been called");
         StartCoroutine(SwipeAttack());
         return base.attackPattern();
     }
-
     // Update is called once per frame
 
     IEnumerator SwipeAttack()
