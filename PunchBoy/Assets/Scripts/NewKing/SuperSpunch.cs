@@ -70,6 +70,7 @@ public class SuperSpunch : MonoBehaviour
         yield return new WaitForSeconds(spunchTimer);
         if (TempBossHealth > 0)
         {
+            spikeAudio.Play();
             GroupAttack g1 = gameObject.AddComponent<GroupAttack>();
 
         }
@@ -79,7 +80,6 @@ public class SuperSpunch : MonoBehaviour
 
     public void spawnSpikes()
     {
-        spikeAudio.Play();
         Instantiate(spikeRow, spawnPos, spikeRow.transform.rotation);
         ResetAttack();
     }
