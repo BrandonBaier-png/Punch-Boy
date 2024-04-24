@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
 
         if (Input.GetKeyDown(KeyCode.W) && xPOS < 3 && moveCooldown <= 0)
         {
-            animator.SetBool("moveUpBool", true);
+            animator.SetTrigger("MoveUp");
             MovePlayer(Vector3.forward);
             xPOS++;
             moveCooldown = .3f;
@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
 
         if (Input.GetKeyDown(KeyCode.A) && yPOS > 0 && moveCooldown <= 0)
         {
-            animator.SetBool("moveLeftBool", true);
+            animator.SetTrigger("MoveLeft");
             MovePlayer(Vector3.left);
             yPOS--;
             moveCooldown = .3f;
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
 
         if (Input.GetKeyDown(KeyCode.S) && xPOS > 0 && moveCooldown <= 0)
         {
-            animator.SetBool("moveDownBool", true);
+            animator.SetTrigger("MoveDown");
             MovePlayer(Vector3.back);
             xPOS--;
             moveCooldown = .3f;
@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
 
         if (Input.GetKeyDown(KeyCode.D) && yPOS < 3 && moveCooldown <= 0)
         {
-            animator.SetBool("moveRightBool", true);
+            animator.SetTrigger("MoveRight");
             MovePlayer(Vector3.right);
             yPOS++;
             moveCooldown = .3f;
@@ -85,10 +85,10 @@ public class PlayerController : MonoBehaviour, IMovementActions
 
         if (moveCooldown <= .05f)
         {
-            animator.SetBool("moveRightBool", false);
-            animator.SetBool("moveLeftBool", false);
-            animator.SetBool("moveDownBool", false);
-            animator.SetBool("moveUpBool", false);
+            animator.ResetTrigger("MoveUp");
+            animator.ResetTrigger("MoveDown");
+            animator.ResetTrigger("MoveRight");
+            animator.ResetTrigger("MoveDown");
         }
 
         if (moveCooldown > 0)
