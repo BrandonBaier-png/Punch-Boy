@@ -30,10 +30,11 @@ public class GroupAttack : MonoBehaviour, Interface
 
     }
 
+    //adds spike object to a list based on coordinates
     public GroupAttack add(int x, int y)
     {
-        SpikeBehavior spike1 = spikeCoordinates.getSpike(x, y).GetComponent<SpikeBehavior>();
-        spikeList.Add(spike1);
+        SpikeBehavior spike = spikeCoordinates.getSpike(x, y).GetComponent<SpikeBehavior>();
+        spikeList.Add(spike);
 
         return this;
     }

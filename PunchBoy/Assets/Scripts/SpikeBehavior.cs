@@ -25,18 +25,9 @@ public class SpikeBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         anim = GetComponent<Animator>();
         rend = transform.GetChild(0).GetComponent<SpriteRenderer>();
         hitBox = transform.GetChild(0).GetComponent<BoxCollider>();
-
-
-
-
-        /* startFadeToRed();*/
-
-
-        /*        StartCoroutine(DeploySpike());*/
     }
 
     // Update is called once per frame
@@ -46,10 +37,10 @@ public class SpikeBehavior : MonoBehaviour
     }
 
    public void playAnimation()
-    {
+   {
         anim.enabled = true;
         anim.Play("Spunch row", 0, 0);
-    }
+   }
 
     public IEnumerator DeploySpike()
     {
