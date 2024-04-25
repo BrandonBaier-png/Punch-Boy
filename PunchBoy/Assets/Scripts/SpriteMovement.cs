@@ -124,7 +124,7 @@ public class SpriteMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.L) && fireballCD <= 0)
         {
-            fireballCD = 5.0f;
+            fireballCD = 1.0f;
             animator.SetBool("firePunchBool", true);
             aniCooldown = .3f;
             Instantiate(fireballPrefab, transform.position, fireballPrefab.transform.rotation);

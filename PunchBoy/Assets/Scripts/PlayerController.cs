@@ -26,8 +26,9 @@ public class PlayerController : MonoBehaviour, IMovementActions
 
     private float basicCooldown = 1.0f;
     private float sweepCooldown = 5.0f;
-    private float fireCooldown = 5.0f;
+    private float fireCooldown = 1.0f;
     private float moveCooldown = 0.0f;
+    private float attackCooldown = 0.0f;
 
     public AudioSource fireAudio;
     public AudioSource sweepAudio;
@@ -96,28 +97,36 @@ public class PlayerController : MonoBehaviour, IMovementActions
             moveCooldown -= Time.deltaTime;
         }
 
+        if (attackCooldown > 0)
+        {
+            attackCooldown -= Time.deltaTime;
+        }
+
         //Basic punch skill
-        if (Input.GetKeyDown(KeyCode.J) && basicCooldown >= 1.0f && moveCooldown <= 0)
+        if (Input.GetKeyDown(KeyCode.J) && basicCooldown >= 1.0f && attackCooldown <= 0)
         {
             basicCooldown = 0;
             punchAudio.Play();
             Instantiate(basicPunchPrefab, transform.position, basicPunchPrefab.transform.rotation);
+            attackCooldown = 0.5f;
         }
 
         //Sweep skill
-        if (Input.GetKeyDown(KeyCode.K) && sweepCooldown >= 5.0f && moveCooldown <= 0)
+        if (Input.GetKeyDown(KeyCode.K) && sweepCooldown >= 5.0f && attackCooldown <= 0)
         {
             sweepCooldown = 0;
             sweepAudio.Play();
             StartCoroutine(SweepRoutine());
+            attackCooldown = 0.5f;
         }
 
         //Fire punch skill
-        if (Input.GetKeyDown(KeyCode.L) && fireCooldown >= 5.0f && moveCooldown <= 0)
+        if (Input.GetKeyDown(KeyCode.L) && fireCooldown >= 1.0f && attackCooldown <= 0)
         {
             fireCooldown = 0;
             Instantiate(fireFistPrefab, transform.position, fireFistPrefab.transform.rotation);
             fireAudio.Play();
+            attackCooldown = 0.5f;
         }
 
         if (basicCooldown <= 1.0f)
@@ -132,7 +141,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
             UpdateSweep();
         }
 
-        if (fireCooldown <= 5.0f)
+        if (fireCooldown <= 1.0f)
         {
             fireCooldown += Time.deltaTime;
             UpdateFire();
@@ -174,6 +183,6 @@ public class PlayerController : MonoBehaviour, IMovementActions
 
     public void UpdateFire()
     {
-        fireIcon.fillAmount = fireCooldown / 5.0f;
+        fireIcon.fillAmount = fireCooldown / 1.0f;
     }
 }

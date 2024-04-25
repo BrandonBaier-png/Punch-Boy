@@ -48,7 +48,7 @@ public class PunchBoyHealth : MonoBehaviour
     public void dealtDamage()
     {
         print("Punch Boy Dealt Damage :3");
-        currentHealth -= 25;
+        currentHealth -= 10;
     }
 
     public void UpdateHealth()
