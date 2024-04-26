@@ -49,6 +49,10 @@ public class SwipeSprite : StandardBossAttack
         GroupAttack wave2row3 = gameObject.AddComponent<GroupAttack>();
         GroupAttack wave2row4 = gameObject.AddComponent<GroupAttack>();
 
+        GroupAttack wave3row1 = gameObject.AddComponent<GroupAttack>();
+
+
+
         wave1row1.add(0, 0).setWaitTime(secondsBetweenAttack);
         wave1row2.add(0, 1).add(1, 1).setWaitTime(secondsBetweenAttack);
         wave1row3.add(0, 2).add(1, 2).add(2, 2).setWaitTime(secondsBetweenAttack);
