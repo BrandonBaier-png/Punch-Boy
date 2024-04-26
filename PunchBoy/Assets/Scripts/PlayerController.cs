@@ -90,6 +90,9 @@ public class PlayerController : MonoBehaviour, IMovementActions
             animator.ResetTrigger("MoveDown");
             animator.ResetTrigger("MoveRight");
             animator.ResetTrigger("MoveDown");
+            animator.ResetTrigger("punch");
+            animator.ResetTrigger("sweep");
+            animator.ResetTrigger("firePunch");
         }
 
         if (moveCooldown > 0)
@@ -105,6 +108,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
         //Basic punch skill
         if (Input.GetKeyDown(KeyCode.J) && basicCooldown >= 1.0f && attackCooldown <= 0)
         {
+            animator.SetTrigger("Punch");
             basicCooldown = 0;
             punchAudio.Play();
             Instantiate(basicPunchPrefab, transform.position, basicPunchPrefab.transform.rotation);
@@ -114,6 +118,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
         //Sweep skill
         if (Input.GetKeyDown(KeyCode.K) && sweepCooldown >= 5.0f && attackCooldown <= 0)
         {
+            animator.SetTrigger("Sweep");
             sweepCooldown = 0;
             sweepAudio.Play();
             StartCoroutine(SweepRoutine());
@@ -123,6 +128,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
         //Fire punch skill
         if (Input.GetKeyDown(KeyCode.L) && fireCooldown >= 1.0f && attackCooldown <= 0)
         {
+            animator.SetTrigger("FirePunch");
             fireCooldown = 0;
             Instantiate(fireFistPrefab, transform.position, fireFistPrefab.transform.rotation);
             fireAudio.Play();

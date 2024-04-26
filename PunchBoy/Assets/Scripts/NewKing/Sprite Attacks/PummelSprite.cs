@@ -75,14 +75,14 @@ public class SpikeInheritor : StandardBossAttack
             {
                 yield return StartCoroutine(quad2.attack());
                 //Instantiate(PummelPrefab, new Vector3(.5f, height, .5f), Quaternion.identity);
-                //Instantiate(Pummel2d, new Vector3(-14.06f, 3.64f, 0f), Quaternion.identity);
+                Instantiate(Pummel2d, new Vector3(-14.06f, 3.64f, 0f), Quaternion.identity);
             }
             // QUAD 1
             else if (GameObject.Find("punchBoy").transform.position.z <= 3 && GameObject.Find("punchBoy").transform.position.z >= 2)
             {
                 yield return StartCoroutine(quad1.attack());
                 //Instantiate(PummelPrefab, new Vector3(.5f, height, 2.5f), Quaternion.identity);
-                //Instantiate(Pummel2d, new Vector3(-12.94f, 3.5f, 0f), Quaternion.identity);
+                Instantiate(Pummel2d, new Vector3(-12.94f, 3.5f, 0f), Quaternion.identity);
             }
         }
         else if (GameObject.Find("punchBoy").transform.position.x <= 3 && GameObject.Find("punchBoy").transform.position.x >= 2)
@@ -92,14 +92,14 @@ public class SpikeInheritor : StandardBossAttack
             {
                 yield return StartCoroutine(quad4.attack());
                 //Instantiate(PummelPrefab, new Vector3(2.5f, height, .5f), Quaternion.identity);
-                //Instantiate(Pummel2d, new Vector3(-12.94f, 3.7f, 0f), Quaternion.identity);
+                Instantiate(Pummel2d, new Vector3(-12.94f, 3.7f, 0f), Quaternion.identity);
             }
             // QUAD 2
             else if (GameObject.Find("punchBoy").transform.position.z <= 3 && GameObject.Find("punchBoy").transform.position.z >= 2)
             {
                 yield return StartCoroutine(quad3.attack());
                 //Instantiate(PummelPrefab, new Vector3(2.5f, height, 2.5f), Quaternion.identity);
-                //Instantiate(Pummel2d, new Vector3(-11.5f, 3.64f, 0f), Quaternion.identity);
+                Instantiate(Pummel2d, new Vector3(-11.5f, 3.64f, 0f), Quaternion.identity);
             }
         }
 

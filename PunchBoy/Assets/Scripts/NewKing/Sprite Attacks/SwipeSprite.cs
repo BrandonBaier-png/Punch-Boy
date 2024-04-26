@@ -15,6 +15,7 @@ public class SwipeSprite : StandardBossAttack
 
     float secondsBetweenAttack = 0.2f;
     float secondsBetweenAttackWave = 0.7f;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,12 +53,13 @@ public class SwipeSprite : StandardBossAttack
         wave1row2.add(0, 1).add(1, 1).setWaitTime(secondsBetweenAttack);
         wave1row3.add(0, 2).add(1, 2).add(2, 2).setWaitTime(secondsBetweenAttack);
         wave1row4.add(0, 3).add(1, 3).add(2, 3).add(3, 3).setWaitTime(secondsBetweenAttackWave); //extra delay to wait for the previous spikes to return
-
+        
         wave2row4.add(0, 3).setWaitTime(secondsBetweenAttack);
         wave2row3.add(0, 2).add(1, 2).setWaitTime(secondsBetweenAttack);
         wave2row2.add(0, 1).add(1, 1).add(2, 1).setWaitTime(secondsBetweenAttack);
         wave2row1.add(0, 0).add(1, 0).add(2, 0).add(3, 0).setWaitTime(secondsBetweenAttack);
 
+        animator.SetTrigger("Swipe");
         yield return StartCoroutine(wave1row1.attack());
         yield return StartCoroutine(wave1row2.attack());
         yield return StartCoroutine(wave1row3.attack());
@@ -66,5 +68,6 @@ public class SwipeSprite : StandardBossAttack
         yield return StartCoroutine(wave2row3.attack());
         yield return StartCoroutine(wave2row2.attack());
         yield return StartCoroutine(wave2row1.attack());
+        animator.ResetTrigger("Swipe");
     }
 }

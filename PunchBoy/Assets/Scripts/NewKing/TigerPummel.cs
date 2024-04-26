@@ -20,6 +20,7 @@ public class TigerPummel : MonoBehaviour
     private bool activeAttack = false;
     private float height = 5f;
     public int secondsBetweenAttack = 2;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,7 @@ public class TigerPummel : MonoBehaviour
          */
         if (activeAttack)
         {
+            animator.SetTrigger("PummelStart");
             StartCoroutine(CallPummelAttack());
            
             rounds = 0;
@@ -51,6 +53,7 @@ public class TigerPummel : MonoBehaviour
         {
             rounds++;
             PummelAttack();
+            if (rounds == 4) { animator.SetTrigger("PummelEnd"); }
             
             yield return new WaitForSeconds(1.5f);
         }
