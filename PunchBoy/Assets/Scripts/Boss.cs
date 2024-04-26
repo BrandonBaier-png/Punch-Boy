@@ -89,7 +89,7 @@ public class Boss : MonoBehaviour
 
     public void AddOnHealthChanged(BossHit bossHit)
     {
-        print("Found Da boss");
+        //print("Found Da boss");
 
         onBossHit += bossHit;
         //currentHealth -= damage;
@@ -98,7 +98,7 @@ public class Boss : MonoBehaviour
 
     public void RemoveOnHealthChanged(BossHit bossHit)
     {
-        print("REMOVED Da boss");
+        //print("REMOVED Da boss");
 
         onBossHit -= bossHit;
         //currentHealth -= damage;

@@ -15,7 +15,6 @@ using UnityEngine.Events;
  * Tasked with randomizing the boss attack choices
  * Attacks are loaded into a queue & picked after a specified delay
  * 
- * 
  * Author - Brandon Baier 
  * 
  */
@@ -53,19 +52,19 @@ public class AttackManager : MonoBehaviour
     private int attackTally = 0;
     public const float BASECOOLDOWN = 3;
     public float attackCooldown = 3;
-    private Queue<int> attackQueue = new Queue<int>();
 
+
+
+    private Queue<int> attackQueue = new Queue<int>();
+    private 
+
+    int[] attackDatabase = { 1, 2, 3, 4 };
 
     // Start is called before the first frame update
 
     void Start()
     {
-        EnqueueBossAttacksFixed();
-        //EnqueueBossAttacks();
-
-        //Adding methods to the attackManager delegate
-        //Whenever attackManager is called, CountAttack is also called;
-        //attackDel += CountAttack;
+  
     }
 
     // Update is called once per frame
@@ -77,11 +76,17 @@ public class AttackManager : MonoBehaviour
     void Update()
     {
         //When the cooldown is less than zero, New King is ready to attack
+        if (attackQueue.Count <= 0)
+        {
+            //EnqueueBossAttacks();
+            EnqueueBossAttacksFixed();
+        }
 
         if (attackCooldown <= 0)
         {
             attackCooldown = BASECOOLDOWN;
-            StartCoroutine(InitiateAttack());
+            // TEMP DISABLE ATTACK
+            //StartCoroutine(InitiateAttack());
             SetAttacking(true);
         }
         else if (!attacking)
@@ -89,12 +94,58 @@ public class AttackManager : MonoBehaviour
             attackCooldown -= Time.deltaTime;
         }
 
-        if (attackQueue.Count == 0)
+        
+    }
+
+    void EnqueueBossAttacksFixed()
+    {
+        /*
+         * 0 - Spunch
+         * 1 - Super Spunch
+         * 2 - Pummmel 
+         * 3 - Swipe
+         */
+        attackQueue.Enqueue(0);
+        attackQueue.Enqueue(1);
+        attackQueue.Enqueue(2);
+        attackQueue.Enqueue(3);
+    }
+
+
+    void EnqueueBossAttacks()
+    {
+        /* Boss attack randomization doensn't function,
+         * maybe try completely random, while storing & not repeating the previous 2 attacks through a delegate.
+         * 
+         * -Brando 
+         */
+
+        LinkedList<int> attacksAvailable = new LinkedList<int>(attackDatabase); 
+        print("makes it here so far :3");
+        //attacksAvailable = populateAttacksAvailable(attackDatabase);
+        //attackList = baseAttackList;
+
+        while (attackQueue.Count < 4) { }
         {
-            EnqueueBossAttacksFixed();
-            //EnqueueBossAttacks();
+            
+            // attackList.Count might be causing the crash
+
+            int attackToQueue = Random.Range(0, attacksAvailable.Count);
+            print(attackToQueue + "iteration");
+            attacksAvailable.Remove(attackToQueue);
+            //print("Current attack queue: " + attackToQueue);
+
+
+
+            //int attackToQueue = Random.Range(0, attackList.Count);
+            //int selectedAttack = Random.Range(0, (attacksAvailable.Count - 1));
+            //print("Current attack queue: " + selectedAttack);
+            //attacksAvailable.Remove(selectedAttack);
+            //attackQueue.Enqueue(selectedAttack);
         }
     }
+
+ 
 
     // When called, calls the attack 
     IEnumerator InitiateAttack()
@@ -133,52 +184,8 @@ public class AttackManager : MonoBehaviour
         attackTally++;
     }
 
-    void EnqueueBossAttacksFixed()
-    {
-        /*
-         * 0 - Spunch
-         * 1 - Super Spunch
-         * 2 - Pummmel 
-         * 3 - Swipe
-         */
+    
 
-        //MAKE RANDOM
-        //attackQueue.Enqueue(2);
-
-
-        //attackQueue.Enqueue(2);
-        //attackQueue.Enqueue(2);
-        attackQueue.Enqueue(0);
-        //attackQueue.Enqueue(2);
-        attackQueue.Enqueue(1);
-        attackQueue.Enqueue(2);
-        attackQueue.Enqueue(3);
-
-
-
-        //attackQueue.Enqueue(2);
-
-    }
-
-    //void EnqueueBossAttacks()
-    //{
-    //    //int r = new Random().RandomRange(0, attackQueue.Count);
-    //    attackList = baseAttackList;
-    //    //foreach (int i in baseAttackList)
-    //    //{
-    //    //    int attackToQueue = Random.Range(0, attackList.Count);
-    //    //    print("Current attack queue: " + attackToQueue);
-    //    //    //int n = rand() % attackList.;
-    //    //}
-    //    while (attackList.Count > 0)
-    //    {
-    //        //int attackToQueue = Random.Range(0, attackList.Count);
-    //        int attackToQueue = Random.Range(0, attackList.Count);
-    //        print("Current attack queue: " + attackToQueue);// + attackToQueue);
-    //        attackList.Remove(attackToQueue);
-    //        attackQueue.Enqueue(attackToQueue);
-    //    }
-    //}
     // SPUNCH
     IEnumerator CoSpunch()
     {
