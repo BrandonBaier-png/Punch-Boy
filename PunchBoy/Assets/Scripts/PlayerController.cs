@@ -90,9 +90,6 @@ public class PlayerController : MonoBehaviour, IMovementActions
             animator.ResetTrigger("MoveDown");
             animator.ResetTrigger("MoveRight");
             animator.ResetTrigger("MoveDown");
-            animator.ResetTrigger("punch");
-            animator.ResetTrigger("sweep");
-            animator.ResetTrigger("firePunch");
         }
 
         if (moveCooldown > 0)
@@ -103,6 +100,11 @@ public class PlayerController : MonoBehaviour, IMovementActions
         if (attackCooldown > 0)
         {
             attackCooldown -= Time.deltaTime;
+        }
+
+        if (attackCooldown <= 0) {
+            animator.ResetTrigger("punch");
+            animator.ResetTrigger("firePunch");
         }
 
         //Basic punch skill

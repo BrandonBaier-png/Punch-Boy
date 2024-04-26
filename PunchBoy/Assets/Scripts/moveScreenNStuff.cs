@@ -23,24 +23,7 @@ public class moveScreenNStuff : MonoBehaviour
     void Update()
     {
         if (scene <= 0) {
-            if (pair > 2) { pair = 1; }
-            if (pair % 2 == 0) 
-            { 
-                scene = 10;
-                rend.sortingOrder = -10;
-                r.sortingOrder = -10;
-                e.sortingOrder = -10;
-                n.sortingOrder = -10;
-            }
-            else 
-            { 
-                scene = 7;
-                rend.sortingOrder = 9;
-                r.sortingOrder = 10;
-                e.sortingOrder = 10;
-                n.sortingOrder = 10;
-            }
-            pair++;
+            AttackScreen();
         }
 
         if (scene > 0) { 
@@ -48,5 +31,27 @@ public class moveScreenNStuff : MonoBehaviour
         }
 
 
+    }
+
+    public void AttackScreen()
+    {
+        if (pair > 2) { pair = 1; }
+        if (pair % 2 == 0)
+        {
+            scene = 10;
+            rend.sortingOrder = -10;
+            r.sortingOrder = -10;
+            e.sortingOrder = -10;
+            n.sortingOrder = -10;
+        }
+        else
+        {
+            scene = 7;
+            rend.sortingOrder = 9;
+            r.sortingOrder = 10;
+            e.sortingOrder = 10;
+            n.sortingOrder = 10;
+        }
+        pair++;
     }
 }
