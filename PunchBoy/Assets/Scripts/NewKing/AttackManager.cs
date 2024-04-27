@@ -64,7 +64,7 @@ public class AttackManager : MonoBehaviour
 
     void Start()
     {
-  
+        EnqueueBossAttacksFixed();
     }
 
     // Update is called once per frame
@@ -86,7 +86,7 @@ public class AttackManager : MonoBehaviour
         {
             attackCooldown = BASECOOLDOWN;
             // TEMP DISABLE ATTACK
-            //StartCoroutine(InitiateAttack());
+            StartCoroutine(InitiateAttack());
             SetAttacking(true);
         }
         else if (!attacking)
@@ -99,6 +99,8 @@ public class AttackManager : MonoBehaviour
 
     void EnqueueBossAttacksFixed()
     {
+
+
         /*
          * 0 - Spunch
          * 1 - Super Spunch
@@ -109,6 +111,7 @@ public class AttackManager : MonoBehaviour
         attackQueue.Enqueue(1);
         attackQueue.Enqueue(2);
         attackQueue.Enqueue(3);
+       
     }
 
 
@@ -145,12 +148,11 @@ public class AttackManager : MonoBehaviour
         }
     }
 
- 
-
     // When called, calls the attack 
     IEnumerator InitiateAttack()
     {
         
+
         switch (attackQueue.Dequeue())
         {
             case 0:
