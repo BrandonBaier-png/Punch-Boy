@@ -29,6 +29,7 @@ public class SuperSpunchSprite : StandardBossAttack
     {
         TempBossHealth = BASETEMPBOSSHEALTH;
         AttatchToDelegate();
+
         StartCoroutine(CallSuperSpunchAttack());
         return base.attackPattern();
     }
