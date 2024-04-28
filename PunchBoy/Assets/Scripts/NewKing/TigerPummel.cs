@@ -20,6 +20,7 @@ public class TigerPummel : MonoBehaviour
     private bool activeAttack = false;
     private float height = 5f;
     public int secondsBetweenAttack = 2;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,7 @@ public class TigerPummel : MonoBehaviour
          */
         if (activeAttack)
         {
+            animator.SetTrigger("PummelStart");
             StartCoroutine(CallPummelAttack());
            
             rounds = 0;
@@ -51,6 +53,7 @@ public class TigerPummel : MonoBehaviour
         {
             rounds++;
             PummelAttack();
+            if (rounds == 4) { animator.SetTrigger("PummelEnd"); }
             
             yield return new WaitForSeconds(1.5f);
         }
@@ -67,12 +70,12 @@ public class TigerPummel : MonoBehaviour
                 if (GameObject.Find("punchBoy").transform.position.z <= 1 && GameObject.Find("punchBoy").transform.position.z >= 0)
                 {
                     Instantiate(PummelPrefab, new Vector3(.5f, height, .5f), Quaternion.identity);
-                    Instantiate(Pummel2d, new Vector3(-14.06f, 3.64f, 0f), Quaternion.identity);
+                    //Instantiate(Pummel2d, new Vector3(-14.06f, 3.64f, 0f), Quaternion.identity);
                 }
                 else if (GameObject.Find("punchBoy").transform.position.z <= 3 && GameObject.Find("punchBoy").transform.position.z >= 2)
                 {
                     Instantiate(PummelPrefab, new Vector3(.5f, height, 2.5f), Quaternion.identity);
-                    Instantiate(Pummel2d, new Vector3(-12.94f, 3.5f, 0f), Quaternion.identity);
+                    //Instantiate(Pummel2d, new Vector3(-12.94f, 3.5f, 0f), Quaternion.identity);
                 }
             }
             else if (GameObject.Find("punchBoy").transform.position.x <= 3 && GameObject.Find("punchBoy").transform.position.x >= 2)
@@ -80,12 +83,12 @@ public class TigerPummel : MonoBehaviour
                 if (GameObject.Find("punchBoy").transform.position.z <= 1 && GameObject.Find("punchBoy").transform.position.z >= 0)
                 {
                     Instantiate(PummelPrefab, new Vector3(2.5f, height, .5f), Quaternion.identity);
-                    Instantiate(Pummel2d, new Vector3(-12.94f, 3.7f, 0f), Quaternion.identity);
+                    //Instantiate(Pummel2d, new Vector3(-12.94f, 3.7f, 0f), Quaternion.identity);
                 }
                 else if (GameObject.Find("punchBoy").transform.position.z <= 3 && GameObject.Find("punchBoy").transform.position.z >= 2)
                 {
                     Instantiate(PummelPrefab, new Vector3(2.5f, height, 2.5f), Quaternion.identity);
-                    Instantiate(Pummel2d, new Vector3(-11.5f, 3.64f, 0f), Quaternion.identity);
+                    //Instantiate(Pummel2d, new Vector3(-11.5f, 3.64f, 0f), Quaternion.identity);
                 }
             }
 

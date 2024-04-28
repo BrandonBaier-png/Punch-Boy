@@ -21,9 +21,10 @@ public class Boss : MonoBehaviour
     //private float bossConcen = 20;
     public Image healthBar;
 
-    private float bossHealth = 200;
-    private float currentHealth = 200;
-    private float fireFistDamage = 10;
+    private float bossHealth = 1000;
+    private float currentHealth = 1000;
+    private float fireFistDamage = 3;
+    private float sweepDamage = 7;
     private float basicPunchDamage = 5;
 
     // Start is called before the first frame update
@@ -40,7 +41,7 @@ public class Boss : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("FireFist") || other.CompareTag("Sweep"))
+        if (other.CompareTag("FireFist"))
         {
 
 
@@ -57,6 +58,13 @@ public class Boss : MonoBehaviour
         {
             dealBossDamage(basicPunchDamage);
             Debug.Log(bossHealth);
+            Destroy(other.gameObject);
+            UpdateHealth();
+        }
+
+        if (other.CompareTag("Sweep"))
+        {
+            dealBossDamage(sweepDamage);
             Destroy(other.gameObject);
             UpdateHealth();
         }
@@ -81,7 +89,7 @@ public class Boss : MonoBehaviour
 
     public void AddOnHealthChanged(BossHit bossHit)
     {
-        print("Found Da boss");
+        //print("Found Da boss");
 
         onBossHit += bossHit;
         //currentHealth -= damage;
@@ -90,7 +98,7 @@ public class Boss : MonoBehaviour
 
     public void RemoveOnHealthChanged(BossHit bossHit)
     {
-        print("REMOVED Da boss");
+        //print("REMOVED Da boss");
 
         onBossHit -= bossHit;
         //currentHealth -= damage;

@@ -100,9 +100,9 @@ public class SpriteMovement : MonoBehaviour
                 gameObject.transform.position = new Vector3(-10.98f, -0.72f, 0);
             }
         }
-        if (sweepCD > 0) { sweepCD -= Time.deltaTime; }
+ /*       if (sweepCD > 0) { sweepCD -= Time.deltaTime; }*/
         if (fireballCD > 0) { fireballCD -= Time.deltaTime; }
-        if (punchCD > 0) { punchCD -= Time.deltaTime; }
+/*      if (punchCD > 0) { punchCD -= Time.deltaTime; }
         if (aniCooldown > 0) { aniCooldown -= Time.deltaTime; }
         if (aniCooldown <= 0)
         {
@@ -121,12 +121,12 @@ public class SpriteMovement : MonoBehaviour
             sweepCD = 5.0f;
             animator.SetBool("sweepBool", true);
             aniCooldown = .3f;
-        }
+        }*/
         if (Input.GetKeyDown(KeyCode.L) && fireballCD <= 0)
         {
-            fireballCD = 5.0f;
-            animator.SetBool("firePunchBool", true);
-            aniCooldown = .3f;
+            fireballCD = 1.0f;
+/*            animator.SetBool("firePunchBool", true);
+            aniCooldown = .3f;*/
             Instantiate(fireballPrefab, transform.position, fireballPrefab.transform.rotation);
         }
     }

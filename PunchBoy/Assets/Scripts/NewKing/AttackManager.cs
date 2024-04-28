@@ -15,7 +15,6 @@ using UnityEngine.Events;
  * Tasked with randomizing the boss attack choices
  * Attacks are loaded into a queue & picked after a specified delay
  * 
- * 
  * Author - Brandon Baier 
  * 
  */
@@ -46,26 +45,26 @@ public class AttackManager : MonoBehaviour
 
     private bool animationBuffer = false;
     private List<int> baseAttackList = new List<int>() { 0, 1, 2, 3 };
-    private List<int> attackList = new List<int>();
+    
     private int secondsBetweenAttack = 4;
     private int secondsBetweenSuperSpunchAttack = 4;
     private bool attacking = false;
     private int attackTally = 0;
     public const float BASECOOLDOWN = 3;
     public float attackCooldown = 3;
-    private Queue<int> attackQueue = new Queue<int>();
 
+
+
+    private Queue<int> attackQueue = new Queue<int>();
+    private 
+
+    int[] attackDatabase = { 1, 2, 3, 4 };
 
     // Start is called before the first frame update
 
     void Start()
     {
-        EnqueueBossAttacksFixed();
-        //EnqueueBossAttacks();
-
-        //Adding methods to the attackManager delegate
-        //Whenever attackManager is called, CountAttack is also called;
-        //attackDel += CountAttack;
+        //EnqueueBossAttacksFixed();
     }
 
     // Update is called once per frame
@@ -77,10 +76,16 @@ public class AttackManager : MonoBehaviour
     void Update()
     {
         //When the cooldown is less than zero, New King is ready to attack
+        if (attackQueue.Count <= 0)
+        {
+            //EnqueueBossAttacks();
+            EnqueueBossAttacksFixed();
+        }
 
         if (attackCooldown <= 0)
         {
             attackCooldown = BASECOOLDOWN;
+            // TEMP DISABLE ATTACK
             StartCoroutine(InitiateAttack());
             SetAttacking(true);
         }
@@ -89,17 +94,71 @@ public class AttackManager : MonoBehaviour
             attackCooldown -= Time.deltaTime;
         }
 
-        if (attackQueue.Count == 0)
-        {
-            EnqueueBossAttacksFixed();
-            //EnqueueBossAttacks();
+        
+    }
+
+    void EnqueueBossAttacksFixed()
+    {
+
+
+        /*
+         * 0 - Spunch
+         * 1 - Super Spunch
+         * 2 - Pummmel 
+         * 3 - Swipe
+         */
+        
+        attackQueue.Enqueue(1);
+        attackQueue.Enqueue(0);
+        attackQueue.Enqueue(2);
+        attackQueue.Enqueue(3);
+       
+    }
+
+
+    void EnqueueBossAttacks()
+    {
+        /* Boss attack randomization doensn't function,
+         * maybe try completely random, while storing & not repeating the previous 2 attacks through a delegate.
+         * 
+         * -Brando 
+         */
+        int i = 0;
+        
+        List<int> attackList = baseAttackList;
+        List<string> stringList = new List<string>() { "Test1", "Test2", "Test3"};
+
+        stringList.Remove("Test1");
+        //attackList.Remove(i);
+        
+        while (attackQueue.Count < 5) {
+            attackQueue.Enqueue(i);
+            i++;
+            print(attackQueue.Count + "Items in Queue :3");
         }
+        //// attackList.Count might be causing the crash
+
+        //int attackToQueue = Random.Range(0, attacksAvailable.Count);
+
+        //attacksAvailable.Remove(attackToQueue);
+        //print("Current attack queue: " + attackToQueue);
+
+
+
+        //int attackToQueue = Random.Range(0, attackList.Count);
+        //int selectedAttack = Random.Range(0, (attacksAvailable.Count - 1));
+        //print("Current attack queue: " + selectedAttack);
+        //attacksAvailable.Remove(selectedAttack);
+        //attackQueue.Enqueue(selectedAttack);
+
+
     }
 
     // When called, calls the attack 
     IEnumerator InitiateAttack()
     {
         
+
         switch (attackQueue.Dequeue())
         {
             case 0:
@@ -133,52 +192,8 @@ public class AttackManager : MonoBehaviour
         attackTally++;
     }
 
-    void EnqueueBossAttacksFixed()
-    {
-        /*
-         * 0 - Spunch
-         * 1 - Super Spunch
-         * 2 - Pummmel 
-         * 3 - Swipe
-         */
+    
 
-        //MAKE RANDOM
-        //attackQueue.Enqueue(2);
-
-
-        //attackQueue.Enqueue(2);
-        //attackQueue.Enqueue(2);
-        attackQueue.Enqueue(0);
-        //attackQueue.Enqueue(2);
-        attackQueue.Enqueue(1);
-        attackQueue.Enqueue(2);
-        attackQueue.Enqueue(3);
-
-
-
-        //attackQueue.Enqueue(2);
-
-    }
-
-    //void EnqueueBossAttacks()
-    //{
-    //    //int r = new Random().RandomRange(0, attackQueue.Count);
-    //    attackList = baseAttackList;
-    //    //foreach (int i in baseAttackList)
-    //    //{
-    //    //    int attackToQueue = Random.Range(0, attackList.Count);
-    //    //    print("Current attack queue: " + attackToQueue);
-    //    //    //int n = rand() % attackList.;
-    //    //}
-    //    while (attackList.Count > 0)
-    //    {
-    //        //int attackToQueue = Random.Range(0, attackList.Count);
-    //        int attackToQueue = Random.Range(0, attackList.Count);
-    //        print("Current attack queue: " + attackToQueue);// + attackToQueue);
-    //        attackList.Remove(attackToQueue);
-    //        attackQueue.Enqueue(attackToQueue);
-    //    }
-    //}
     // SPUNCH
     IEnumerator CoSpunch()
     {
@@ -199,14 +214,6 @@ public class AttackManager : MonoBehaviour
     // SUPER SPUNCH
     IEnumerator CoSuperSpunch()
     {
-        if (!animationBuffer)
-        {
-            animator.SetBool("SuperSpunchPreparing", true);
-            animator.SetTrigger("SuperSpunch");
-            animationBuffer = true;
-        }
-
-
         GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
         SuperSpunchEvent.Invoke();
 
@@ -225,19 +232,12 @@ public class AttackManager : MonoBehaviour
     {
         print("PUMMEL ATTACK MANAGER");
 
-        if (!animationBuffer)
-        {
-            animator.SetTrigger("PummelStart");
-            animationBuffer = true;
-        }
         PummelEvent.Invoke();
 
         //StartCoroutine(waitUntilAttackCleared());
         
 
         yield return new WaitForSeconds(secondsBetweenAttack);
-        animator.ResetTrigger("PummelStart");
-        animationBuffer = false;
         SetAttacking(false);
         //print("PUMMEL END");
 
@@ -260,6 +260,11 @@ public class AttackManager : MonoBehaviour
         SetAttacking(false);
     }
 
+
+    /* Below code is likely depricated
+     * 
+     * -Brandon
+     */
     private void DestroyAllSpikes()
     {
         GameObject[] activeSpikes = GameObject.FindGameObjectsWithTag("Spike");

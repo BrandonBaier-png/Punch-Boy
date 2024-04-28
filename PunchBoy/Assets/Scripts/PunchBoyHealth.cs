@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Profiling;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -48,7 +47,7 @@ public class PunchBoyHealth : MonoBehaviour
     public void dealtDamage()
     {
         print("Punch Boy Dealt Damage :3");
-        currentHealth -= 25;
+        currentHealth -= 10;
     }
 
     public void UpdateHealth()

@@ -22,7 +22,6 @@ public class SuperSpunch : MonoBehaviour
 
     private float BASETEMPBOSSHEALTH = 50;
     private float TempBossHealth = 50;
-
     
     public int BASESPUNCHTIMER = 3;
     public int spunchTimer = 3;
@@ -55,7 +54,6 @@ public class SuperSpunch : MonoBehaviour
     void Update()
     {
 
-
         if (activeAttack)
         {
             //print("SUPERSPUNCH ACTIVE");
@@ -66,16 +64,24 @@ public class SuperSpunch : MonoBehaviour
 
     IEnumerator superSpunchAttack()
     {
+        animator.SetTrigger("SuperSpunch");
         print("Waiting for boss countdown");
         yield return new WaitForSeconds(spunchTimer);
         if (TempBossHealth > 0)
         {
+            animator.SetBool("SuperSpunchOut", true);
+            animator.SetTrigger("SuperSpunch");
             spikeAudio.Play();
             GroupAttack g1 = gameObject.AddComponent<GroupAttack>();
 
         }
+        else {
+            animator.SetBool("SuperSpunchOut", false);
+            animator.SetTrigger("SuperSpunch");
+        }
         yield return new WaitForSeconds(1);
-
+        animator.SetBool("SuperSpunchOut", false);
+        animator.ResetTrigger("SuperSpunch");
     }
 
     public void spawnSpikes()
