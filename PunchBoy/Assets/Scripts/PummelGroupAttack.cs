@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PummelAnimationBehavior : MonoBehaviour
+public class PummelGroupAttack : MonoBehaviour, Interface
 {
 
-    SpikeCoordinates spikeCoordinates;
+    PummelCoordinates PummelCoordinates;
     private float waitTime = 0.5f;
     List<PummelBehavior> PummelList;
 
@@ -15,7 +15,7 @@ public class PummelAnimationBehavior : MonoBehaviour
         for (int i = 0; i < PummelList.Count; i++)
         {
             /* Debug.Log("deploying spikes-> " + spikeList[i]);*/
-            StartCoroutine(spikeList[i].DeployPummel());
+            StartCoroutine(PummelList[i].DeployPummel());
         }
         /*Debug.Log("starting coroutine");*/
         yield return new WaitForSeconds(waitTime);
@@ -25,15 +25,15 @@ public class PummelAnimationBehavior : MonoBehaviour
     public void Awake()
     {
         PummelCoordinates = GameObject.Find("Pummel2dObject").GetComponent<PummelCoordinates>();
-        spikeList = new List<PummelBehavior>();
-        Debug.Log(spikeCoordinates.ToString());
+        PummelList = new List<PummelBehavior>();
+        Debug.Log(PummelCoordinates.ToString());
 
     }
 
-    public GroupAttack add(int x, int y)
+    public PummelGroupAttack add(int x)
     {
-        SpikeBehavior spike1 = PummelCoordinates.getSpike(x, y).GetComponent<SpikeBehavior>();
-        spikeList.Add(spike1);
+        PummelBehavior pummel1 = PummelCoordinates.getPummel(x).GetComponent<PummelBehavior>();
+        PummelList.Add(pummel1);
 
         return this;
     }
@@ -46,7 +46,7 @@ public class PummelAnimationBehavior : MonoBehaviour
 
     }
 
-    public GroupAttack setWaitTime(float newWaitTime)
+    public PummelGroupAttack setWaitTime(float newWaitTime)
     {
         this.waitTime = newWaitTime;
         return this;
