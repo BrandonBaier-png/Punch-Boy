@@ -31,6 +31,7 @@ public class AttackManager : MonoBehaviour
     public UnityEvent SuperSpunchEvent;
     public UnityEvent SpunchEvent;
     public UnityEvent PummelEvent;
+    public UnityEvent ShockwaveEvent;
 
     //AttackDel attackDel;
 
@@ -44,7 +45,7 @@ public class AttackManager : MonoBehaviour
 
 
     private bool animationBuffer = false;
-    private List<int> baseAttackList = new List<int>() { 0, 1, 2, 3 };
+    private List<int> baseAttackList = new List<int>() { 0, 1, 2, 3, 4 };
     
     private int secondsBetweenAttack = 4;
     private int secondsBetweenSuperSpunchAttack = 4;
@@ -106,13 +107,15 @@ public class AttackManager : MonoBehaviour
          * 1 - Super Spunch
          * 2 - Pummmel 
          * 3 - Swipe
+         * 4 - Shockwave
          */
         
         attackQueue.Enqueue(1);
         attackQueue.Enqueue(0);
         attackQueue.Enqueue(2);
         attackQueue.Enqueue(3);
-       
+        attackQueue.Enqueue(4);
+
     }
 
 
@@ -174,6 +177,9 @@ public class AttackManager : MonoBehaviour
             case 3:
                 currentAttack = CoSwipe();
                 break;
+            case 4:
+                currentAttack = CoShockwave();
+                break;
         }
         //StartCoroutine(currentAttack);
         yield return StartCoroutine(currentAttack);
@@ -228,6 +234,8 @@ public class AttackManager : MonoBehaviour
         SetAttacking(false);
     }
     // PUMMEL
+
+    //COPY THIS ONE
     IEnumerator CoPummel()
     {
         print("PUMMEL ATTACK MANAGER");
@@ -240,6 +248,19 @@ public class AttackManager : MonoBehaviour
         yield return new WaitForSeconds(secondsBetweenAttack);
         SetAttacking(false);
         //print("PUMMEL END");
+
+    }
+
+    IEnumerator CoShockwave()
+    {
+        print("SHOCKWAVE ATTACK MANAGER");
+
+        ShockwaveEvent.Invoke();
+
+
+
+        yield return new WaitForSeconds(secondsBetweenAttack);
+        SetAttacking(false);
 
     }
     // SWIPE

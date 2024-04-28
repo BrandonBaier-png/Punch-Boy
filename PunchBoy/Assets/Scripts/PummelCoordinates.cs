@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PummelBehavior : MonoBehaviour
+public class PummelCoordinates : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,12 @@ public class PummelBehavior : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public GameObject getPummel(int x)
+    {
+        int pos = 0;
+        pos = x;
+        return gameObject.transform.GetChild(pos).gameObject;
     }
 }
