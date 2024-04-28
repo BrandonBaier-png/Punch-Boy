@@ -49,7 +49,10 @@ public class SpikeInheritor : StandardBossAttack
     IEnumerator PummelAttack()
     {
 
-        public PummelGroupAttack g1 = gameObject.AddComponent<PummelGroupAttack>();
+        PummelGroupAttack g1 = gameObject.AddComponent<PummelGroupAttack>();
+        PummelGroupAttack g2 = gameObject.AddComponent<PummelGroupAttack>();
+        PummelGroupAttack g3 = gameObject.AddComponent<PummelGroupAttack>();
+        PummelGroupAttack g4 = gameObject.AddComponent<PummelGroupAttack>();
         /* Stage grid with each containing 4 elements
          * 
          * Quad 1 | Quad 2
