@@ -49,9 +49,6 @@ public class ShockwavePunch : StandardBossAttack
         yield return StartCoroutine(punch2.attack());
         yield return StartCoroutine(punch2wave1.attack());
         yield return StartCoroutine(punch2wave2.attack());
-        yield return StartCoroutine(punch3.attack());
-        yield return StartCoroutine(punch3wave1.attack());
-        yield return StartCoroutine(punch3wave2.attack());
         animator.ResetTrigger("Swipe");
     }
 }
