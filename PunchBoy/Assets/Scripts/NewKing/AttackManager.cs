@@ -203,18 +203,11 @@ public class AttackManager : MonoBehaviour
     // SPUNCH
     IEnumerator CoSpunch()
     {
-        if (!animationBuffer)
-        {
-            animator.SetTrigger("Spunch");
-            animationBuffer = true;
-        }
 
         GameObject SpunchObject = GameObject.Find("SpunchGameObject");
         SpunchEvent.Invoke();
 
         yield return new WaitForSeconds(secondsBetweenAttack);
-        animator.ResetTrigger("Spunch");
-        animationBuffer = false;
         SetAttacking(false);
     }
     // SUPER SPUNCH
@@ -266,18 +259,11 @@ public class AttackManager : MonoBehaviour
     // SWIPE
     IEnumerator CoSwipe()
     {
-        if (!animationBuffer)
-        {
-            animator.SetTrigger("Swipe");
-            animationBuffer = true;
-        }
 
         GameObject SwipeGameObject = GameObject.Find("SwipeGameObject");
         SwipeEvent.Invoke();
 
         yield return new WaitForSeconds(secondsBetweenAttack);
-        animator.ResetTrigger("Swipe");
-        animationBuffer = false;
         SetAttacking(false);
     }
 

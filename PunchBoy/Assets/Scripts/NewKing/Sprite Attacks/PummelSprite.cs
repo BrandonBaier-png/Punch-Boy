@@ -71,22 +71,31 @@ public class SpikeInheritor : StandardBossAttack
         quad3.add(0, 2).add(0, 3).add(1, 2).add(1, 3).setWaitTime(secondsBetweenAttack);
         quad4.add(2, 2).add(2, 3).add(3, 2).add(3, 3).setWaitTime(secondsBetweenAttack);
 
+        g1.add(0);
+        g2.add(1);
+        g3.add(2);
+        g4.add(3);
+
         print("PUMMEL HAS BEEN CALLED");
         if (GameObject.Find("punchBoy").transform.position.x <= 1 && GameObject.Find("punchBoy").transform.position.x >= 0)
         {
             // QUAD 3
             if (GameObject.Find("punchBoy").transform.position.z <= 1 && GameObject.Find("punchBoy").transform.position.z >= 0)
             {
-                yield return StartCoroutine(quad2.attack());
+                StartCoroutine(quad2.attack());
+                yield return new WaitForSeconds(1);
                 //Instantiate(PummelPrefab, new Vector3(.5f, height, .5f), Quaternion.identity);
                 //Instantiate(Pummel2d, new Vector3(-14.06f, 3.64f, 0f), Quaternion.identity);
+                StartCoroutine(g3.attack());
             }
             // QUAD 1
             else if (GameObject.Find("punchBoy").transform.position.z <= 3 && GameObject.Find("punchBoy").transform.position.z >= 2)
             {
-                yield return StartCoroutine(quad1.attack());
+                StartCoroutine(quad1.attack());
+                yield return new WaitForSeconds(1);
                 //Instantiate(PummelPrefab, new Vector3(.5f, height, 2.5f), Quaternion.identity);
                 //Instantiate(Pummel2d, new Vector3(-12.94f, 3.5f, 0f), Quaternion.identity);
+                StartCoroutine(g1.attack());
             }
         }
         else if (GameObject.Find("punchBoy").transform.position.x <= 3 && GameObject.Find("punchBoy").transform.position.x >= 2)
@@ -94,16 +103,20 @@ public class SpikeInheritor : StandardBossAttack
             // QUAD 4
             if (GameObject.Find("punchBoy").transform.position.z <= 1 && GameObject.Find("punchBoy").transform.position.z >= 0)
             {
-                yield return StartCoroutine(quad4.attack());
+                StartCoroutine(quad4.attack());
+                yield return new WaitForSeconds(1);
                 //Instantiate(PummelPrefab, new Vector3(2.5f, height, .5f), Quaternion.identity);
                 //Instantiate(Pummel2d, new Vector3(-12.94f, 3.7f, 0f), Quaternion.identity);
+                StartCoroutine(g4.attack());
             }
             // QUAD 2
             else if (GameObject.Find("punchBoy").transform.position.z <= 3 && GameObject.Find("punchBoy").transform.position.z >= 2)
             {
-                yield return StartCoroutine(quad3.attack());
+                StartCoroutine(quad3.attack());
+                yield return new WaitForSeconds(1);
                 //Instantiate(PummelPrefab, new Vector3(2.5f, height, 2.5f), Quaternion.identity);
                 //Instantiate(Pummel2d, new Vector3(-11.5f, 3.64f, 0f), Quaternion.identity);
+                StartCoroutine(g2.attack());
             }
         }
 

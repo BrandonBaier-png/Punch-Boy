@@ -1311,13 +1311,13 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8193459342846495397, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 5264231016075401504, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 399762026}
   m_SourcePrefab: {fileID: 100100000, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
 --- !u!1 &399762025 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8193459342846495397, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5264231016075401504, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
   m_PrefabInstance: {fileID: 399762024}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &399762026
@@ -1329,7 +1329,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 399762025}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 700237bbef4e6a6418ae3d3161790ae5, type: 3}
+  m_Script: {fileID: 11500000, guid: de6971e211b75dc4091399d5d617711e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &448128017
@@ -2527,19 +2527,7 @@ MonoBehaviour:
         m_CallState: 2
   ShockwaveEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1655986917}
-        m_TargetAssemblyTypeName: StandardBossAttack, Assembly-CSharp
-        m_MethodName: EnableAttack
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   spikeRow: {fileID: 140573681093482226, guid: 51799f69fb9b9ba44b04178e79935655, type: 3}
   attackCooldown: 3
 --- !u!1 &909965927

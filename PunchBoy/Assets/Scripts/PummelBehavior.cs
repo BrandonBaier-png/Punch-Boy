@@ -7,10 +7,6 @@ public class PummelBehavior : MonoBehaviour
     public Animator anim;
 
     SpriteRenderer rend1;
-    public float fadeLength = 3f;
-    public float fadingSpeed = 0.05f;
-    public Color startColor;
-    public Color endColor;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +36,10 @@ public class PummelBehavior : MonoBehaviour
 
         playAnimation();
 
-        yield return new WaitForSeconds(.95f);
+        yield return new WaitForSeconds(.5f);
+
+        anim.enabled = false;
+        rend1.enabled = false;
 
         yield return null;
 

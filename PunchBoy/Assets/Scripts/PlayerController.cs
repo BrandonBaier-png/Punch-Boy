@@ -102,11 +102,6 @@ public class PlayerController : MonoBehaviour, IMovementActions
             attackCooldown -= Time.deltaTime;
         }
 
-        if (attackCooldown <= 0) {
-            animator.ResetTrigger("punch");
-            animator.ResetTrigger("firePunch");
-        }
-
         //Basic punch skill
         if (Input.GetKeyDown(KeyCode.J) && basicCooldown >= 1.0f && attackCooldown <= 0)
         {
