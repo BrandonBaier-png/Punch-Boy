@@ -45,7 +45,7 @@ public class AttackManager : MonoBehaviour
 
     private bool animationBuffer = false;
     private List<int> baseAttackList = new List<int>() { 0, 1, 2, 3 };
-    private List<int> attackList = new List<int>();
+    
     private int secondsBetweenAttack = 4;
     private int secondsBetweenSuperSpunchAttack = 4;
     private bool attacking = false;
@@ -64,7 +64,7 @@ public class AttackManager : MonoBehaviour
 
     void Start()
     {
-        EnqueueBossAttacksFixed();
+        //EnqueueBossAttacksFixed();
     }
 
     // Update is called once per frame
@@ -107,8 +107,9 @@ public class AttackManager : MonoBehaviour
          * 2 - Pummmel 
          * 3 - Swipe
          */
-        attackQueue.Enqueue(0);
+        
         attackQueue.Enqueue(1);
+        attackQueue.Enqueue(0);
         attackQueue.Enqueue(2);
         attackQueue.Enqueue(3);
        
@@ -122,30 +123,35 @@ public class AttackManager : MonoBehaviour
          * 
          * -Brando 
          */
+        int i = 0;
+        
+        List<int> attackList = baseAttackList;
+        List<string> stringList = new List<string>() { "Test1", "Test2", "Test3"};
 
-        LinkedList<int> attacksAvailable = new LinkedList<int>(attackDatabase); 
-        print("makes it here so far :3");
-        //attacksAvailable = populateAttacksAvailable(attackDatabase);
-        //attackList = baseAttackList;
-
-        while (attackQueue.Count < 4) { }
-        {
-            
-            // attackList.Count might be causing the crash
-
-            int attackToQueue = Random.Range(0, attacksAvailable.Count);
-            print(attackToQueue + "iteration");
-            attacksAvailable.Remove(attackToQueue);
-            //print("Current attack queue: " + attackToQueue);
-
-
-
-            //int attackToQueue = Random.Range(0, attackList.Count);
-            //int selectedAttack = Random.Range(0, (attacksAvailable.Count - 1));
-            //print("Current attack queue: " + selectedAttack);
-            //attacksAvailable.Remove(selectedAttack);
-            //attackQueue.Enqueue(selectedAttack);
+        stringList.Remove("Test1");
+        //attackList.Remove(i);
+        
+        while (attackQueue.Count < 5) {
+            attackQueue.Enqueue(i);
+            i++;
+            print(attackQueue.Count + "Items in Queue :3");
         }
+        //// attackList.Count might be causing the crash
+
+        //int attackToQueue = Random.Range(0, attacksAvailable.Count);
+
+        //attacksAvailable.Remove(attackToQueue);
+        //print("Current attack queue: " + attackToQueue);
+
+
+
+        //int attackToQueue = Random.Range(0, attackList.Count);
+        //int selectedAttack = Random.Range(0, (attacksAvailable.Count - 1));
+        //print("Current attack queue: " + selectedAttack);
+        //attacksAvailable.Remove(selectedAttack);
+        //attackQueue.Enqueue(selectedAttack);
+
+
     }
 
     // When called, calls the attack 
@@ -254,6 +260,11 @@ public class AttackManager : MonoBehaviour
         SetAttacking(false);
     }
 
+
+    /* Below code is likely depricated
+     * 
+     * -Brandon
+     */
     private void DestroyAllSpikes()
     {
         GameObject[] activeSpikes = GameObject.FindGameObjectsWithTag("Spike");
