@@ -1112,6 +1112,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &259029790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 259029792}
+  - component: {fileID: 259029791}
+  m_Layer: 0
+  m_Name: 2dMoonSwipeController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &259029791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259029790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0fb2b338e98d014ca25406e956701dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spunchTigerAnim: {fileID: 1829014378}
+  animator: {fileID: 1829014378}
+--- !u!4 &259029792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259029790}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.7410192, y: -1.5111254, z: 11.704577}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &332795389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,7 +2573,49 @@ MonoBehaviour:
         m_CallState: 2
   ShockwaveEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1655986917}
+        m_TargetAssemblyTypeName: StandardBossAttack, Assembly-CSharp
+        m_MethodName: EnableAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  MoonEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 259029791}
+        m_TargetAssemblyTypeName: StandardBossAttack, Assembly-CSharp
+        m_MethodName: EnableAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  SlamEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1214177802}
+        m_TargetAssemblyTypeName: StandardBossAttack, Assembly-CSharp
+        m_MethodName: EnableAttack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   spikeRow: {fileID: 140573681093482226, guid: 51799f69fb9b9ba44b04178e79935655, type: 3}
   attackCooldown: 3
 --- !u!1 &909965927
@@ -3499,6 +3587,52 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.52176, y: -1.0434875, z: 2.6104844}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1214177801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1214177803}
+  - component: {fileID: 1214177802}
+  m_Layer: 0
+  m_Name: 2dVerticalSlamController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1214177802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214177801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c253e95b1682564dbf17d97b46d3758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spunchTigerAnim: {fileID: 1829014378}
+  animator: {fileID: 1829014378}
+--- !u!4 &1214177803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214177801}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.7410192, y: -1.5111254, z: 11.704577}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5797,6 +5931,8 @@ SceneRoots:
   - {fileID: 2073884578}
   - {fileID: 1000055066}
   - {fileID: 604120091}
+  - {fileID: 1214177803}
+  - {fileID: 259029792}
   - {fileID: 1903634090}
   - {fileID: 1178230846}
   - {fileID: 1711761626}

@@ -32,6 +32,8 @@ public class AttackManager : MonoBehaviour
     public UnityEvent SpunchEvent;
     public UnityEvent PummelEvent;
     public UnityEvent ShockwaveEvent;
+    public UnityEvent MoonEvent;
+    public UnityEvent SlamEvent;
 
     //AttackDel attackDel;
 
@@ -45,7 +47,7 @@ public class AttackManager : MonoBehaviour
 
 
     private bool animationBuffer = false;
-    private List<int> baseAttackList = new List<int>() { 0, 1, 2, 3, 4 };
+    private List<int> baseAttackList = new List<int>() { 0, 1, 2, 3, 4, 5, 6 };
     
     private int secondsBetweenAttack = 4;
     private int secondsBetweenSuperSpunchAttack = 4;
@@ -108,13 +110,17 @@ public class AttackManager : MonoBehaviour
          * 2 - Pummmel 
          * 3 - Swipe
          * 4 - Shockwave
+         * 5 - Moon Swipe
+         * 6 - Vertical Slam
          */
-        
+
+        attackQueue.Enqueue(6);
+        attackQueue.Enqueue(5);
+        attackQueue.Enqueue(4);
         attackQueue.Enqueue(1);
         attackQueue.Enqueue(0);
         attackQueue.Enqueue(2);
         attackQueue.Enqueue(3);
-        attackQueue.Enqueue(4);
 
     }
 
@@ -179,6 +185,12 @@ public class AttackManager : MonoBehaviour
                 break;
             case 4:
                 currentAttack = CoShockwave();
+                break;
+            case 5:
+                currentAttack = CoMoon();
+                break;
+            case 6:
+                currentAttack = CoSlam();
                 break;
         }
         //StartCoroutine(currentAttack);
@@ -256,6 +268,33 @@ public class AttackManager : MonoBehaviour
         SetAttacking(false);
 
     }
+
+    IEnumerator CoMoon()
+    {
+        print("MOON ATTACK MANAGER");
+
+        MoonEvent.Invoke();
+
+
+
+        yield return new WaitForSeconds(secondsBetweenAttack);
+        SetAttacking(false);
+
+    }
+
+    IEnumerator CoSlam()
+    {
+        print("SLAM ATTACK MANAGER");
+
+        SlamEvent.Invoke();
+
+
+
+        yield return new WaitForSeconds(secondsBetweenAttack);
+        SetAttacking(false);
+
+    }
+
     // SWIPE
     IEnumerator CoSwipe()
     {
