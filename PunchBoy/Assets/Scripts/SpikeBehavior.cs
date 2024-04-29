@@ -61,7 +61,8 @@ public class SpikeBehavior : MonoBehaviour
     }
 
     public void toggleHitbox(bool t) {
-        hitBox.enabled = true;
+        hitBox.enabled = t;
+        Debug.Log(hitBox);
     }
 
     public IEnumerator ToRed()
