@@ -35,8 +35,8 @@ public class VerticalSlam : StandardBossAttack
         punchAudio.Play();
         yield return StartCoroutine(slam2.attack());
         punchAudio.Play();
-        animator.ResetTrigger("Swipe");
-        yield return StartCoroutine(slam2Wave.attack());
+        /*animator.ResetTrigger("Swipe");*/
+/*        yield return StartCoroutine(slam2Wave.attack());*/
         animator.ResetTrigger("SwipeStart");
     }
 }
