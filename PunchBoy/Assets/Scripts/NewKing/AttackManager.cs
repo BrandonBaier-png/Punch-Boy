@@ -234,13 +234,17 @@ public class AttackManager : MonoBehaviour
     // SUPER SPUNCH
     IEnumerator CoSuperSpunch()
     {
+        if (!animationBuffer)
+        {
+            animator.SetTrigger("SuperSpunchPreparing");
+            animationBuffer = true;
+        }
         GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
         SuperSpunchEvent.Invoke();
 
         yield return new WaitForSeconds(secondsBetweenSuperSpunchAttack);
         //DestroyAllSpikes();
         animator.SetBool("SuperSpunchPreparing", false);
-        animator.ResetTrigger("SuperSpunch");
         animationBuffer = false;
         SetAttacking(false);
     }
@@ -249,6 +253,10 @@ public class AttackManager : MonoBehaviour
     //COPY THIS ONE
     IEnumerator CoPummel()
     {
+        if (!animationBuffer) {
+            animator.SetTrigger("PummelStart");
+            animationBuffer = true;
+        }
         print("PUMMEL ATTACK MANAGER");
 
         PummelEvent.Invoke();
@@ -258,6 +266,8 @@ public class AttackManager : MonoBehaviour
 
         yield return new WaitForSeconds(secondsBetweenAttack);
         SetAttacking(false);
+        animator.SetTrigger("PummelEnd");
+        animationBuffer = false;
         //print("PUMMEL END");
 
     }

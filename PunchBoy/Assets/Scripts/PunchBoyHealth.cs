@@ -10,6 +10,8 @@ public class PunchBoyHealth : MonoBehaviour
     private float currentHealth = 100;
     private float ITime = 0;
     public Image PBHealthBar;
+
+    public Animator Animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +42,7 @@ public class PunchBoyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             UpdateHealth();
-            SceneManager.LoadScene("GameOver");
+            PunchBoyDead();
         }
     }
 
@@ -53,5 +55,11 @@ public class PunchBoyHealth : MonoBehaviour
     public void UpdateHealth()
     {
         PBHealthBar.fillAmount = currentHealth / maxHealth;
+    }
+
+    IEnumerator PunchBoyDead() {
+        Animator.SetTrigger("Death");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("GameOver");
     }
 }

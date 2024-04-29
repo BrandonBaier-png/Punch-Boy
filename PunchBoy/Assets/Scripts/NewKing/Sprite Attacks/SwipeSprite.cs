@@ -79,7 +79,7 @@ public class SwipeSprite : StandardBossAttack
         wave4row3.add(0, 1).add(1, 1).setWaitTime(secondsBetweenAttack);
         wave4row4.add(0, 0).add(1, 0).setWaitTime(secondsBetweenAttack);
 
-        animator.SetTrigger("Swipe");
+        animator.SetTrigger("SwipeStart");
         yield return StartCoroutine(wave1row1.attack());
         yield return StartCoroutine(wave1row2.attack());
         yield return StartCoroutine(wave1row3.attack());
@@ -96,6 +96,5 @@ public class SwipeSprite : StandardBossAttack
         yield return StartCoroutine(wave4row2.attack());
         yield return StartCoroutine(wave4row3.attack());
         yield return StartCoroutine(wave4row4.attack());
-        animator.ResetTrigger("Swipe");
     }
 }
