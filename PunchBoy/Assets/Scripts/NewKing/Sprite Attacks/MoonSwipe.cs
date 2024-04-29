@@ -14,7 +14,7 @@ public class MoonSwipe : StandardBossAttack
 {
 
     float secondsBetweenAttack = 0.2f;
-    float secondsBetweenAttackWave = 1.0f;
+    float secondsBetweenAttackWave = 1.5f;
     public Animator animator;
     // Start is called before the first frame update
     void Start()

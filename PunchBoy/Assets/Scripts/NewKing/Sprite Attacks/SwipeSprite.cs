@@ -15,6 +15,7 @@ public class SwipeSprite : StandardBossAttack
 
     float secondsBetweenAttack = 0.2f;
     float secondsBetweenAttackWave = 0.7f;
+    float secondsBetweenFinalWaves = 1.5f;
     public Animator animator;
     // Start is called before the first frame update
     void Start()
@@ -67,12 +68,12 @@ public class SwipeSprite : StandardBossAttack
         wave2row4.add(0, 3).setWaitTime(secondsBetweenAttack);
         wave2row3.add(0, 2).add(1, 2).setWaitTime(secondsBetweenAttack);
         wave2row2.add(0, 1).add(1, 1).add(2, 1).setWaitTime(secondsBetweenAttack);
-        wave2row1.add(0, 0).add(1, 0).add(2, 0).add(3, 0).setWaitTime(secondsBetweenAttackWave);
+        wave2row1.add(0, 0).add(1, 0).add(2, 0).add(3, 0).setWaitTime(secondsBetweenFinalWaves);
 
         wave3row1.add(3, 0).add(2, 0).setWaitTime(secondsBetweenAttack);
         wave3row2.add(3, 1).add(2, 1).setWaitTime(secondsBetweenAttack);
         wave3row3.add(3, 2).add(2, 2).setWaitTime(secondsBetweenAttack);
-        wave3row4.add(3, 3).add(2, 3).setWaitTime(secondsBetweenAttackWave);
+        wave3row4.add(3, 3).add(2, 3).setWaitTime(secondsBetweenFinalWaves);
 
         wave4row1.add(0, 3).add(1, 3).setWaitTime(secondsBetweenAttack);
         wave4row2.add(0, 2).add(1, 2).setWaitTime(secondsBetweenAttack);
