@@ -71,7 +71,6 @@ public class SuperSpunch : MonoBehaviour
         {
             animator.SetBool("SuperSpunchOut", true);
             animator.SetTrigger("SuperSpunch");
-            spikeAudio.Play();
             GroupAttack g1 = gameObject.AddComponent<GroupAttack>();
 
         }
@@ -87,6 +86,7 @@ public class SuperSpunch : MonoBehaviour
     public void spawnSpikes()
     {
         Instantiate(spikeRow, spawnPos, spikeRow.transform.rotation);
+        spikeAudio.Play();
         ResetAttack();
     }
     void ResetSuperSpunch()
