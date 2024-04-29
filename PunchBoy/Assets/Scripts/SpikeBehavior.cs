@@ -60,7 +60,11 @@ public class SpikeBehavior : MonoBehaviour
 
     }
 
-    IEnumerator ToRed()
+    public void toggleHitbox(bool t) {
+        hitBox.enabled = true;
+    }
+
+    public IEnumerator ToRed()
     {
         rend.enabled = true;
 

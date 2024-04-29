@@ -21,6 +21,21 @@ public class GroupAttack : MonoBehaviour, Interface
         yield return new WaitForSeconds(waitTime);
     }
 
+    public IEnumerator PummelAttack() {
+        for (int i = 0; i < spikeList.Count; i++)
+        {
+            spikeList[i].toggleHitbox(true);
+            /* Debug.Log("deploying spikes-> " + spikeList[i]);*/
+            StartCoroutine(spikeList[i].ToRed());
+        }
+
+        yield return new WaitForSeconds(waitTime);
+        for (int i = 0; i < spikeList.Count; i++)
+        {
+            spikeList[i].toggleHitbox(false);
+        }
+    }
+
     // Start is called before the first frame update
     public void Awake()
     {
