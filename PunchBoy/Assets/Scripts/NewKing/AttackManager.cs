@@ -308,7 +308,6 @@ public class AttackManager : MonoBehaviour
 
         yield return new WaitForSeconds(secondsBetweenAttack);
         SetAttacking(false);
-
     }
 
     // SWIPE
