@@ -18,6 +18,7 @@ public class SuperSpunchSprite : StandardBossAttack
     // THIS IS A PROOF OF CONCEPT HEALTH, WE CAN CHANGE IT AT ANY TIME
     private float TempBossHealth;
     float spunchTimer = 4;
+    public Animator animator;
     // Start is called before the first frame update
 
     private void Start()
@@ -50,9 +51,17 @@ public class SuperSpunchSprite : StandardBossAttack
         print("Boss Health " + TempBossHealth);
         if (TempBossHealth > 0)
         {
+            animator.SetBool("SuperSpunchOut", true);
+            animator.SetTrigger("SuperSpunch");
             yield return StartCoroutine(allSpikes.attack());
 
         }
+        else {
+            animator.SetBool("SuperSpunchOut", false);
+            animator.SetTrigger("SuperSpunch");
+        }
+        animator.SetBool("SuperSpunchOut", false);
+        animator.ResetTrigger("SuperSpunch");
         RemoveFromDelegate();
     }
 

@@ -62,7 +62,7 @@ public class MoonSwipe : StandardBossAttack
         wave3row1.add(0, 2).add(1, 2).add(2, 2).setWaitTime(secondsBetweenAttack);
         wave3row1.add(0, 3).add(1, 3).add(2, 3).add(3, 3).setWaitTime(secondsBetweenAttackWave);
 
-        animator.SetTrigger("Swipe");
+        animator.SetTrigger("SwipeStart");
         yield return StartCoroutine(wave1row1.attack());
         yield return StartCoroutine(wave1row2.attack());
         yield return StartCoroutine(wave1row3.attack());
@@ -73,6 +73,6 @@ public class MoonSwipe : StandardBossAttack
         yield return StartCoroutine(wave3row2.attack());
         yield return StartCoroutine(wave3row3.attack());
         yield return StartCoroutine(wave3row4.attack());
-        animator.ResetTrigger("Swipe");
+        animator.ResetTrigger("SwipeStart");
     }
 }

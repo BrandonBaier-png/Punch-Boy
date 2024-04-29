@@ -42,7 +42,7 @@ public class PunchBoyHealth : MonoBehaviour
         if (currentHealth <= 0)
         {
             UpdateHealth();
-            PunchBoyDead();
+            StartCoroutine(PunchBoyDead());
         }
     }
 
@@ -59,6 +59,7 @@ public class PunchBoyHealth : MonoBehaviour
 
     IEnumerator PunchBoyDead() {
         Animator.SetTrigger("Death");
+        Debug.Log("death animation triggered");
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("GameOver");
     }

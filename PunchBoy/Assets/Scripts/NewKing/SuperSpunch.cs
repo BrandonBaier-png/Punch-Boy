@@ -69,8 +69,10 @@ public class SuperSpunch : MonoBehaviour
         yield return new WaitForSeconds(spunchTimer);
         if (TempBossHealth > 0)
         {
+            print("spunch success animation");
             animator.SetBool("SuperSpunchOut", true);
             animator.SetTrigger("SuperSpunch");
+            
             spikeAudio.Play();
             GroupAttack g1 = gameObject.AddComponent<GroupAttack>();
 
