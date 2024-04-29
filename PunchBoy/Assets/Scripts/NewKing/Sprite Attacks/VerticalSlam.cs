@@ -30,11 +30,13 @@ public class VerticalSlam : StandardBossAttack
         slam1.add(0, 1).add(0, 2).add(1, 1).add(1, 2).add(2, 1).add(2, 2).add(3, 1).add(3, 2).setWaitTime(attackDelay);
         slam2.add(1, 0).add(2, 0).add(1, 1).add(2, 1).add(1, 2).add(2, 2).add(1, 3).add(2, 3).setWaitTime(attackDelay);
 
-        animator.SetTrigger("Swipe");
+        animator.SetTrigger("SwipeStart");
         yield return StartCoroutine(slam1.attack());
         punchAudio.Play();
         yield return StartCoroutine(slam2.attack());
         punchAudio.Play();
         animator.ResetTrigger("Swipe");
+        yield return StartCoroutine(slam2Wave.attack());
+        animator.ResetTrigger("SwipeStart");
     }
 }
