@@ -81,8 +81,8 @@ public class AttackManager : MonoBehaviour
         //When the cooldown is less than zero, New King is ready to attack
         if (attackQueue.Count <= 0)
         {
-            //EnqueueBossAttacks();
-            EnqueueBossAttacksFixed();
+            EnqueueBossAttacks();
+            //EnqueueBossAttacksFixed();
         }
 
         if (attackCooldown <= 0)
@@ -133,34 +133,43 @@ public class AttackManager : MonoBehaviour
          * -Brando 
          */
         int i = 0;
-        
         List<int> attackList = baseAttackList;
-        List<string> stringList = new List<string>() { "Test1", "Test2", "Test3"};
-
-        stringList.Remove("Test1");
-        //attackList.Remove(i);
+        List<int> usedAttackList = new List<int>();
         
-        while (attackQueue.Count < 5) {
-            attackQueue.Enqueue(i);
+
+
+        //stringList.Remove("Test1");
+        /*
+         * for Every Attack
+         * 
+         * 
+         */
+        
+        while (attackQueue.Count < 7) {
+            int attackNumber = randomExceptList(7, usedAttackList);
+            attackQueue.Enqueue(attackNumber);
+            usedAttackList.Add(attackNumber);
             i++;
             print(attackQueue.Count + "Items in Queue :3");
         }
-        //// attackList.Count might be causing the crash
+    
+    }
 
-        //int attackToQueue = Random.Range(0, attacksAvailable.Count);
+    public int randomExceptList(int attackListLength, List<int> exclusion)
+    {
+        System.Random random = new System.Random();
+        
+        int result = random.Next(attackListLength - exclusion.Count);
+        for (int i = 0; i < exclusion.Count; i++)
+        {
+            if (result < exclusion[i])
+            {
+                return result;
+            }
+            result++;
+        }
 
-        //attacksAvailable.Remove(attackToQueue);
-        //print("Current attack queue: " + attackToQueue);
-
-
-
-        //int attackToQueue = Random.Range(0, attackList.Count);
-        //int selectedAttack = Random.Range(0, (attacksAvailable.Count - 1));
-        //print("Current attack queue: " + selectedAttack);
-        //attacksAvailable.Remove(selectedAttack);
-        //attackQueue.Enqueue(selectedAttack);
-
-
+        return result;
     }
 
     // When called, calls the attack 
@@ -210,7 +219,7 @@ public class AttackManager : MonoBehaviour
         attackTally++;
     }
 
-    
+
 
     // SPUNCH
     IEnumerator CoSpunch()
@@ -227,9 +236,6 @@ public class AttackManager : MonoBehaviour
     {
         GameObject SuperSpunchObject = GameObject.Find("SuperSpunchGameObject");
         SuperSpunchEvent.Invoke();
-
-        
-
 
         yield return new WaitForSeconds(secondsBetweenSuperSpunchAttack);
         //DestroyAllSpikes();

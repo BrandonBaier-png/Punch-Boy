@@ -54,6 +54,7 @@ public class SpikeInheritor : StandardBossAttack
         PummelGroupAttack g3 = gameObject.AddComponent<PummelGroupAttack>();
         PummelGroupAttack g4 = gameObject.AddComponent<PummelGroupAttack>();
         /* Stage grid with each containing 4 elements
+         * ROTATE CLOCKWISE TO MATCH
          * 
          * Quad 1 | Quad 2
          * ----------------
