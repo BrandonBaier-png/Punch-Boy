@@ -165,7 +165,7 @@ TextureImporter:
       name: SpikeAttack_v2_0
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 256
         width: 128
         height: 128
@@ -186,7 +186,7 @@ TextureImporter:
       name: SpikeAttack_v2_1
       rect:
         serializedVersion: 2
-        x: 256
+        x: 128
         y: 256
         width: 128
         height: 128
@@ -207,7 +207,7 @@ TextureImporter:
       name: SpikeAttack_v2_2
       rect:
         serializedVersion: 2
-        x: 384
+        x: 256
         y: 256
         width: 128
         height: 128
@@ -228,7 +228,7 @@ TextureImporter:
       name: SpikeAttack_v2_3
       rect:
         serializedVersion: 2
-        x: 512
+        x: 384
         y: 256
         width: 128
         height: 128
@@ -249,8 +249,8 @@ TextureImporter:
       name: SpikeAttack_v2_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
+        x: 512
+        y: 256
         width: 128
         height: 128
       alignment: 0
@@ -270,7 +270,7 @@ TextureImporter:
       name: SpikeAttack_v2_5
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 128
         width: 128
         height: 128
@@ -291,7 +291,7 @@ TextureImporter:
       name: SpikeAttack_v2_6
       rect:
         serializedVersion: 2
-        x: 256
+        x: 128
         y: 128
         width: 128
         height: 128
@@ -312,7 +312,7 @@ TextureImporter:
       name: SpikeAttack_v2_7
       rect:
         serializedVersion: 2
-        x: 384
+        x: 256
         y: 128
         width: 128
         height: 128
@@ -333,7 +333,7 @@ TextureImporter:
       name: SpikeAttack_v2_8
       rect:
         serializedVersion: 2
-        x: 512
+        x: 384
         y: 128
         width: 128
         height: 128
@@ -354,8 +354,8 @@ TextureImporter:
       name: SpikeAttack_v2_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 512
+        y: 128
         width: 128
         height: 128
       alignment: 0
@@ -375,7 +375,7 @@ TextureImporter:
       name: SpikeAttack_v2_10
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 0
         width: 128
         height: 128
@@ -396,7 +396,7 @@ TextureImporter:
       name: SpikeAttack_v2_11
       rect:
         serializedVersion: 2
-        x: 256
+        x: 128
         y: 0
         width: 128
         height: 128
@@ -417,7 +417,7 @@ TextureImporter:
       name: SpikeAttack_v2_12
       rect:
         serializedVersion: 2
-        x: 384
+        x: 256
         y: 0
         width: 128
         height: 128
@@ -430,6 +430,48 @@ TextureImporter:
       bones: []
       spriteID: 42f1432975e9c364d972e0287f38f6c3
       internalID: -1065931899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeAttack_v2_13
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf321b28a3508a5408e9da08c5d01c42
+      internalID: -2016279110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpikeAttack_v2_14
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce919669a5d6b564e94b3cddd2ea321b
+      internalID: 1686796829
       vertices: []
       indices: 
       edges: []
@@ -450,6 +492,8 @@ TextureImporter:
       SpikeAttack_v2_10: -947732549
       SpikeAttack_v2_11: 1879396049
       SpikeAttack_v2_12: -1065931899
+      SpikeAttack_v2_13: -2016279110
+      SpikeAttack_v2_14: 1686796829
       SpikeAttack_v2_2: 764935807
       SpikeAttack_v2_3: 257015671
       SpikeAttack_v2_4: -1023234305

@@ -73,6 +73,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb09196da062ecc40a2eda0776a1d795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spunchTigerAnim: {fileID: 0}
+  spikesAudio: {fileID: 0}
+  punchAudio: {fileID: 0}
 --- !u!1001 &1221025177481800979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -767,10 +770,18 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 47499673335029676}
+    - target: {fileID: 6215629428101873900, guid: ac2f49a8ffccf3b40949a00102d1b6e7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1340149633, guid: 9bef940b7d23b5143b4d162d9478aba6, type: 3}
     - target: {fileID: 6261301240472059388, guid: ac2f49a8ffccf3b40949a00102d1b6e7, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6261301240472059388, guid: ac2f49a8ffccf3b40949a00102d1b6e7, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 781b18dad8f82ef4babada0f3d1afd01, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
