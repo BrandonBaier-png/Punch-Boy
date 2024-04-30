@@ -3199,6 +3199,8 @@ MonoBehaviour:
   BossDamaged:
     m_PersistentCalls:
       m_Calls: []
+  Pb: {fileID: 797729216}
+  Nk: {fileID: 1829014378}
   healthBar: {fileID: 1462939010}
 --- !u!23 &762248703
 MeshRenderer:
@@ -4575,6 +4577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spunchTigerAnim: {fileID: 1829014378}
   animator: {fileID: 1829014378}
+  swipeAudio: {fileID: 0}
 --- !u!4 &1178230846
 Transform:
   m_ObjectHideFlags: 0

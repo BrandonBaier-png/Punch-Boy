@@ -16,6 +16,8 @@ public class Boss : MonoBehaviour
     SuperSpunchSprite superSpunchSprite;
     public UnityEvent BossDamaged;
     public BossHit onBossHit;
+    public Animator Pb;
+    public Animator Nk;
 
     //private float bossConcenInitial = 20;
     //private float bossConcen = 20;
@@ -71,7 +73,7 @@ public class Boss : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene("GameWin");
+            StartCoroutine(PBwin());
         }
         Debug.Log(bossHealth);
 
@@ -108,5 +110,13 @@ public class Boss : MonoBehaviour
     public void UpdateHealth()
     {
         healthBar.fillAmount = currentHealth / bossHealth;
+    }
+
+    IEnumerator PBwin() {
+        Nk.SetBool("TigerDead", true);
+        Nk.SetTrigger("Death");
+        Pb.SetTrigger("Win");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("GameWin");
     }
 }

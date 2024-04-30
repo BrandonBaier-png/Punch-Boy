@@ -24,12 +24,17 @@ public class GroupAttack : MonoBehaviour, Interface
     public IEnumerator PummelAttack() {
         for (int i = 0; i < spikeList.Count; i++)
         {
-            spikeList[i].toggleHitbox(true);
             /* Debug.Log("deploying spikes-> " + spikeList[i]);*/
             StartCoroutine(spikeList[i].ToRed());
         }
 
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(1);
+        for (int i = 0; i < spikeList.Count; i++)
+        {
+            spikeList[i].toggleHitbox(true);
+        }
+
+        yield return new WaitForSeconds(.3f);
         for (int i = 0; i < spikeList.Count; i++)
         {
             spikeList[i].toggleHitbox(false);
