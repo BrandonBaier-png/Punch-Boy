@@ -132,7 +132,7 @@ public class SpikeInheritor : StandardBossAttack
 
     IEnumerator AudioController()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.7f);
 
         spikeAudio.Play();
     }

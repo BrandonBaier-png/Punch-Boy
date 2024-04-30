@@ -16,6 +16,8 @@ public class MoonSwipe : StandardBossAttack
     float secondsBetweenAttack = 0.15f;
     float secondsBetweenAttackWave = 1.0f;
     public Animator animator;
+
+    public AudioSource swipeAudio;
     
     // Start is called before the first frame update
     void Start()
@@ -55,14 +57,22 @@ public class MoonSwipe : StandardBossAttack
         wave2row3.add(0, 0).add(3, 0).setWaitTime(secondsBetweenAttackWave);
 
         animator.SetTrigger("SwipeStart");
+        StartCoroutine(AudioDelay());
         yield return StartCoroutine(wave1row1.attack());
         yield return StartCoroutine(wave1row2.attack());
         yield return StartCoroutine(wave1row3.attack());
         animator.ResetTrigger("SwipeStart");
         animator.SetTrigger("SwipeStart");
+        StartCoroutine(AudioDelay());
         yield return StartCoroutine(wave2row1.attack());
         yield return StartCoroutine(wave2row2.attack());
         yield return StartCoroutine(wave2row3.attack());
         animator.ResetTrigger("SwipeStart");
+    }
+
+    IEnumerator AudioDelay()
+    {
+        yield return new WaitForSeconds(1.0f);
+        swipeAudio.Play();
     }
 }

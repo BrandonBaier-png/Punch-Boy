@@ -2369,6 +2369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spunchTigerAnim: {fileID: 1829014378}
   animator: {fileID: 1829014378}
+  swipeAudio: {fileID: 909965929}
 --- !u!4 &259029792
 Transform:
   m_ObjectHideFlags: 0
@@ -5586,7 +5587,6 @@ MonoBehaviour:
   Wave2Prefab: {fileID: 2620178644965276692, guid: 64f2edffe1274e740a981d8f20708a58, type: 3}
   Wave3Prefab: {fileID: 2231566502378920933, guid: de648bf7d290a1c48b101f9726c4dbfb, type: 3}
   Wave4Prefab: {fileID: 2770879811854091383, guid: 4247e3c1e1ff8ad4fa6dba9335f607c8, type: 3}
-  swipeAudio: {fileID: 909965929}
 --- !u!1 &1455473449
 GameObject:
   m_ObjectHideFlags: 0
@@ -6235,6 +6235,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spunchTigerAnim: {fileID: 1829014378}
   animator: {fileID: 1829014378}
+  punchAudio: {fileID: 1713105739}
+  spikeAudio: {fileID: 1333322334}
 --- !u!4 &1655986918
 Transform:
   m_ObjectHideFlags: 0
@@ -6943,7 +6945,7 @@ MonoBehaviour:
   PummelPrefab: {fileID: 2229207107116478058, guid: 35ee2250f9e8d6346bda6a00386076f4, type: 3}
   Pummel2d: {fileID: 5264231016075401504, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
   secondsBetweenAttack: 2
-  spikeAudio: {fileID: 1333322334}
+  spikeAudio: {fileID: 1713105739}
 --- !u!4 &1903634090
 Transform:
   m_ObjectHideFlags: 0
