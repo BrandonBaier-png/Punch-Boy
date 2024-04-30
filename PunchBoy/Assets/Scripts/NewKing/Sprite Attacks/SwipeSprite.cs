@@ -83,24 +83,30 @@ public class SwipeSprite : StandardBossAttack
         wave4row4.add(0, 0).add(1, 0).setWaitTime(secondsBetweenAttack);
 
         animator.SetTrigger("SwipeStart");
+        swipeAudio.Play();
         yield return StartCoroutine(wave1row1.attack());
         yield return StartCoroutine(wave1row2.attack());
         yield return StartCoroutine(wave1row3.attack());
-        swipeAudio.Play();
         yield return StartCoroutine(wave1row4.attack());
+        print("CODE MADE IT HERE :3");
         animator.ResetTrigger("SwipeStart");
+
+
         animator.SetTrigger("SwipeStart");
+        swipeAudio.Play();
         yield return StartCoroutine(wave2row4.attack());
         yield return StartCoroutine(wave2row3.attack());
         yield return StartCoroutine(wave2row2.attack());
-        swipeAudio.Play();
         yield return StartCoroutine(wave2row1.attack());
         animator.ResetTrigger("SwipeStart");
+
+
         animator.SetTrigger("SwipeStart");
         yield return StartCoroutine(wave3row1.attack());
         yield return StartCoroutine(wave3row2.attack());
         yield return StartCoroutine(wave3row3.attack());
         swipeAudio.Play();
+
         yield return StartCoroutine(wave3row4.attack());
         animator.ResetTrigger("SwipeStart");
         animator.SetTrigger("SwipeStart");
@@ -108,6 +114,7 @@ public class SwipeSprite : StandardBossAttack
         yield return StartCoroutine(wave4row2.attack());
         yield return StartCoroutine(wave4row3.attack());
         swipeAudio.Play();
+
         yield return StartCoroutine(wave4row4.attack());
         animator.ResetTrigger("SwipeStart");
     }
