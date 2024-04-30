@@ -25,7 +25,7 @@ public class Boss : MonoBehaviour
 
     private float bossHealth = 500;
     private float currentHealth = 500;
-    private float fireFistDamage = 3;
+    private float fireFistDamage = 4;
     private float sweepDamage = 7;
     private float basicPunchDamage = 5;
 
