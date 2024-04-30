@@ -138,6 +138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb09196da062ecc40a2eda0776a1d795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spunchTigerAnim: {fileID: 0}
+  spikesAudio: {fileID: 0}
+  punchAudio: {fileID: 0}
 --- !u!1 &2672808549647728719
 GameObject:
   m_ObjectHideFlags: 0
