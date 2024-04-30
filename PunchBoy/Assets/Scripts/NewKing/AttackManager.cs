@@ -114,6 +114,15 @@ public class AttackManager : MonoBehaviour
          * 6 - Vertical Slam
          */
 
+        attackQueue.Enqueue(2);
+        attackQueue.Enqueue(2);
+        attackQueue.Enqueue(2);
+        attackQueue.Enqueue(2);
+        attackQueue.Enqueue(2);
+        attackQueue.Enqueue(2);
+        attackQueue.Enqueue(2);
+        attackQueue.Enqueue(2);
+        attackQueue.Enqueue(3);
         attackQueue.Enqueue(3);
         attackQueue.Enqueue(3);
         attackQueue.Enqueue(3);
