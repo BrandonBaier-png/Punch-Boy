@@ -269,7 +269,6 @@ public class AttackManager : MonoBehaviour
     IEnumerator CoPummel()
     {
         if (!animationBuffer) {
-            GameObject.Find("TigerSpunch_AlexRowley_0").transform.position = new Vector3(-10.71f,2.3f,0);
             animator.SetTrigger("PummelStart");
             animationBuffer = true;
         }
@@ -283,7 +282,6 @@ public class AttackManager : MonoBehaviour
         yield return new WaitForSeconds(secondsBetweenAttack);
         SetAttacking(false);
         animator.SetTrigger("PummelEnd");
-        GameObject.Find("TigerSpunch_AlexRowley_0").transform.position = new Vector3(-10.71f, 1.27f, 0);
         animationBuffer = false;
         //print("PUMMEL END");
 
