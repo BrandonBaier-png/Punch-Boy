@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2108938572, guid: 6605b7c8f1ce675418a30339ad34b088, type: 3}
+  m_Sprite: {fileID: -1139484191, guid: 3df920961df78544db84bbfd82bbde10, type: 3}
   m_Color: {r: 0.9811321, g: 0.9811321, b: 0.9811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,7 +98,7 @@ Animator:
   m_GameObject: {fileID: 2225574825525539687}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d822fe27fe0e1d045aa041028cf6cb82, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0a2295627a0de0b4f9fff17853e1d243, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -138,6 +138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb09196da062ecc40a2eda0776a1d795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spunchTigerAnim: {fileID: 0}
+  spikesAudio: {fileID: 0}
+  punchAudio: {fileID: 0}
 --- !u!1 &2672808549647728719
 GameObject:
   m_ObjectHideFlags: 0
