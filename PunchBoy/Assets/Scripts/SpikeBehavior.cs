@@ -39,7 +39,7 @@ public class SpikeBehavior : MonoBehaviour
    public void playAnimation()
    {
         anim.enabled = true;
-        anim.Play("Spunch row", 0, 0);
+        anim.Play("updated spike row", 0, 0);
    }
 
     public IEnumerator DeploySpike()
