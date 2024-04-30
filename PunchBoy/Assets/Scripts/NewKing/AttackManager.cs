@@ -54,7 +54,7 @@ public class AttackManager : MonoBehaviour
     private bool attacking = false;
     private int attackTally = 0;
     public const float BASECOOLDOWN = 3;
-    public float attackCooldown = 3;
+    public float attackCooldown = 1;
 
 
 
@@ -115,12 +115,17 @@ public class AttackManager : MonoBehaviour
          */
 
         attackQueue.Enqueue(3);
-        attackQueue.Enqueue(6);
-        attackQueue.Enqueue(5);
-        attackQueue.Enqueue(4);
-        attackQueue.Enqueue(1);
-        attackQueue.Enqueue(0);
-        attackQueue.Enqueue(2);
+        attackQueue.Enqueue(3);
+        attackQueue.Enqueue(3);
+        attackQueue.Enqueue(3);
+        attackQueue.Enqueue(3);
+        attackQueue.Enqueue(3);
+        //attackQueue.Enqueue(6);
+        //attackQueue.Enqueue(5);
+        //attackQueue.Enqueue(4);
+        //attackQueue.Enqueue(1);
+        //attackQueue.Enqueue(0);
+        //attackQueue.Enqueue(2);
 
     }
 
@@ -183,7 +188,8 @@ public class AttackManager : MonoBehaviour
                 currentAttack = CoSpunch();
                 break;         
             case 1:
-                currentAttack = CoSuperSpunch();
+                currentAttack = CoMoon();
+                //currentAttack = CoSuperSpunch();
                 break;
             case 2:
                 currentAttack = CoPummel();

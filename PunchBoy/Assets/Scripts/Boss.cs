@@ -23,8 +23,8 @@ public class Boss : MonoBehaviour
     //private float bossConcen = 20;
     public Image healthBar;
 
-    private float bossHealth = 1000;
-    private float currentHealth = 1000;
+    private float bossHealth = 500;
+    private float currentHealth = 500;
     private float fireFistDamage = 3;
     private float sweepDamage = 7;
     private float basicPunchDamage = 5;
