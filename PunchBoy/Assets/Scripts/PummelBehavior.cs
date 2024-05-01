@@ -25,7 +25,7 @@ public class PummelBehavior : MonoBehaviour
     {
         rend1.enabled = true;
         anim.enabled = true;
-        anim.Play("Pummel2dObject", 0);
+        anim.Play("Pummel2dPunch", 0);
     }
 
     public IEnumerator DeployPummel()
@@ -40,6 +40,7 @@ public class PummelBehavior : MonoBehaviour
 
         anim.enabled = false;
         rend1.enabled = false;
+        
 
         yield return null;
 

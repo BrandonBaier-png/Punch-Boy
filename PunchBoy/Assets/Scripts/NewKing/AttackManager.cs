@@ -122,13 +122,7 @@ public class AttackManager : MonoBehaviour
         attackQueue.Enqueue(2);
         attackQueue.Enqueue(2);
         attackQueue.Enqueue(2);
-        attackQueue.Enqueue(3);
-        attackQueue.Enqueue(3);
-        attackQueue.Enqueue(3);
-        attackQueue.Enqueue(3);
-        attackQueue.Enqueue(3);
-        attackQueue.Enqueue(3);
-        attackQueue.Enqueue(3);
+        
         //attackQueue.Enqueue(6);
         //attackQueue.Enqueue(5);
         //attackQueue.Enqueue(4);

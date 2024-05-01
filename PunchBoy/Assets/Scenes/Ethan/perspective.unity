@@ -2597,9 +2597,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 198384206468307269, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198384206468307269, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
       propertyPath: m_SortingOrder
       value: 667
       objectReference: {fileID: 0}
+    - target: {fileID: 446250426671039501, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 550272432}
     - target: {fileID: 1104247013167348230, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2708,6 +2716,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 667
       objectReference: {fileID: 0}
+    - target: {fileID: 8020802839040461438, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 566981937}
     - target: {fileID: 8423536869769505724, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2716,6 +2728,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 667
       objectReference: {fileID: 0}
+    - target: {fileID: 8842543868745972466, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 716444669}
     - target: {fileID: 9091897319006645660, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2829,6 +2845,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &550272432 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4961098469067229715, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
+  m_PrefabInstance: {fileID: 399762024}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &566981937 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 505927881376747862, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
+  m_PrefabInstance: {fileID: 399762024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &604120089
 GameObject:
   m_ObjectHideFlags: 0
@@ -3463,6 +3489,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 2
   m_SpriteSortPoint: 0
+--- !u!95 &716444669 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2672549678619365451, guid: 529c20f22650bb84e9f3fa04798194e9, type: 3}
+  m_PrefabInstance: {fileID: 399762024}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &730241719
 GameObject:
   m_ObjectHideFlags: 0

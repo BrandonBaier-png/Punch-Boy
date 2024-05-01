@@ -20,10 +20,6 @@ public class SwipeSprite : StandardBossAttack
 
     public AudioSource swipeAudio;
     // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     public override IEnumerator attackPattern()
     {
