@@ -18,6 +18,12 @@ public class MainMenuButton : MonoBehaviour
     }
 
     public void Menu() {
+        GameObject.Find("SoundEffect").GetComponent<AudioSource>().Play();
+        StartCoroutine(MenuButton());
+    }
+
+    IEnumerator MenuButton() { 
+        yield return new WaitForSeconds(.2f);
         SceneManager.LoadScene("StartScreen");
     }
 }

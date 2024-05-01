@@ -18,7 +18,11 @@ public class restartGameButton : MonoBehaviour
     }
 
     public void restart() {
-        Debug.Log("restart called");
+        GameObject.Find("SoundEffect").GetComponent<AudioSource>().Play();
+        StartCoroutine(RestartButton());
+    }
+    IEnumerator RestartButton() {
+        yield return new WaitForSeconds(.2f);
         SceneManager.LoadScene("perspective");
     }
 }

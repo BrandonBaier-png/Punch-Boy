@@ -19,6 +19,12 @@ public class StartGame : MonoBehaviour
 
     public void Begin()
     {
+        GameObject.Find("SoundEffect").GetComponent<AudioSource>().Play();
+        StartCoroutine(GameStart());
+    }
+
+    IEnumerator GameStart() {
+        yield return new WaitForSeconds(.2f);
         SceneManager.LoadScene("perspective");
     }
 }

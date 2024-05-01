@@ -33,8 +33,16 @@ public class moveScreenNStuff : MonoBehaviour
 
     }
 
-    public void AttackScreen()
+    public void AttackScreenButton() {
+        GameObject.Find("SoundEffect").GetComponent<AudioSource>().Play();
+        StartCoroutine(AttackScreenShow());
+    }
+    void AttackScreen()
     {
+        StartCoroutine(AttackScreenShow());
+    }
+
+    IEnumerator AttackScreenShow() {
         if (pair > 2) { pair = 1; }
         if (pair % 2 == 0)
         {
@@ -53,5 +61,6 @@ public class moveScreenNStuff : MonoBehaviour
             n.sortingOrder = 10;
         }
         pair++;
+        yield return null;
     }
 }
