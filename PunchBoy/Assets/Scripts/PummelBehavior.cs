@@ -24,9 +24,8 @@ public class PummelBehavior : MonoBehaviour
     public void playAnimation()
     {
         rend1.enabled = true;
-        anim.SetTrigger("PummelAttack");
-/*        anim.enabled = true;
-        anim.Play("Pummel2dPunch", 0);*/
+        anim.enabled = true;
+        anim.Play("Pummel2dPunch", 0);
     }
 
     public IEnumerator DeployPummel()
