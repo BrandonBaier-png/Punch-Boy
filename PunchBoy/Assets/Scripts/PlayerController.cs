@@ -55,7 +55,8 @@ public class PlayerController : MonoBehaviour, IMovementActions
         if (Input.GetKeyDown(KeyCode.W) && xPOS < 3 && moveCooldown <= 0)
         {
             animator.SetTrigger("MoveUp");
-            MovePlayer(Vector3.forward);
+            //MovePlayer(Vector3.forward);
+            StartCoroutine(MovePlayerUp());
             xPOS++;
             moveCooldown = .3f;
         }
@@ -63,7 +64,8 @@ public class PlayerController : MonoBehaviour, IMovementActions
         if (Input.GetKeyDown(KeyCode.A) && yPOS > 0 && moveCooldown <= 0)
         {
             animator.SetTrigger("MoveLeft");
-            MovePlayer(Vector3.left);
+            //MovePlayer(Vector3.left);
+            StartCoroutine(MovePlayerLeft());
             yPOS--;
             moveCooldown = .3f;
         }
@@ -71,7 +73,8 @@ public class PlayerController : MonoBehaviour, IMovementActions
         if (Input.GetKeyDown(KeyCode.S) && xPOS > 0 && moveCooldown <= 0)
         {
             animator.SetTrigger("MoveDown");
-            MovePlayer(Vector3.back);
+            //MovePlayer(Vector3.back);
+            StartCoroutine(MovePlayerDown());
             xPOS--;
             moveCooldown = .3f;
         }
@@ -79,7 +82,8 @@ public class PlayerController : MonoBehaviour, IMovementActions
         if (Input.GetKeyDown(KeyCode.D) && yPOS < 3 && moveCooldown <= 0)
         {
             animator.SetTrigger("MoveRight");
-            MovePlayer(Vector3.right);
+            //MovePlayer(Vector3.right);
+            StartCoroutine(MovePlayerRight());
             yPOS++;
             moveCooldown = .3f;
         }
@@ -150,6 +154,40 @@ public class PlayerController : MonoBehaviour, IMovementActions
             UpdateFire();
         }
 
+    }
+
+    IEnumerator MovePlayerUp() {
+        for (float i = 0; i < .3f; i += Time.deltaTime) {
+            GameObject.Find("PunchBoySprite").transform.position += (new Vector3(.642f,.316f,0) * Time.deltaTime * 3.3f);
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    IEnumerator MovePlayerDown()
+    {
+        for (float i = 0; i < .3f; i += Time.deltaTime)
+        {
+            GameObject.Find("PunchBoySprite").transform.position += (new Vector3(-.642f, -.316f, 0) * Time.deltaTime * 3.3f);
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    IEnumerator MovePlayerLeft()
+    {
+        for (float i = 0; i < .3f; i += Time.deltaTime)
+        {
+            GameObject.Find("PunchBoySprite").transform.position += (new Vector3(-.642f, .316f, 0) * Time.deltaTime * 3.3f);
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    IEnumerator MovePlayerRight()
+    {
+        for (float i = 0; i < .3f; i += Time.deltaTime)
+        {
+            GameObject.Find("PunchBoySprite").transform.position += (new Vector3(.642f, -.316f, 0) * Time.deltaTime * 3.3f);
+            yield return new WaitForEndOfFrame();
+        }
     }
 
     private void MovePlayer(Vector3 direction)

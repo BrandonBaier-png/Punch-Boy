@@ -25,7 +25,7 @@ public class SpriteMovement : MonoBehaviour
         //  NOTE - Do not destory the punch boy object, this code will cause a large amount of errors if it is deleted. 
         //
         //
-        if (GameObject.Find("punchBoy").transform.position.z == 0)
+/*        if (GameObject.Find("punchBoy").transform.position.z == 0)
         {
             if (GameObject.Find("punchBoy").transform.position.x == 0)
             {
@@ -99,7 +99,7 @@ public class SpriteMovement : MonoBehaviour
             {
                 gameObject.transform.position = new Vector3(-10.98f, -0.72f, 0);
             }
-        }
+        }*/
  /*       if (sweepCD > 0) { sweepCD -= Time.deltaTime; }*/
         if (fireballCD > 0) { fireballCD -= Time.deltaTime; }
 /*      if (punchCD > 0) { punchCD -= Time.deltaTime; }
