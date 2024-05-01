@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// I'm making a comment here so I can push to help someone troubleshoot their version
 public class AnimationMovement : MonoBehaviour
 {
     //was -1.50
