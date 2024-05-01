@@ -62,6 +62,9 @@ public class MoonSwipe : StandardBossAttack
         yield return StartCoroutine(wave1row2.attack());
         yield return StartCoroutine(wave1row3.attack());
         animator.ResetTrigger("SwipeStart");
+
+        yield return new WaitForSeconds(0.8f);
+
         animator.SetTrigger("SwipeStart");
         StartCoroutine(AudioDelay());
         yield return StartCoroutine(wave2row1.attack());
