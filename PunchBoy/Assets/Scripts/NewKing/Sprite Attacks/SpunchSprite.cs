@@ -18,7 +18,7 @@ public class SpikeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(playSpikes());
+        
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class SpikeController : MonoBehaviour
     {
         if (activeAttack)
         {
-            //print("SUPERSPUNCH ACTIVE");
+            //Debug.log("SUPERSPUNCH ACTIVE");
             StartCoroutine(playSpikes());
             CurrentAttack(false);
         }
