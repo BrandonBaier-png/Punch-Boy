@@ -13,6 +13,7 @@ public class SpriteMovement : MonoBehaviour
 
     public Animator animator;
     public GameObject fireballPrefab;
+
     // Start is called before the first frame update
     void Start()
     {

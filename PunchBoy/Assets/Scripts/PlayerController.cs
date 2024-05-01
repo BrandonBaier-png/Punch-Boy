@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
     public AudioSource fireAudio;
     public AudioSource sweepAudio;
     public AudioSource punchAudio;
+    public AudioSource dashAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
 
         if (Input.GetKeyDown(KeyCode.W) && xPOS < 3 && moveCooldown <= 0)
         {
+            dashAudio.Play();
             animator.SetTrigger("MoveUp");
             MovePlayer(Vector3.forward);
             StartCoroutine(MovePlayerUp());
@@ -63,6 +65,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
 
         if (Input.GetKeyDown(KeyCode.A) && yPOS > 0 && moveCooldown <= 0)
         {
+            dashAudio.Play();
             animator.SetTrigger("MoveLeft");
             MovePlayer(Vector3.left);
             StartCoroutine(MovePlayerLeft());
@@ -72,6 +75,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
 
         if (Input.GetKeyDown(KeyCode.S) && xPOS > 0 && moveCooldown <= 0)
         {
+            dashAudio.Play();
             animator.SetTrigger("MoveDown");
             MovePlayer(Vector3.back);
             StartCoroutine(MovePlayerDown());
@@ -81,6 +85,7 @@ public class PlayerController : MonoBehaviour, IMovementActions
 
         if (Input.GetKeyDown(KeyCode.D) && yPOS < 3 && moveCooldown <= 0)
         {
+            dashAudio.Play();
             animator.SetTrigger("MoveRight");
             MovePlayer(Vector3.right);
             StartCoroutine(MovePlayerRight());
@@ -157,7 +162,8 @@ public class PlayerController : MonoBehaviour, IMovementActions
     }
 
     IEnumerator MovePlayerUp() {
-        for (float i = 0; i < .3f; i += Time.deltaTime) {
+        for (float i = 0; i < .3f; i += Time.deltaTime)
+        {
             GameObject.Find("PunchBoySprite").transform.position += (new Vector3(.642f,.316f,0) * Time.deltaTime * 3.3f);
             yield return new WaitForEndOfFrame();
         }
