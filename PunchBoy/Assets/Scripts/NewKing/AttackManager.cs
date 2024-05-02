@@ -268,6 +268,8 @@ public class AttackManager : MonoBehaviour
         }
         print("PUMMEL ATTACK MANAGER");
 
+        //changed the pummel animator
+
         PummelEvent.Invoke();
 
         //StartCoroutine(waitUntilAttackCleared());
