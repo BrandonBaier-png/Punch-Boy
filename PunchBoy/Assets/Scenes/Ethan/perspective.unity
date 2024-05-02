@@ -6655,6 +6655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spunchTigerAnim: {fileID: 1829014378}
   animator: {fileID: 1829014378}
+  superSpunchAudio: {fileID: 1713105739}
 --- !u!4 &1711761626
 Transform:
   m_ObjectHideFlags: 0

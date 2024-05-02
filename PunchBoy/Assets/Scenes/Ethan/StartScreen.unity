@@ -392,6 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 702f246d976cb8046a637bae7997da07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonHit: {fileID: 1925359286}
 --- !u!1 &346203441
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,7 +856,7 @@ AudioSource:
   m_Volume: 0.54
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128

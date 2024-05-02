@@ -21,6 +21,8 @@ public class SuperSpunchSprite : StandardBossAttack
     public Animator animator;
     // Start is called before the first frame update
 
+    public AudioSource superSpunchAudio;
+
     private void Start()
     {
         
@@ -43,6 +45,7 @@ public class SuperSpunchSprite : StandardBossAttack
             for (int y = 0; y < 4; y++)
             {
                 allSpikes.add(x, y);
+                StartCoroutine(AudioDelay());
             }
         }
 
@@ -95,5 +98,11 @@ public class SuperSpunchSprite : StandardBossAttack
                 bossController.RemoveOnHealthChanged(dealTempDamage);
             }
         }
+    }
+
+    IEnumerator AudioDelay()
+    {
+        yield return new WaitForSeconds(0.8f);
+        superSpunchAudio.Play();
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
 {
+    public AudioSource buttonHit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class StartGame : MonoBehaviour
 
     public void Begin()
     {
-        GameObject.Find("SoundEffect").GetComponent<AudioSource>().Play();
+        buttonHit.Play();
         StartCoroutine(GameStart());
     }
 
