@@ -11,11 +11,25 @@ public class PunchBoyHealth : MonoBehaviour
     private float ITime = 0;
     public Image PBHealthBar;
 
+    private bool pbInvincible = false;
+    private float PBINVINCIBLETIMERBASE = 0.05f;
+    private float pbInvincibleTimer = 0.05f;
+
+
     public Animator Animator;
     // Start is called before the first frame update
     void Start()
     {
+        SpriteMovement pbSpriteMovement = this.gameObject.GetComponent<SpriteMovement>();
+            //print("FISHE SEARCH");
+            if (pbSpriteMovement != null)
+            {
+                pbSpriteMovement.addToMovementTracker(toggleInvincible);
+                //print("Sprite Movement Found");
 
+   
+            }
+        
     }
 
     // Update is called once per frame
@@ -26,6 +40,17 @@ public class PunchBoyHealth : MonoBehaviour
             ITime -= Time.deltaTime;
         }
 
+        if (pbInvincible)
+        {
+            //print("INVINCIBLE STATUS: " + pbInvincible);
+            pbInvincibleTimer -= Time.deltaTime;
+            if (pbInvincibleTimer < 0)
+            {
+                toggleInvincible(false);
+                pbInvincibleTimer = PBINVINCIBLETIMERBASE;
+            }
+        }
+
         //print("Punch boy health " + health);
         //Debug.Log(health);
     }
@@ -33,7 +58,7 @@ public class PunchBoyHealth : MonoBehaviour
     void OnTriggerEnter(UnityEngine.Collider collision)
     {
         BoxCollider spriteBox = collision.gameObject.GetComponent<BoxCollider>();
-        if (collision.tag == "Spike" && ITime <= 0)
+        if (collision.tag == "Spike" && ITime <= 0 && !pbInvincible)
         {
             dealtDamage();
             UpdateHealth();
@@ -46,9 +71,13 @@ public class PunchBoyHealth : MonoBehaviour
         }
     }
 
+    public void toggleInvincible(bool status)
+    {
+        pbInvincible = status;
+    }
+
     public void dealtDamage()
     {
-        print("Punch Boy Dealt Damage :3");
         currentHealth -= 10;
     }
 
