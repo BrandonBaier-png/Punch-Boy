@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuButton : MonoBehaviour
 {
+    public AudioSource buttonAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class MainMenuButton : MonoBehaviour
     }
 
     public void Menu() {
-        GameObject.Find("SoundEffect").GetComponent<AudioSource>().Play();
+        buttonAudio.Play();
         StartCoroutine(MenuButton());
     }
 

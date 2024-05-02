@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class restartGameButton : MonoBehaviour
 {
+    public AudioSource buttonAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class restartGameButton : MonoBehaviour
     }
 
     public void restart() {
-        GameObject.Find("SoundEffect").GetComponent<AudioSource>().Play();
+        buttonAudio.Play();
         StartCoroutine(RestartButton());
     }
     IEnumerator RestartButton() {
