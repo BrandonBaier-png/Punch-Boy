@@ -273,7 +273,7 @@ public class AttackManager : MonoBehaviour
         //StartCoroutine(waitUntilAttackCleared());
         
 
-        yield return new WaitForSeconds(secondsBetweenAttack);
+        yield return new WaitForSeconds(6);
         SetAttacking(false);
         animator.SetTrigger("PummelEnd");
         animationBuffer = false;
