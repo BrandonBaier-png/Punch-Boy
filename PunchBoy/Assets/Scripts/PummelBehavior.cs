@@ -5,13 +5,11 @@ using UnityEngine;
 public class PummelBehavior : MonoBehaviour
 {
     public Animator anim;
-
     SpriteRenderer rend1;
 
     // Start is called before the first frame update
     void Start()
     {
-        anim = gameObject.GetComponent<Animator>();
         rend1 = transform.GetComponent<SpriteRenderer>();
     }
 
