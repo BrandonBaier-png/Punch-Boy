@@ -17,8 +17,8 @@ public class SpikeInheritor : StandardBossAttack
     [SerializeField] private Object Pummel2d;
     int rounds = 0;
     private float height = 5f;
-    public int secondsBetweenAttack = 2;
-    private float pummelAnimDelay = 0.8f;
+    public float secondsBetweenAttack = .5f;
+    private float pummelAnimDelay = 1f;
 
     public AudioSource spikeAudio;
 
@@ -80,12 +80,12 @@ public class SpikeInheritor : StandardBossAttack
 
         
 
-        while (rounds < 4)
+        while (rounds < 3)
         {
             StartCoroutine(pummelLogic(g1, g2, g3, g4, quad1, quad2, quad3, quad4));
             StartCoroutine(AudioController());
             tickRounds();
-            yield return null;
+            yield return new WaitForSeconds(secondsBetweenAttack);
         }
 
     }
@@ -99,14 +99,16 @@ public class SpikeInheritor : StandardBossAttack
             // QUAD 3
             if (GameObject.Find("punchBoy").transform.position.z <= 1 && GameObject.Find("punchBoy").transform.position.z >= 0)
             {
+                Debug.Log("quadrant 2 called");
                 StartCoroutine(quad2.PummelAttack());
-                StartCoroutine(g3.attack());
                 yield return new WaitForSeconds(pummelAnimDelay);
+                StartCoroutine(g3.attack());
                 //StartCoroutine(g3.attack());
             }
             // QUAD 1
             else if (GameObject.Find("punchBoy").transform.position.z <= 3 && GameObject.Find("punchBoy").transform.position.z >= 2)
             {
+                Debug.Log("quadrant 1 called");
                 StartCoroutine(quad1.PummelAttack());
                 yield return new WaitForSeconds(pummelAnimDelay);
                 StartCoroutine(g1.attack());
@@ -117,6 +119,7 @@ public class SpikeInheritor : StandardBossAttack
             // QUAD 4
             if (GameObject.Find("punchBoy").transform.position.z <= 1 && GameObject.Find("punchBoy").transform.position.z >= 0)
             {
+                Debug.Log("quadrant 4 called");
                 StartCoroutine(quad4.PummelAttack());
                 yield return new WaitForSeconds(pummelAnimDelay);
                 StartCoroutine(g4.attack());
@@ -124,6 +127,7 @@ public class SpikeInheritor : StandardBossAttack
             // QUAD 2
             else if (GameObject.Find("punchBoy").transform.position.z <= 3 && GameObject.Find("punchBoy").transform.position.z >= 2)
             {
+                Debug.Log("quadrant 3 called");
                 StartCoroutine(quad3.PummelAttack());
                 yield return new WaitForSeconds(pummelAnimDelay);
                 StartCoroutine(g2.attack());

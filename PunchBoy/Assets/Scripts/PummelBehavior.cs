@@ -11,7 +11,7 @@ public class PummelBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
         rend1 = transform.GetComponent<SpriteRenderer>();
     }
 
@@ -39,10 +39,8 @@ public class PummelBehavior : MonoBehaviour
 
         yield return new WaitForSeconds(.5f);
 
-        anim.enabled = false;
         rend1.enabled = false;
         
-
         yield return null;
 
     }
